@@ -1,0 +1,16 @@
+{
+  "name": "sidestoreio",
+  "version": "1.0.0",
+  "description": "The website for SideStore.",
+  "source": "src/index.html",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.2",
+    "postcss": "^8.4.20",
+    "tailwindcss": "^3.2.4"
+  }
+}
