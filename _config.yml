@@ -1,1 +1,19 @@
-theme: jekyll-theme-slate
+baseurl = "https://sidestore.io"
+title = "SideStore"
+#theme = ["hugo-social-metadata", "hugo-redirect", "hugo-cloak-email", "small-apps-prov"]
+themesDir = "themes"
+languageCode = "en-us"
+summaryLength = "10"
+# Site language. Available translations in the theme's `/i18n` directory.
+defaultContentLanguage = "en"
+# Enable comments by entering your Disqus shortname
+#disqusShortname = "provenance-emu"
+# Enable Google Analytics by entering your tracking code
+#googleAnalytics = "UA-128934358-3"
+
+# Define the number of posts per page
+paginate = 6
+
+# Pygment Code
+tsCodefences = true
+pygmentsStyle = "solarized-dark"
