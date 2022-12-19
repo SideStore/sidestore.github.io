@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel",
-    "build": "parcel build --no-source-maps"
+    "build": "parcel build --no-source-maps --public-url ./"
   },
   "devDependencies": {
     "parcel": "^2.8.2",
