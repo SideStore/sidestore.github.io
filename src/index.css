@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.
+ ^ used in index.html */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-sidegrad {
+  background: #6932e0;
+  background: radial-gradient(circle at 40vh -10vw, rgba(90, 26, 229, 0.2), #121316 70%), #121316;
+}
