@@ -1,0 +1,42 @@
+name: Deploy to pages
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install and Build 🔧
+        run: |
+          yarn
+          yarn build
+          cp -R src/.well-known dist/.well-known
+
+      - name: Setup Pages ⚙️
+        uses: actions/configure-pages@v2
+
+      - name: Upload artifact 📁
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'dist'
+
+      - name: Deploy to GitHub Pages 🚀
+        id: deployment
+        uses: actions/deploy-pages@v1
