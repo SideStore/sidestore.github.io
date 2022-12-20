@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
 
-  <body>
+  <body class="scrollbar-thin scrollbar-track-[#121316] scrollbar-thumb-[#21262d]">
     <div class="bg-sidegrad flex flex-col items-center">
       <!-- navbar -->
       <div class="sticky top-0 z-50 flex w-full justify-center">
         <nav
-          class="mx-4 mt-4 flex max-w-xl flex-grow flex-row items-center rounded-full bg-[rgba(31,32,35,.6)] px-5 py-4 shadow-sm backdrop-blur-3xl"
+          class="mx-4 mt-4 flex max-w-xl flex-grow flex-row items-center rounded-full bg-[rgba(31,32,35,.5)] px-5 py-4 shadow-sm backdrop-blur-2xl"
         >
           <img alt="SideStore Logo" src="assets/apple-touch-icon.png" class="h-8 w-8 rounded-full" />
           <div class="flex-grow"></div>
@@ -47,7 +47,7 @@
       </div>
 
       <!-- hero/landing section -->
-      <div class="mt-4 flex h-full w-full flex-col items-center overflow-hidden lg:mt-0 lg:grid lg:grid-cols-8 2xl:max-w-[80vw]">
+      <div class="mt-4 flex h-full w-full max-w-[90rem] flex-col items-center overflow-hidden lg:mt-0 lg:grid lg:grid-cols-8">
         <div class="flex flex-col justify-center px-4 text-left lg:col-span-4 lg:-translate-y-2/4 lg:pl-12 2xl:pl-0">
           <h1 class="font-['Poppins'] text-3xl font-bold text-white sm:text-4xl lg:text-6xl">SideStore</h1>
           <p class="mt-4 max-w-xl text-gray-300">
@@ -58,7 +58,7 @@
           <div class="mt-4 flex flex-col gap-2 buttonsok:flex-row">
             <!-- rounded pill download button -->
             <div class="flex items-center justify-center rounded-full bg-[#6932e0] px-7 py-2.5">
-              <a href="https://example.com" class="font-medium text-white">Learn more</a>
+              <a href="#apps-section" class="font-medium text-white">Learn more</a>
             </div>
             <div class="flex items-center justify-center rounded-full border-2 border-[#6932e0] px-7 py-2.5">
               <a href="https://example.com" class="font-medium text-white">Documentation</a>
@@ -69,13 +69,16 @@
           <img alt="Phone render" src="assets/hero_render2.png" class="max-h-full max-w-3xl object-scale-down" />
         </div>
 
-        <div class="mr-0 max-h-[38rem] w-screen translate-x-1/4 md:w-full md:translate-x-1/4 lg:hidden">
-          <img alt="Phone render" src="assets/hero_render2.png" class="max-h-full max-w-3xl object-scale-down" />
+        <div class="fade-out mr-0 max-h-[38rem] w-screen translate-x-1/4 md:w-full lg:hidden">
+          <img alt="Phone render" src="assets/hero_render2.png" class="max-h-full max-w-3xl bg-cover object-scale-down" />
         </div>
       </div>
 
-      <div class="h-64">
-        <h1 class="font-['Poppins'] text-3xl font-bold text-white sm:text-4xl lg:text-6xl">SideStore</h1>
+      <div id="apps-section" class="h-64 max-w-[90rem] px-4 lg:px-12">
+        <h1 class="font-['Poppins'] text-3xl font-bold text-white">
+          SideStore allows installation for any app you want, alongside the many available in our verified sources. And with in-app JIT support, play
+          hardware-accelerated games, emulators or whatever you want, wherever you want, with no computer required.
+        </h1>
       </div>
     </div>
   </body>
