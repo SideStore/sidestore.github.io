@@ -16,7 +16,31 @@ module.exports = {
           900: '#1a202c',
         },
       },
+      animation: {
+        marquee: 'marquee 25s linear infinite',
+        marquee2: 'marquee2 25s linear infinite',
+        'rev-marquee': 'rev-marquee 25s linear infinite',
+        'rev-marquee2': 'rev-marquee2 25s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        marquee2: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
+        'rev-marquee': {
+          '100%': { transform: 'translateX(0%)' },
+          '0%': { transform: 'translateX(-100%)' },
+        },
+        'rev-marquee2': {
+          '100%': { transform: 'translateX(100%)' },
+          '0%': { transform: 'translateX(0%)' },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 };
