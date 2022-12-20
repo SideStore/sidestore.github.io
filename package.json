@@ -11,6 +11,7 @@
   "devDependencies": {
     "parcel": "^2.8.2",
     "postcss": "^8.4.20",
+    "posthtml-include": "^1.7.4",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",
     "tailwind-scrollbar": "^2.0.1",

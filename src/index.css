@@ -10,12 +10,14 @@
   html {
     scroll-behavior: smooth;
   }
+  body {
+    background: #121316;
+  }
 }
 
 @layer utilities {
   .bg-sidegrad {
-    background: #121316;
-    background: radial-gradient(circle at 40vh -10vw, rgba(90, 26, 229, 0.2), #121316 70%), #121316;
+    background: radial-gradient(circle at 40vh -10vw, rgba(90, 26, 229, 0.2), #121316 70%);
   }
   .scrollbar-extrathin {
     scrollbar-width: thin;

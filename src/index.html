@@ -10,6 +10,8 @@
   </head>
 
   <body class="scrollbar-thin scrollbar-track-[#121316] scrollbar-thumb-[#21262d]">
+    <!-- a div that is fixed behind all content in the apps section with a gradient background -->
+    <div class="bg-sidegrad fixed -z-10 h-screen w-screen -translate-x-full"></div>
     <div class="bg-sidegrad flex flex-col items-center">
       <!-- navbar -->
       <div class="sticky top-0 z-50 flex w-full justify-center">
@@ -74,11 +76,35 @@
         </div>
       </div>
 
-      <div id="apps-section" class="h-64 max-w-[90rem] px-4 lg:px-12">
-        <h1 class="font-['Poppins'] text-3xl font-bold text-white">
-          SideStore allows installation for any app you want, alongside the many available in our verified sources. And with in-app JIT support, play
-          hardware-accelerated games, emulators or whatever you want, wherever you want, with no computer required.
-        </h1>
+      <div id="apps-section" class="my-8 flex w-full flex-col items-center lg:grid lg:max-w-[90rem] lg:grid-cols-2 lg:px-12">
+        <div class="mr-4 flex max-w-xl flex-col justify-center px-4 pb-4">
+          <h1 class="font-['Poppins'] text-3xl font-bold text-white">Apps</h1>
+          <p class="mt-2 text-gray-200">
+            SideStore allows installation for any app you want, alongside the many available in our verified sources. And with the in-app JIT enabler,
+            you can play hardware-accelerated games, emulators or whatever you want, wherever you want, with no computer required.
+          </p>
+        </div>
+
+        <div class="mt-4 flex w-screen flex-col lg:mt-0 lg:w-auto">
+          <div class="relative flex overflow-x-hidden">
+            <div class="flex animate-marquee whitespace-nowrap py-2">
+              <include src="./src/components/marqueeItems.html" />
+            </div>
+
+            <div class="absolute top-0 flex animate-marquee2 whitespace-nowrap py-2">
+              <include src="./src/components/marqueeItems.html" />
+            </div>
+          </div>
+          <div class="relative flex overflow-x-hidden">
+            <div class="flex animate-rev-marquee whitespace-nowrap py-2">
+              <include src="./src/components/marqueeItems.html" />
+            </div>
+
+            <div class="absolute top-0 flex animate-rev-marquee2 whitespace-nowrap py-2">
+              <include src="./src/components/marqueeItems.html" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
