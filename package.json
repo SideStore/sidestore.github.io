@@ -9,6 +9,8 @@
     "build": "parcel build --no-source-maps --public-url ./"
   },
   "devDependencies": {
+    "@parcel/resolver-glob": "^2.8.2",
+    "@parcel/transformer-inline-string": "2.8.2",
     "parcel": "^2.8.2",
     "postcss": "^8.4.20",
     "posthtml-include": "^1.7.4",
