@@ -17,10 +17,10 @@ module.exports = {
         },
       },
       animation: {
-        marquee: 'marquee 42s linear infinite',
-        marquee2: 'marquee2 42s linear infinite',
-        'marquee-rev': 'rev-marquee 42s linear infinite',
-        'marquee2-rev': 'rev-marquee2 42s linear infinite',
+        marquee: 'marquee 72s linear infinite',
+        marquee2: 'marquee2 72s linear infinite',
+        'marquee-rev': 'rev-marquee 72s linear infinite',
+        'marquee2-rev': 'rev-marquee2 72s linear infinite',
       },
       keyframes: {
         marquee: {
