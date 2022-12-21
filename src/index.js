@@ -61,7 +61,7 @@ let apps = [
   },
   {
     name: 'Ready',
-    desc: 'Ready is an open source emulator for the following 8 bit home computers:',
+    desc: 'Ready is an open source emulator for multiple 8 bit home computers.',
   },
   {
     name: 'MAME4iOS',
