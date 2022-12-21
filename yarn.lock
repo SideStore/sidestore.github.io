@@ -1183,11 +1183,6 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
-fclone@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.npmjs.org/fclone/-/fclone-1.0.11.tgz"
-  integrity sha512-GDqVQezKzRABdeqflsgMr7ktzgF9CyS+p2oe0jJqUY6izSSbhPIQJDpoU4PtGcD7VPM9xh/dVrTu6z1nwgmEGw==
-
 fill-range@^7.0.1:
   version "7.0.1"
   resolved "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz"
@@ -1702,31 +1697,7 @@ postcss@^8.4.18, postcss@^8.4.20:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-posthtml-expressions@^1.7.1:
-  version "1.11.0"
-  resolved "https://registry.npmjs.org/posthtml-expressions/-/posthtml-expressions-1.11.0.tgz"
-  integrity sha512-Un7J/UugURkoxCuFJ+1UwzmXe19hPrfUBOYgrjf2ipkCyghSh8L3ldwKttgjs8GI+4aPPUFThAted0J2tpORnA==
-  dependencies:
-    fclone "^1.0.11"
-    posthtml-match-helper "^1.0.1"
-    posthtml-parser "^0.10.0"
-    posthtml-render "^3.0.0"
-
-posthtml-include@^1.7.4:
-  version "1.7.4"
-  resolved "https://registry.npmjs.org/posthtml-include/-/posthtml-include-1.7.4.tgz"
-  integrity sha512-GO5QzHiM6/fXq8DxLoLN+jEW4sH/6nuGF9z+NJmP1qi1A3J2zCC7WwXrEwaPL3T8LrH+FL4IedK+mIJHbn5ZEA==
-  dependencies:
-    posthtml "^0.16.6"
-    posthtml-expressions "^1.7.1"
-    posthtml-parser "^0.11.0"
-
-posthtml-match-helper@^1.0.1:
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/posthtml-match-helper/-/posthtml-match-helper-1.0.3.tgz"
-  integrity sha512-aeRAPvok2Fs6uzSm85665jdAk5UOd8US2QCkWtGU6yLPlKSwzWTSgZZuABc3UeNy3K1lVk/HV9bRkWJYN05Ymw==
-
-posthtml-parser@^0.10.0, posthtml-parser@^0.10.1:
+posthtml-parser@^0.10.1:
   version "0.10.2"
   resolved "https://registry.npmjs.org/posthtml-parser/-/posthtml-parser-0.10.2.tgz"
   integrity sha512-PId6zZ/2lyJi9LiKfe+i2xv57oEjJgWbsHGGANwos5AvdQp98i6AtamAl8gzSVFGfQ43Glb5D614cvZf012VKg==
@@ -1747,7 +1718,7 @@ posthtml-render@^3.0.0:
   dependencies:
     is-json "^2.0.1"
 
-posthtml@^0.16.4, posthtml@^0.16.5, posthtml@^0.16.6:
+posthtml@^0.16.4, posthtml@^0.16.5:
   version "0.16.6"
   resolved "https://registry.npmjs.org/posthtml/-/posthtml-0.16.6.tgz"
   integrity sha512-JcEmHlyLK/o0uGAlj65vgg+7LIms0xKXe60lcDOTU7oVX/3LuEuLwrQpW3VJ7de5TaFKiW4kWkaIpJL42FEgxQ==

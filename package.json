@@ -19,7 +19,6 @@
     "@parcel/transformer-inline-string": "2.8.2",
     "parcel": "^2.8.2",
     "postcss": "^8.4.20",
-    "posthtml-include": "^1.7.4",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",
     "run-script-os": "^1.1.6",
