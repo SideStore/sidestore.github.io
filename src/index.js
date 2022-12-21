@@ -40,10 +40,6 @@ let apps = [
     desc: 'RetroArch is a frontend for a plethora of emulators.',
   },
   {
-    name: 'Flappy Bird',
-    desc: 'A revival of the original Flappy Bird by Dong Nguyen.',
-  },
-  {
     name: 'iNDS',
     desc: 'Aa derivation of the previous Nintendo DS emulator apps for iOS: nds4ios and Nitrogen.',
   },
