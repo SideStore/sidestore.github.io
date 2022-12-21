@@ -92,7 +92,7 @@ let apps = [
     desc: 'Fully emulates the Mac Plus, the Mac II or the Mac 128K',
   },
 ]
-  .map((i) => ({ ...i, icon: icons[i.name].endsWith('.webp') ? icons[i.name] : icons[i.name + '.webp'] }))
+  .map((i) => ({ ...i, icon: icons[i.name].endsWith('.webp') ? icons[i.name] : icons[i.name] + '.webp' }))
   .map((i) => template(marqueeItem, i, ['icon']));
 
 let set1 = apps.sort(() => Math.random() - 0.5).join('');
