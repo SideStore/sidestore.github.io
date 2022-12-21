@@ -9,14 +9,11 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
 
-  <body class="scrollbar-thin scrollbar-track-[#121316] scrollbar-thumb-[#21262d]">
-    <!-- a div that is fixed behind all content in the apps section with a gradient background -->
-    <div class="bg-sidegrad fixed -z-10 h-screen w-screen -translate-x-full"></div>
-    <div class="bg-sidegrad flex flex-col items-center">
-      <!-- navbar -->
-      <div class="sticky top-0 z-50 flex w-full justify-center">
+  <body>
+    <div class="bg-sidegrad flex h-screen flex-col items-center">
+      <div class="flex w-screen justify-center">
         <nav
-          class="mx-4 mt-4 flex max-w-xl flex-grow flex-row items-center rounded-full bg-[rgba(31,32,35,.5)] px-5 py-4 shadow-sm backdrop-blur-2xl"
+          class="mx-4 mt-4 flex max-w-xl flex-grow flex-row items-center rounded-full bg-[rgba(31,32,35,.6)] px-5 py-4 shadow-sm backdrop-blur-3xl"
         >
           <img alt="SideStore Logo" src="assets/apple-touch-icon.png" class="h-8 w-8 rounded-full" />
           <div class="flex-grow"></div>
@@ -47,9 +44,7 @@
           </div>
         </nav>
       </div>
-
-      <!-- hero/landing section -->
-      <div class="mt-4 flex h-full w-full max-w-[90rem] flex-col items-center overflow-hidden lg:mt-0 lg:grid lg:grid-cols-8">
+      <div class="mt-6 flex h-full max-h-screen flex-col items-center overflow-hidden sm:w-screen lg:mt-0 lg:grid lg:grid-cols-8 2xl:max-w-[80vw]">
         <div class="flex flex-col justify-center px-4 text-left lg:col-span-4 lg:-translate-y-2/4 lg:pl-12 2xl:pl-0">
           <h1 class="font-['Poppins'] text-3xl font-bold text-white sm:text-4xl lg:text-6xl">SideStore</h1>
           <p class="mt-4 max-w-xl text-gray-300">
@@ -60,50 +55,21 @@
           <div class="mt-4 flex flex-col gap-2 buttonsok:flex-row">
             <!-- rounded pill download button -->
             <div class="flex items-center justify-center rounded-full bg-[#6932e0] px-7 py-2.5">
-              <a href="#apps-section" class="font-medium text-white">Learn more</a>
+              <a href="https://example.com" class="font-medium text-white">Learn more</a>
             </div>
             <div class="flex items-center justify-center rounded-full border-2 border-[#6932e0] px-7 py-2.5">
               <a href="https://example.com" class="font-medium text-white">Documentation</a>
             </div>
           </div>
         </div>
-        <div class="hidden h-full w-full translate-x-24 items-center justify-center px-12 lg:col-span-4 lg:flex stoplgtranslation:translate-x-0">
+        <div
+          class="hidden h-full w-full translate-y-12 translate-x-24 items-center justify-center px-12 lg:col-span-4 lg:flex stoplgtranslation:translate-x-0"
+        >
           <img alt="Phone render" src="assets/hero_render2.png" class="max-h-full max-w-3xl object-scale-down" />
         </div>
 
-        <div class="fade-out mr-0 max-h-[38rem] w-screen translate-x-1/4 md:w-full lg:hidden">
-          <img alt="Phone render" src="assets/hero_render2.png" class="max-h-full max-w-3xl bg-cover object-scale-down" />
-        </div>
-      </div>
-
-      <div id="apps-section" class="my-8 flex w-full flex-col items-center lg:grid lg:max-w-[90rem] lg:grid-cols-2 lg:px-12">
-        <div class="mr-4 flex max-w-xl flex-col justify-center px-4 pb-4">
-          <h1 class="font-['Poppins'] text-3xl font-bold text-white">Apps</h1>
-          <p class="mt-2 text-gray-200">
-            SideStore allows installation for any app you want, alongside the many available in our verified sources. And with the in-app JIT enabler,
-            you can play hardware-accelerated games, emulators or whatever you want, wherever you want, with no computer required.
-          </p>
-        </div>
-
-        <div class="mt-4 flex w-screen flex-col lg:mt-0 lg:w-auto">
-          <div class="relative flex overflow-x-hidden">
-            <div class="flex animate-marquee whitespace-nowrap py-2">
-              <include src="./src/components/marqueeItems.html" />
-            </div>
-
-            <div class="absolute top-0 flex animate-marquee2 whitespace-nowrap py-2">
-              <include src="./src/components/marqueeItems.html" />
-            </div>
-          </div>
-          <div class="relative flex overflow-x-hidden">
-            <div class="flex animate-rev-marquee whitespace-nowrap py-2">
-              <include src="./src/components/marqueeItems.html" />
-            </div>
-
-            <div class="absolute top-0 flex animate-rev-marquee2 whitespace-nowrap py-2">
-              <include src="./src/components/marqueeItems.html" />
-            </div>
-          </div>
+        <div class="mr-0 w-screen translate-x-6 md:w-full md:translate-x-1/4 lg:hidden">
+          <img alt="Phone render" src="assets/hero_render2.png" class="max-h-full max-w-3xl object-scale-down" />
         </div>
       </div>
     </div>

@@ -6,24 +6,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    background: #121316;
-  }
-}
-
-@layer utilities {
-  .bg-sidegrad {
-    background: radial-gradient(circle at 40vh -10vw, rgba(90, 26, 229, 0.2), #121316 70%);
-  }
-  .scrollbar-extrathin {
-    scrollbar-width: thin;
-  }
-  .scrollbar-extrathin::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
+.bg-sidegrad {
+  background: #6932e0;
+  background: radial-gradient(circle at 40vh -10vw, rgba(90, 26, 229, 0.2), #121316 70%), #121316;
 }
