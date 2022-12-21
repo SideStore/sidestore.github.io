@@ -27,6 +27,7 @@ jobs:
         run: |
           yarn
           yarn build
+          cp -R src/.well-known dist/.well-known
 
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v2

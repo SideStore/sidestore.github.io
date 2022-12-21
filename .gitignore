@@ -2,4 +2,3 @@ node_modules/
 dist/
 .parcel-cache/
 yarn-error.log
-.DS_Store
