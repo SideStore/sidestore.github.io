@@ -1,14 +1,14 @@
 {
   "name": "sidestoreio",
   "version": "1.0.0",
-  "description": "The website for SideStore.",
+  "description": "The sidestore website, visible at sidestore.io",
   "source": "src/index.html",
   "license": "MIT",
   "scripts": {
     "dev": "parcel",
     "prebuild": "run-script-os",
     "prebuild:nix": "rm -rf dist .parcel-cache",
-    "prebuild:windows": "rd /s /q dist & rd /s /qparcel-cache",
+    "prebuild:windows": "rd /s /q dist & rd /s /q parcel-cache",
     "build": "parcel build --no-source-maps --public-url ./",
     "postbuild": "run-script-os",
     "postbuild:nix": "cp -R src/.well-known dist/.well-known",
