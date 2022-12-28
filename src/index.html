@@ -5,7 +5,9 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-27VPGVY9C8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
       gtag('config', 'G-27VPGVY9C8');
     </script>
@@ -66,7 +68,7 @@
           <div class="mt-4 flex flex-col gap-2 buttonsok:flex-row">
             <!-- rounded pill download button -->
             <div class="flex items-center justify-center rounded-full bg-[#6932e0] px-7 py-2.5">
-              <a href="#apps-section" class="font-medium text-white">Learn more</a>
+              <a href="#apps-section" class="font-medium text-white">Get started</a>
             </div>
             <div class="flex items-center justify-center rounded-full border-2 border-[#6932e0] px-7 py-2.5">
               <a href="https://wiki.sidestore.io" target="_blank" class="font-medium text-white">Documentation</a>
@@ -93,8 +95,8 @@
         </div>
       </div>
 
-      <div id="apps-section" class="my-8 flex w-full flex-col items-center lg:grid lg:max-w-[90rem] lg:grid-cols-2 lg:px-12">
-        <div class="mr-4 flex max-w-xl flex-col justify-center px-4 pb-4">
+      <div id="apps-section" class="my-8 flex w-full flex-col items-center justify-center lg:grid lg:max-w-[90rem] lg:grid-cols-2 lg:px-12">
+        <div class="flex max-w-xl flex-col justify-center px-4 pb-4 lg:mr-4">
           <h1 class="font-['Poppins'] text-3xl font-medium text-white">Apps</h1>
           <p class="mt-2 text-gray-200">
             SideStore allows installation for any app you want, alongside the many available in our verified sources. And with the in-app JIT enabler,
@@ -112,6 +114,21 @@
             <div class="flex animate-marquee-rev whitespace-nowrap py-2" id="marquee2"></div>
             <div class="absolute top-0 flex animate-marquee2-rev whitespace-nowrap py-2" id="marquee2"></div>
           </div>
+        </div>
+      </div>
+
+      <div id="open-source" class="my-8 flex w-full flex-col items-center justify-center lg:grid lg:max-w-[90rem] lg:grid-cols-2 lg:px-12">
+        <div class="flex max-w-xl flex-col justify-center px-4 pb-4 lg:ml-4">
+          <h1 class="font-['Poppins'] text-3xl font-medium text-white">Open Source</h1>
+          <p class="mt-2 text-gray-200">
+            SideStore is fully open-source, and always will be. You can find the source code on GitHub, and contribute to the project if you want.
+          </p>
+        </div>
+        <div class="flex max-w-xl flex-col justify-center px-4 pb-4">
+          <h1 class="font-['Poppins'] text-3xl font-medium text-white">Open Source</h1>
+          <p class="mt-2 text-gray-200">
+            SideStore is fully open-source, and always will be. You can find the source code on GitHub, and contribute to the project if you want.
+          </p>
         </div>
       </div>
     </div>
