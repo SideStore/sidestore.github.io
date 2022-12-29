@@ -101,22 +101,73 @@ let apps = [
     eventLog = await (await fetch('https://api.github.com/orgs/sidestore/events?per_page=50')).json();
   }
 
+  const typeMap = {
+    PushEvent: 'commit',
+    IssueCommentEvent: 'issue_comment',
+  };
+
   let log = eventLog
     .filter((i) => ['PushEvent', 'IssueCommentEvent'].includes(i.type))
     .filter((i) => !i.actor.login.includes('[bot]'))
+    .map((i) => ({
+      event: typeMap[i.type],
+      data: {
+        commits: (i.payload.commits && i.payload.commits.length) || null,
+        issueID: (i.payload.issue && i.payload.issue.number) || null,
+        date: {
+          firstDate: i.created_at,
+          lastDate: null,
+          dateSpan: null,
+        },
+        actor: i.actor,
+        repo: i.repo,
+      },
+    }))
+    .reduce((acc, i) => {
+      if (i.event == 'commit') {
+        let last = acc[acc.length - 1];
+        if (last && last.event == 'commit' && last.data.actor.login == i.data.actor.login && last.data.repo.name == i.data.repo.name) {
+          last.data.commits += i.data.commits;
+          last.data.date.lastDate = i.data.date.firstDate;
+          return acc;
+        }
+      }
+      acc.push(i);
+      return acc;
+    }, [])
     .map((i) => {
-      if (i.type == 'PushEvent') {
-        let text = `<a class="text-purple-300" href="${i.actor.url}">${i.actor.login}</a> pushed ${i.payload.commits.length} commit${
-          i.payload.commits.length > 1 ? 's' : ''
-        } to <a class="text-purple-300" href="${i.repo.url}">${i.repo.name.split('/')[1]}</a>`;
-        return template(eventItem, { avatar: i.actor.avatar_url, message: text }, []);
+      let date = new Date(i.data.date.firstDate);
+      const set = (t) => (i.data.date.dateSpan = t);
+
+      if (i.event == 'commit') {
+        let lastDate = new Date(i.data.date.lastDate);
+        let dateSpan = Math.round((lastDate - date) / 1000 / 60 / 60 / 24);
+        if (dateSpan == 0) set('today');
+        else if (dateSpan == 1) set('yesterday');
+        else if (dateSpan <= 7) set('this week');
+        else if (dateSpan <= 30) set('this month');
+        else if (dateSpan <= 365) set('this year');
+        else set('a long time ago');
+      } else {
+        let dateSpan = Math.round((new Date() - date) / 1000 / 60 / 60);
+        if (dateSpan == 0) set('just now');
+        else if (dateSpan == 1) set('an hour ago');
+        else if (dateSpan <= 24) set(`${dateSpan} hours ago`);
+        else if (dateSpan <= 48) set('yesterday');
+        else set(`${Math.round(dateSpan / 24)} days ago`);
       }
-      if (i.type == 'IssueCommentEvent') {
-        let text = `<a class="text-purple-300" href="${i.actor.url}">${i.actor.login}</a> commented on issue #${i.payload.issue.number} in <a class="text-purple-300" href="${i.repo.url}">${i.repo.name}</a>`;
-        return template(eventItem, { avatar: i.actor.avatar_url, message: text }, []);
-      }
+
+      return i;
     })
-    .slice(0, 10);
+    .map((i) => {
+      let text = `<a class="text-purple-300" href="${i.data.actor.url}">${i.data.actor.login}</a> `;
+
+      if (i.event == 'commit') text += `pushed ${i.data.commits} commit${i.data.commits > 1 ? 's' : ''} to `;
+      if (i.event == 'issue_comment') text += `commented on issue #${i.data.issueID} in `;
+
+      text += `<a class="text-purple-300" href="${i.data.repo.url}">${i.data.repo.name.split('/')[1]}</a> ${i.data.date.dateSpan}`;
+      return template(eventItem, { avatar: i.data.actor.avatar_url, message: text }, []);
+    });
 
   document.querySelectorAll('#event-log').forEach((el) => (el.innerHTML = log.join('')));
 })();
