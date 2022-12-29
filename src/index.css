@@ -32,4 +32,12 @@
     -webkit-mask-image: linear-gradient(#0000, #000, #000, #000, #0000);
     mask-image: linear-gradient(#0000, #000, #000, #000, #0000);
   }
+
+  .pause-animations-on-children-on-hover:hover * {
+    animation-play-state: paused;
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
 }
