@@ -12,6 +12,7 @@
   }
   body {
     background: #121316;
+    /* background: #4354d1; */
   }
 }
 
@@ -25,5 +26,10 @@
   .scrollbar-extrathin::-webkit-scrollbar {
     width: 6px;
     height: 6px;
+  }
+
+  .mask-fade-vertical {
+    -webkit-mask-image: linear-gradient(#0000, #000, #000, #000, #0000);
+    mask-image: linear-gradient(#0000, #000, #000, #000, #0000);
   }
 }

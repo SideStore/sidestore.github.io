@@ -21,6 +21,9 @@ module.exports = {
         marquee2: 'marquee2 72s linear infinite',
         'marquee-rev': 'rev-marquee 72s linear infinite',
         'marquee2-rev': 'rev-marquee2 72s linear infinite',
+
+        'vertical-marquee': 'vertical-marquee 12s linear infinite',
+        'vertical-marquee2': 'vertical-marquee2 12s linear infinite',
       },
       keyframes: {
         marquee: {
@@ -38,6 +41,15 @@ module.exports = {
         'rev-marquee2': {
           '100%': { transform: 'translateX(100%)' },
           '0%': { transform: 'translateX(0%)' },
+        },
+
+        'vertical-marquee': {
+          '100%': { transform: 'translateY(0%)' },
+          '0%': { transform: 'translateY(-100%)' },
+        },
+        'vertical-marquee2': {
+          '100%': { transform: 'translateY(100%)' },
+          '0%': { transform: 'translateY(0%)' },
         },
       },
     },

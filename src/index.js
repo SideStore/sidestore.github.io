@@ -1,4 +1,5 @@
 import icons from './assets/app_icons/*.webp';
+import eventLog from './data.json';
 
 let template = (html, obj, urlkeys) => {
   Object.keys(obj).forEach(
@@ -97,3 +98,30 @@ document.querySelectorAll('#marquee1').forEach((el) => (el.innerHTML = set1));
 document.querySelectorAll('#marquee2').forEach((el) => (el.innerHTML = set2));
 
 console.log(`Loaded apps marquee with ${apps.length} items.`);
+
+let eventItem = ` <li class="flex items-center mb-1.5">
+            <img class="mr-2 h-5 w-5 rounded-full" src="{{avatar}}" />
+            <p class="font-mono text-xs text-gray-300">
+{{message}}
+
+            </p>
+          </li>`;
+
+let log = eventLog
+  .filter((i) => ['PushEvent', 'IssueCommentEvent'].includes(i.type))
+  .filter((i) => !i.actor.login.includes('[bot]'))
+  .map((i) => {
+    if (i.type == 'PushEvent') {
+      let text = `<a class="text-purple-300" href="${i.actor.url}">${i.actor.login}</a> pushed ${i.payload.commits.length} commit${
+        i.payload.commits.length > 1 ? 's' : ''
+      } to <a class="text-purple-300" href="${i.repo.url}">${i.repo.name}</a>`;
+      return template(eventItem, { avatar: i.actor.avatar_url, message: text }, []);
+    }
+    if (i.type == 'IssueCommentEvent') {
+      let text = `<a class="text-purple-300" href="${i.actor.url}">${i.actor.login}</a> commented on issue #${i.payload.issue.number} in <a class="text-purple-300" href="${i.repo.url}">${i.repo.name}</a>`;
+      return template(eventItem, { avatar: i.actor.avatar_url, message: text }, []);
+    }
+  })
+  .slice(0, 10);
+
+document.querySelectorAll('#event-log').forEach((el) => (el.innerHTML = log.join('')));

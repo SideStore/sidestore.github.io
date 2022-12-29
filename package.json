@@ -15,8 +15,10 @@
     "postbuild:windows": "xcopy src/.well-known dist/.well-known /E/H"
   },
   "devDependencies": {
+    "@parcel/packager-raw-url": "2.8.2",
     "@parcel/resolver-glob": "^2.8.2",
     "@parcel/transformer-inline-string": "2.8.2",
+    "@parcel/transformer-webmanifest": "2.8.2",
     "parcel": "^2.8.2",
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",

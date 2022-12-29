@@ -15,6 +15,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SideStore</title>
+    <meta name="description" content="An alternative app store that aims to make sideloading apps as seamless as possible." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sidestore.io/" />
+    <meta property="og:title" content="SideStore" />
+    <meta property="og:description" content="An alternative app store that aims to make sideloading apps as seamless as possible." />
+    <meta property="og:image" content="assets/embed_card.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sidestore.io/" />
+    <meta property="twitter:title" content="SideStore" />
+    <meta property="twitter:description" content="An alternative app store that aims to make sideloading apps as seamless as possible." />
+    <meta property="twitter:image" content="assets/embed_card.png" />
+
+    <link href="assets/favicon-32x32.png" rel="icon" sizes="32x32" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link href="assets/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <link rel="stylesheet" href="./index.css" />
   </head>
@@ -118,18 +137,22 @@
       </div>
 
       <div id="open-source" class="my-8 flex w-full flex-col items-center justify-center lg:grid lg:max-w-[90rem] lg:grid-cols-2 lg:px-12">
-        <div class="flex max-w-xl flex-col justify-center px-4 pb-4 lg:ml-4">
+        <div class="flex max-w-xl flex-col justify-center px-4 pb-4 lg:mr-4">
           <h1 class="font-['Poppins'] text-3xl font-medium text-white">Open Source</h1>
           <p class="mt-2 text-gray-200">
             SideStore is fully open-source, and always will be. You can find the source code on GitHub, and contribute to the project if you want.
           </p>
         </div>
-        <div class="flex max-w-xl flex-col justify-center px-4 pb-4">
-          <h1 class="font-['Poppins'] text-3xl font-medium text-white">Open Source</h1>
-          <p class="mt-2 text-gray-200">
-            SideStore is fully open-source, and always will be. You can find the source code on GitHub, and contribute to the project if you want.
-          </p>
+        <div class="mt-4 flex flex-col items-center px-4 pb-4 text-left lg:mt-0">
+          <ul id="event-log"></ul>
         </div>
+
+        <!-- <div class="mask-fade-vertical mt-4 flex h-72 w-screen flex-col px-4 pb-4 text-left lg:mt-0 lg:w-auto">
+          <div class="relative flex flex-col overflow-y-hidden">
+            <div class="flex animate-vertical-marquee flex-col" id="event-log"></div>
+            <div class="absolute top-0 flex animate-vertical-marquee2 flex-col" id="event-log"></div>
+          </div>
+        </div> -->
       </div>
     </div>
 
