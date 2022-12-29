@@ -26,7 +26,9 @@ jobs:
       - name: Install and Build 🔧
         run: |
           yarn
-          yarn build
+          yarn prebuild
+          parcel build --no-source-maps --public-url https://sidestore.io/
+          yarn postbuild
 
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v2
