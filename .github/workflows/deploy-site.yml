@@ -26,6 +26,7 @@ jobs:
       - name: Install and Build 🔧
         run: |
           yarn
+          yarn global add parcel
           yarn prebuild
           parcel build --no-source-maps --public-url https://sidestore.io/
           yarn postbuild
