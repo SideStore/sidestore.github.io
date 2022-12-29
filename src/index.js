@@ -143,11 +143,8 @@ let apps = [
     }, [])
     .map((i) => {
       const set = (t) => (i.data.date.dateSpan = t);
-
       let lastDate = new Date(i.data.date.lastDate);
-      // minutes
       let dateSpan = Math.round((new Date() - lastDate) / 1000 / 60);
-      console.log(dateSpan);
 
       if (dateSpan == 0) set('just now');
       else if (dateSpan == 1) set('a minute ago');
@@ -162,16 +159,13 @@ let apps = [
     })
     .map((i) => {
       let url = (t) => t.replace(/https:\/\/api\.github\.com\/(users|repos)/i, 'https://github.com');
+      let glink = (id, type) => `<a class="glink" href="${`${url(i.data.repo.url)}/${type}/${id}`}">#${id}</a>`;
 
       let text = `<a class="glink" href="${url(i.data.actor.url)}">${i.data.actor.login}</a> `;
-      console.log(i.data.payload);
       if (i.event == 'commit') text += `pushed ${i.data.commits} commit${i.data.commits > 1 ? 's' : ''} to `;
-      if (i.event == 'issue_comment')
-        text += `commented on issue <a class="glink" href="${`${url(i.data.repo.url)}/issues/${i.data.issueID}`}">#${i.data.issueID}</a> in `;
-      if (i.event == 'pull_comment')
-        text += `commented on pull request <a class="glink" href="${`${url(i.data.repo.url)}/pull/${i.data.pullID}`}">#${i.data.pullID}</a> in `;
-      if (i.event == 'pull_request')
-        text += ` ${i.data.action} pull request <a class="glink" href="${`${url(i.data.repo.url)}/pull/${i.data.pullID}`}">#${i.data.pullID}</a> in `;
+      if (i.event == 'issue_comment') text += `commented on issue ${glink(i.data.issueID, 'issues')} in `;
+      if (i.event == 'pull_comment') text += `commented on pull request ${glink(i.data.pullID, 'pull')} in `;
+      if (i.event == 'pull_request') text += ` ${i.data.action} pull request ${glink(i.data.pullID, 'pull')} in `;
 
       text += `<a class="glink" href="${url(i.data.repo.url)}">${i.data.repo.name.split('/')[1]}</a> ${i.data.date.dateSpan}`;
       return template(eventItem, { avatar: i.data.actor.avatar_url, message: text }, []);
