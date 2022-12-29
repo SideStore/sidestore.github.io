@@ -8,7 +8,7 @@ let template = (html, obj, urlkeys) => {
 };
 
 let marqueeItem = `<div class="mx-2 flex h-auto w-max max-w-[324px] items-center rounded-xl bg-[rgba(31,32,35,.5)] px-4 py-4 will-change-transform"><img src="{{icon}}" loading="lazy" alt="{{name}}" class="mr-4 h-16 w-16 rounded-xl" /><div class="flex flex-col justify-center"><h1 class="text-xl font-medium font-['Poppins'] text-gray-200">{{name}}</h1><p class="whitespace-pre-line text-sm text-gray-200">{{desc}}</p></div></div>`;
-let eventItem = `<li class="flex items-center mb-1.5"><img class="mr-2 h-5 w-5 rounded-full" loading="lazy" src="{{avatar}}"/><p class="font-mono text-xs text-gray-300">{{message}}</p></li>`;
+let eventItem = `<li class="flex items-center mb-1.5"><img class="mr-2 h-5 w-5 rounded-full" loading="lazy" src="{{avatar}}" alt="{{actor_name}}"/><p class="font-mono text-xs text-gray-300">{{message}}</p></li>`;
 
 let apps = [
   { name: 'UTM', desc: 'Run virtual machines on iOS' },
@@ -168,7 +168,7 @@ let apps = [
       if (i.event == 'pull_request') text += ` ${i.data.action} pull request ${glink(i.data.pullID, 'pull')} in `;
 
       text += `<a class="glink" href="${url(i.data.repo.url)}">${i.data.repo.name.split('/')[1]}</a> ${i.data.date.dateSpan}`;
-      return template(eventItem, { avatar: i.data.actor.avatar_url + 'v=3&s=32', message: text }, []);
+      return template(eventItem, { avatar: i.data.actor.avatar_url + 'v=3&s=32', message: text, actor_name: i.data.actor.login }, []);
     })
     .slice(0, 15);
 
