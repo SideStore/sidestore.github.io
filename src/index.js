@@ -94,7 +94,12 @@ let apps = [
 
   console.log(`Loaded apps marquee with ${apps.length} items.`);
 
-  let eventLog = await (await fetch('https://api.github.com/orgs/sidestore/events?per_page=50')).json();
+  let eventLog = {};
+  if (process.env.NODE_ENV !== 'production') {
+    eventLog = await import('./assets/mockevents.json');
+  } else {
+    eventlog = await (await fetch('https://api.github.com/orgs/sidestore/events?per_page=50')).json();
+  }
 
   let log = eventLog
     .filter((i) => ['PushEvent', 'IssueCommentEvent'].includes(i.type))
