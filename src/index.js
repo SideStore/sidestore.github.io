@@ -104,19 +104,24 @@ let apps = [
   const typeMap = {
     PushEvent: 'commit',
     IssueCommentEvent: 'issue_comment',
+    PullRequestReviewCommentEvent: 'pull_comment',
+    PullRequestEvent: 'pull_request',
   };
 
   let log = eventLog
-    .filter((i) => ['PushEvent', 'IssueCommentEvent'].includes(i.type))
+    .filter((i) => Object.keys(typeMap).includes(i.type))
     .filter((i) => !i.actor.login.includes('[bot]'))
+    .filter((i) => i.type !== 'PullRequestEvent' || ['opened', 'closed', 'reopened'].includes(i.payload.action))
     .map((i) => ({
       event: typeMap[i.type],
       data: {
         commits: (i.payload.commits && i.payload.commits.length) || null,
         issueID: (i.payload.issue && i.payload.issue.number) || null,
+        pullID: (i.payload.pull_request && i.payload.pull_request.number) || null,
+        action: i.payload.action || null,
         date: {
           firstDate: i.created_at,
-          lastDate: null,
+          lastDate: i.created_at,
           dateSpan: null,
         },
         actor: i.actor,
@@ -126,6 +131,7 @@ let apps = [
     .reduce((acc, i) => {
       if (i.event == 'commit') {
         let last = acc[acc.length - 1];
+
         if (last && last.event == 'commit' && last.data.actor.login == i.data.actor.login && last.data.repo.name == i.data.repo.name) {
           last.data.commits += i.data.commits;
           last.data.date.lastDate = i.data.date.firstDate;
@@ -136,38 +142,41 @@ let apps = [
       return acc;
     }, [])
     .map((i) => {
-      let date = new Date(i.data.date.firstDate);
       const set = (t) => (i.data.date.dateSpan = t);
 
-      if (i.event == 'commit') {
-        let lastDate = new Date(i.data.date.lastDate);
-        let dateSpan = Math.round((lastDate - date) / 1000 / 60 / 60 / 24);
-        if (dateSpan == 0) set('today');
-        else if (dateSpan == 1) set('yesterday');
-        else if (dateSpan <= 7) set('this week');
-        else if (dateSpan <= 30) set('this month');
-        else if (dateSpan <= 365) set('this year');
-        else set('a long time ago');
-      } else {
-        let dateSpan = Math.round((new Date() - date) / 1000 / 60 / 60);
-        if (dateSpan == 0) set('just now');
-        else if (dateSpan == 1) set('an hour ago');
-        else if (dateSpan <= 24) set(`${dateSpan} hours ago`);
-        else if (dateSpan <= 48) set('yesterday');
-        else set(`${Math.round(dateSpan / 24)} days ago`);
-      }
+      let lastDate = new Date(i.data.date.lastDate);
+      // minutes
+      let dateSpan = Math.round((new Date() - lastDate) / 1000 / 60);
+      console.log(dateSpan);
+
+      if (dateSpan == 0) set('just now');
+      else if (dateSpan == 1) set('a minute ago');
+      else if (dateSpan <= 60) set(`${dateSpan} minutes ago`);
+      else if (dateSpan / 60 == 1) set('an hour ago');
+      else if (dateSpan / 60 <= 24) set(`${Math.round(dateSpan / 60)} hours ago`);
+      else if (dateSpan / 60 <= 48) set('yesterday');
+      else if (dateSpan / 60 <= 24 * 365) set(`${Math.round(dateSpan / 60 / 24)} days ago`);
+      else set(`a long time ago`);
 
       return i;
     })
     .map((i) => {
-      let text = `<a class="text-purple-300" href="${i.data.actor.url}">${i.data.actor.login}</a> `;
+      let url = (t) => t.replace(/https:\/\/api\.github\.com\/(users|repos)/i, 'https://github.com');
 
+      let text = `<a class="glink" href="${url(i.data.actor.url)}">${i.data.actor.login}</a> `;
+      console.log(i.data.payload);
       if (i.event == 'commit') text += `pushed ${i.data.commits} commit${i.data.commits > 1 ? 's' : ''} to `;
-      if (i.event == 'issue_comment') text += `commented on issue #${i.data.issueID} in `;
+      if (i.event == 'issue_comment')
+        text += `commented on issue <a class="glink" href="${`${url(i.data.repo.url)}/issues/${i.data.issueID}`}">#${i.data.issueID}</a> in `;
+      if (i.event == 'pull_comment')
+        text += `commented on pull request <a class="glink" href="${`${url(i.data.repo.url)}/pull/${i.data.pullID}`}">#${i.data.pullID}</a> in `;
+      if (i.event == 'pull_request')
+        text += ` ${i.data.action} pull request <a class="glink" href="${`${url(i.data.repo.url)}/pull/${i.data.pullID}`}">#${i.data.pullID}</a> in `;
 
-      text += `<a class="text-purple-300" href="${i.data.repo.url}">${i.data.repo.name.split('/')[1]}</a> ${i.data.date.dateSpan}`;
+      text += `<a class="glink" href="${url(i.data.repo.url)}">${i.data.repo.name.split('/')[1]}</a> ${i.data.date.dateSpan}`;
       return template(eventItem, { avatar: i.data.actor.avatar_url, message: text }, []);
-    });
+    })
+    .slice(0, 15);
 
   document.querySelectorAll('#event-log').forEach((el) => (el.innerHTML = log.join('')));
 })();

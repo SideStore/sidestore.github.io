@@ -123,7 +123,7 @@
           </p>
         </div>
 
-        <div class="mt-4 flex w-screen flex-col lg:mt-0 lg:w-auto">
+        <div class="mask-fade-horizontal mt-4 flex w-screen flex-col lg:mt-0 lg:w-auto">
           <div class="relative flex overflow-x-hidden">
             <div class="flex animate-marquee whitespace-nowrap py-2 will-change-transform" id="marquee1"></div>
             <div class="absolute top-0 flex animate-marquee2 whitespace-nowrap py-2 will-change-transform" id="marquee1"></div>
@@ -136,23 +136,16 @@
         </div>
       </div>
 
-      <div id="open-source" class="my-8 flex w-full flex-col items-center justify-center lg:grid lg:max-w-[90rem] lg:grid-cols-2 lg:px-12">
-        <div class="flex max-w-xl flex-col justify-center px-4 pb-4 lg:mr-4">
+      <div id="open-source" class="my-8 flex w-full flex-col items-center justify-center lg:grid lg:max-w-[90rem] lg:grid-cols-8 lg:px-12">
+        <div class="flex max-w-xl flex-col justify-center px-4 pb-4 lg:col-span-3 lg:mr-4">
           <h1 class="font-['Poppins'] text-3xl font-medium text-white">Open Source</h1>
           <p class="mt-2 text-gray-200">
             SideStore is fully open-source and run by contributors. You can find the source code on GitHub, and contribute to the project if you want.
           </p>
         </div>
-        <div class="mt-4 flex flex-col items-center px-4 pb-4 text-left lg:mt-0">
+        <div class="mt-4 flex flex-col items-center px-4 pb-4 text-left lg:col-span-5 lg:mt-0">
           <ul id="event-log"></ul>
         </div>
-
-        <!-- <div class="mask-fade-vertical mt-4 flex h-72 w-screen flex-col px-4 pb-4 text-left lg:mt-0 lg:w-auto">
-          <div class="relative flex flex-col overflow-y-hidden">
-            <div class="flex animate-vertical-marquee flex-col" id="event-log"></div>
-            <div class="absolute top-0 flex animate-vertical-marquee2 flex-col" id="event-log"></div>
-          </div>
-        </div> -->
       </div>
     </div>
 
