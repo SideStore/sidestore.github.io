@@ -159,7 +159,7 @@ let apps = [
     })
     .map((i) => {
       let url = (t) => t.replace(/https:\/\/api\.github\.com\/(users|repos)/i, 'https://github.com');
-      let glink = (id, type) => `<a class="glink" href="${`${url(i.data.repo.url)}/${type}/${id}`}">#${id}</a>`;
+      let glink = (id, type) => `<a class="glink" target="_blank" href="${`${url(i.data.repo.url)}/${type}/${id}`}">#${id}</a>`;
 
       let text = `<a class="glink" href="${url(i.data.actor.url)}">${i.data.actor.login}</a> `;
       if (i.event == 'commit') text += `pushed ${i.data.commits} commit${i.data.commits > 1 ? 's' : ''} to `;
