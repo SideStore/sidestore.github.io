@@ -108,7 +108,7 @@ let apps = [
       if (i.type == 'PushEvent') {
         let text = `<a class="text-purple-300" href="${i.actor.url}">${i.actor.login}</a> pushed ${i.payload.commits.length} commit${
           i.payload.commits.length > 1 ? 's' : ''
-        } to <a class="text-purple-300" href="${i.repo.url}">${i.repo.name}</a>`;
+        } to <a class="text-purple-300" href="${i.repo.url}">${i.repo.name.split('/')[1]}</a>`;
         return template(eventItem, { avatar: i.actor.avatar_url, message: text }, []);
       }
       if (i.type == 'IssueCommentEvent') {
