@@ -1,5 +1,4 @@
 import icons from './assets/app_icons/*.webp';
-import eventLog from './data.json';
 
 let template = (html, obj, urlkeys) => {
   Object.keys(obj).forEach(
@@ -8,14 +7,8 @@ let template = (html, obj, urlkeys) => {
   return html;
 };
 
-let marqueeItem = `<div class="mx-2 flex h-auto w-max max-w-[324px] items-center rounded-xl bg-[rgba(31,32,35,.5)] px-4 py-4">
-    <img src="{{icon}}" alt="{{name}}" class="mr-4 h-16 w-16 rounded-xl" />
-    <div class="flex flex-col justify-center">
-    <h1 class="text-xl font-medium font-['Poppins'] text-gray-200">{{name}}</h1>
-    <p class="whitespace-pre-line text-sm text-gray-200">{{desc}}</p>
-    </div>
-    </div>
-    `;
+let marqueeItem = `<div class="mx-2 flex h-auto w-max max-w-[324px] items-center rounded-xl bg-[rgba(31,32,35,.5)] px-4 py-4"><img src="{{icon}}" alt="{{name}}" class="mr-4 h-16 w-16 rounded-xl" /><div class="flex flex-col justify-center"><h1 class="text-xl font-medium font-['Poppins'] text-gray-200">{{name}}</h1><p class="whitespace-pre-line text-sm text-gray-200">{{desc}}</p></div></div>`;
+let eventItem = `<li class="flex items-center mb-1.5"><img class="mr-2 h-5 w-5 rounded-full" src="{{avatar}}"/><p class="font-mono text-xs text-gray-300">{{message}}</p></li>`;
 
 let apps = [
   { name: 'UTM', desc: 'Run virtual machines on iOS' },
@@ -88,40 +81,37 @@ let apps = [
     name: 'Mini vMac',
     desc: 'Fully emulates the Mac Plus, the Mac II or the Mac 128K',
   },
-]
-  .map((i) => ({ ...i, icon: icons[i.name].endsWith('.webp') ? icons[i.name] : icons[i.name] + '.webp' }))
-  .map((i) => template(marqueeItem, i, ['icon']));
+];
+(async () => {
+  apps = apps
+    .map((i) => ({ ...i, icon: icons[i.name].endsWith('.webp') ? icons[i.name] : icons[i.name] + '.webp' }))
+    .map((i) => template(marqueeItem, i, ['icon']));
 
-let set1 = apps.sort(() => Math.random() - 0.5).join('');
-let set2 = apps.sort(() => Math.random() - 0.5).join('');
-document.querySelectorAll('#marquee1').forEach((el) => (el.innerHTML = set1));
-document.querySelectorAll('#marquee2').forEach((el) => (el.innerHTML = set2));
+  let set1 = apps.sort(() => Math.random() - 0.5).join('');
+  let set2 = apps.sort(() => Math.random() - 0.5).join('');
+  document.querySelectorAll('#marquee1').forEach((el) => (el.innerHTML = set1));
+  document.querySelectorAll('#marquee2').forEach((el) => (el.innerHTML = set2));
 
-console.log(`Loaded apps marquee with ${apps.length} items.`);
+  console.log(`Loaded apps marquee with ${apps.length} items.`);
 
-let eventItem = ` <li class="flex items-center mb-1.5">
-            <img class="mr-2 h-5 w-5 rounded-full" src="{{avatar}}" />
-            <p class="font-mono text-xs text-gray-300">
-{{message}}
+  let eventLog = await (await fetch('https://api.github.com/orgs/sidestore/events?per_page=50')).json();
 
-            </p>
-          </li>`;
+  let log = eventLog
+    .filter((i) => ['PushEvent', 'IssueCommentEvent'].includes(i.type))
+    .filter((i) => !i.actor.login.includes('[bot]'))
+    .map((i) => {
+      if (i.type == 'PushEvent') {
+        let text = `<a class="text-purple-300" href="${i.actor.url}">${i.actor.login}</a> pushed ${i.payload.commits.length} commit${
+          i.payload.commits.length > 1 ? 's' : ''
+        } to <a class="text-purple-300" href="${i.repo.url}">${i.repo.name}</a>`;
+        return template(eventItem, { avatar: i.actor.avatar_url, message: text }, []);
+      }
+      if (i.type == 'IssueCommentEvent') {
+        let text = `<a class="text-purple-300" href="${i.actor.url}">${i.actor.login}</a> commented on issue #${i.payload.issue.number} in <a class="text-purple-300" href="${i.repo.url}">${i.repo.name}</a>`;
+        return template(eventItem, { avatar: i.actor.avatar_url, message: text }, []);
+      }
+    })
+    .slice(0, 10);
 
-let log = eventLog
-  .filter((i) => ['PushEvent', 'IssueCommentEvent'].includes(i.type))
-  .filter((i) => !i.actor.login.includes('[bot]'))
-  .map((i) => {
-    if (i.type == 'PushEvent') {
-      let text = `<a class="text-purple-300" href="${i.actor.url}">${i.actor.login}</a> pushed ${i.payload.commits.length} commit${
-        i.payload.commits.length > 1 ? 's' : ''
-      } to <a class="text-purple-300" href="${i.repo.url}">${i.repo.name}</a>`;
-      return template(eventItem, { avatar: i.actor.avatar_url, message: text }, []);
-    }
-    if (i.type == 'IssueCommentEvent') {
-      let text = `<a class="text-purple-300" href="${i.actor.url}">${i.actor.login}</a> commented on issue #${i.payload.issue.number} in <a class="text-purple-300" href="${i.repo.url}">${i.repo.name}</a>`;
-      return template(eventItem, { avatar: i.actor.avatar_url, message: text }, []);
-    }
-  })
-  .slice(0, 10);
-
-document.querySelectorAll('#event-log').forEach((el) => (el.innerHTML = log.join('')));
+  document.querySelectorAll('#event-log').forEach((el) => (el.innerHTML = log.join('')));
+})();
