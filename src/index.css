@@ -46,4 +46,33 @@
   .glink {
     @apply text-purple-300 transition-all duration-200 ease-in-out hover:font-semibold hover:text-purple-100;
   }
+
+  .marquee-container {
+    --offset: -0%;
+    --move-initial: calc(- (100 / 44) % + var(--offset));
+    --move-final: calc(-50% + var(--offset));
+    --move-initial--reverse: calc((100 / 44) %);
+    --move-final--reverse: calc(50%);
+  }
+
+  .marquee-inner {
+    transform: translate3d(var(--move-initial), 0, 0);
+    animation: marquee 42s linear infinite;
+    animation-play-state: paused;
+    will-change: transform, contents;
+  }
+
+  .marquee-inner.marquee-reverse {
+    animation-direction: reverse;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
 }

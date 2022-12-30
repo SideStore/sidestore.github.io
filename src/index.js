@@ -82,6 +82,7 @@ let apps = [
     desc: 'Fully emulates the Mac Plus, the Mac II or the Mac 128K',
   },
 ];
+window.apps = apps;
 (async () => {
   apps = apps
     .map((i) => ({ ...i, icon: icons[i.name].endsWith('.webp') ? icons[i.name] : icons[i.name] + '.webp' }))
@@ -89,8 +90,9 @@ let apps = [
 
   let set1 = apps.sort(() => Math.random() - 0.5).join('');
   let set2 = apps.sort(() => Math.random() - 0.5).join('');
-  document.querySelectorAll('#marquee1').forEach((el) => (el.innerHTML = set1));
-  document.querySelectorAll('#marquee2').forEach((el) => (el.innerHTML = set2));
+  document.querySelectorAll('#marquee1').forEach((el) => (el.innerHTML = set1.repeat(2)));
+  document.querySelectorAll('#marquee2').forEach((el) => (el.innerHTML = set2.repeat(2)));
+  document.querySelectorAll('.marquee-inner').forEach((e) => (e.style['animation-play-state'] = 'running'));
 
   console.log(`Loaded apps marquee with ${apps.length} items.`);
 
