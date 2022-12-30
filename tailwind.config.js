@@ -39,15 +39,6 @@ module.exports = {
           '100%': { transform: 'translateX(100%)' },
           '0%': { transform: 'translateX(0%)' },
         },
-
-        'vertical-marquee': {
-          '100%': { transform: 'translateY(0%)' },
-          '0%': { transform: 'translateY(-100%)' },
-        },
-        'vertical-marquee2': {
-          '100%': { transform: 'translateY(100%)' },
-          '0%': { transform: 'translateY(0%)' },
-        },
       },
     },
   },
