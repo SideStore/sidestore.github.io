@@ -38,11 +38,6 @@
     mask-image: linear-gradient(to right, #0000, #000 10%, #000 90%, #0000);
   }
 
-  /*  TODO: figure this out */
-  .slow-anim-on-hover-108s:hover * {
-    animation-duration: 108s !important;
-  }
-
   .glink {
     @apply text-purple-300 transition-all duration-200 ease-in-out hover:font-semibold hover:text-purple-100;
   }
