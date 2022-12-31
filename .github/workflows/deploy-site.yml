@@ -28,7 +28,7 @@ jobs:
           yarn
           yarn global add parcel
           yarn prebuild
-          parcel build --no-source-maps --public-url $url
+          parcel build --no-source-maps --public-url ${{ steps.deployment.outputs.page_url }}
           yarn postbuild
           sed -i 's/{gh_actions_replace_hash}/${{ github.sha }}/' dist/index.html
 
