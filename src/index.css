@@ -57,6 +57,10 @@
   .marquee-inner.marquee-reverse {
     animation-direction: reverse;
   }
+
+  *:hover > .darken-container-hover {
+    @apply bg-orange-600;
+  }
 }
 
 @keyframes marquee {
