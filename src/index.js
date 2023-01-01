@@ -100,7 +100,7 @@ window.apps = apps;
   if (process.env.NODE_ENV !== 'production') {
     eventLog = await import('./assets/mockevents.json');
   } else {
-    eventLog = await (await fetch('https://api.github.com/orgs/sidestore/events?per_page=50')).json();
+    eventLog = await (await fetch('https://api.github.com/orgs/sidestore/events?per_page=100')).json();
   }
 
   const typeMap = {
