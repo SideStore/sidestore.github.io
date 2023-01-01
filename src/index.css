@@ -16,7 +16,7 @@
     height: 100%;
     /* background: radial-gradient(circle closest-corner at 70px 70px, rgba(90, 26, 229, 0.2), #121316 70%),
       radial-gradient(circle at bottom right, #fff, #121316 70%), #121316; */
-    background: radial-gradient(circle 150vh at 25% -20px, rgba(90, 26, 229, 0.2), transparent),
+    background: radial-gradient(circle 120vh at 25% -20px, rgba(90, 26, 229, 0.2), rgba(90, 26, 229, 0.2), transparent),
       radial-gradient(circle 150vh at 70% 80%, rgba(26, 80, 229, 0.2), transparent), #121316;
   }
 }
