@@ -63,6 +63,16 @@
   }
 }
 
+@layer components {
+  .btn-fill {
+    @apply flex items-center justify-center rounded-full bg-purple-500 px-7 py-2.5 font-medium text-white shadow-sm transition-colors duration-200 ease-in-out focus:bg-purple-600 focus:outline-none focus:ring-4 focus:ring-purple-300 hover:bg-purple-600;
+  }
+
+  .btn-fill.disabled {
+    @apply cursor-not-allowed bg-gray-700 focus:pointer-events-none focus:bg-gray-700 focus:ring-0 hover:bg-gray-700;
+  }
+}
+
 @keyframes marquee {
   0% {
     transform: translate3d(var(--move-initial), 0, 0);

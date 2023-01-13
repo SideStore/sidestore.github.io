@@ -156,69 +156,54 @@
         </p>
       </div>
 
-      <div class="flex w-screen flex-col items-center lg:mt-0 lg:w-auto">
-        <h1 class="mb-2 font-['Poppins'] text-xl font-medium text-white">SideStore IPA</h1>
+      <div class="mt-2 flex w-screen flex-col items-center lg:mt-0 lg:w-auto">
+        <!-- <h1 class="mb-2 font-['Poppins'] text-xl font-medium text-white">SideStore IPA</h1> -->
 
-        <div class="flex w-full max-w-md flex-col gap-2 px-6 text-[0.845rem] sm:flex-row sm:justify-center sm:px-0 sm:text-base">
-          <div
-            class="flex items-center justify-center rounded-full bg-purple-500 px-7 py-2.5 transition-colors duration-150 ease-in-out hover:bg-purple-600"
-          >
-            <a href="https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.ipa" class="font-medium text-white"
-              >Download IPA</a
-            >
-          </div>
+        <div class="flex w-full max-w-md flex-col px-6 text-[0.845rem] sm:items-center sm:px-0 sm:text-base">
+          <a href="https://github.com/SideStore/SideStore/releases/latest/download/SideStore.ipa" class="btn-fill">Download SideStore IPA</a>
+        </div>
 
-          <div
-            class="flex items-center justify-center rounded-full bg-purple-500 px-7 py-2.5 transition-colors duration-150 ease-in-out hover:bg-purple-600"
+        <h1 class="mt-6 mb-2 font-['Poppins'] text-xl font-medium text-white">SideServer</h1>
+
+        <div
+          class="flex w-full max-w-md flex-col gap-3 px-6 text-[0.845rem] buttonsok:grid buttonsok:grid-cols-3 buttonsok:justify-center sm:text-base"
+        >
+          <a href="https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg" class="btn-fill">macOS</a>
+          <a href="" class="disabled btn-fill">Windows</a>
+          <a href="" class="disabled btn-fill">Linux</a>
+        </div>
+
+        <div
+          class="line-h mx-6 mt-4 flex max-w-md rounded-lg bg-[rgba(31,32,35,.8)] p-4 px-5 py-4 text-xs text-red-400 shadow-sm backdrop-blur-2xl"
+          role="alert"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="mr-3 inline h-5 w-5 flex-shrink-0"
           >
-            <a
-              href="https://nightly.link/SideStore/SideStore/workflows/build/develop/SideStore.ipa.zip"
-              class="mr-1 font-medium text-white"
-              >Download IPA</a
-            >
-            <span
-              class="darken-container-hover pointer-events-none ml-0.5 rounded-full bg-orange-500 py-0.5 px-2 text-xs font-medium text-white transition-colors duration-150 ease-in-out"
-              >Beta</span
-            >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+            />
+          </svg>
+
+          <span class="sr-only">Info</span>
+          <div>
+            SideServer is not yet available for download for Windows or Linux. Please refer to our
+            <a class="glink" href="https://wiki.sidestore.io">wiki</a> for instructions to use AltServer for installation.
           </div>
         </div>
 
-        <h1 class="mt-4 mb-2 font-['Poppins'] text-xl font-medium text-white">
-          SideServer <span class="rounded-full bg-red-500 py-0.5 px-2 text-xs font-medium text-white">Coming Soon</span>
-        </h1>
+        <h1 class="mt-6 mb-2 font-['Poppins'] text-xl font-medium text-white">WireGuard VPN</h1>
 
-        <div class="flex w-full max-w-md flex-col gap-2 px-6 text-[0.845rem] buttonsok:flex-row buttonsok:justify-center buttonsok:px-0 sm:text-base">
-          <div class="flex items-center justify-center rounded-full full bg-purple-500 px-7 py-2.5 transition-colors duration-150 ease-in-out hover:bg-purple-600">
-            <a href="https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg" class="font-medium text-white">macOS</a>
-          </div>
-          <div class="disabled flex items-center justify-center rounded-full bg-gray-700 px-7 py-2.5 hover:cursor-not-allowed">
-            <a href="#" class="disabled pointer-events-none font-medium text-white hover:cursor-not-allowed">Windows</a>
-          </div>
-          <div class="disabled flex items-center justify-center rounded-full bg-gray-700 px-7 py-2.5 hover:cursor-not-allowed">
-            <a href="#" class="disabled pointer-events-none font-medium text-white hover:cursor-not-allowed">Linux</a>
-          </div>
-        </div>
-
-        <h1 class="mt-4 mb-2 font-['Poppins'] text-xl font-medium text-white">WireGuard VPN</h1>
-
-        <div class="flex w-full max-w-md flex-col gap-2 px-6 text-[0.845rem] sm:flex-row sm:justify-center sm:px-0 sm:text-base">
-          <div
-            class="flex items-center justify-center rounded-full bg-purple-500 px-7 py-2.5 transition-colors duration-150 ease-in-out hover:bg-purple-600"
-          >
-            <a href="https://apps.apple.com/us/app/wireguard/id1441195209" class="font-medium text-white">WireGuard VPN</a>
-          </div>
-          <div
-            class="flex items-center justify-center rounded-full bg-purple-500 px-7 py-2.5 transition-colors duration-150 ease-in-out hover:bg-purple-600"
-          >
-            <a href="https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.conf" class="font-medium text-white"
-              >WireGuard Config File</a
-            >
-          </div>
-        </div>
-        <div class="mx-6 mt-4 max-w-md rounded-md bg-red-100 px-3 py-2 text-sm text-purple-900 md:mx-0">
-          Warning:
-          <span class="rounded-full bg-orange-500 py-0.5 px-2 text-xs font-medium text-white">Beta</span>
-          builds are incomplete and do not reflect the final build, and are hence deemed unstable. SideServer is not yet available for download.
+        <div class="flex w-full max-w-md flex-col gap-3 px-6 text-[0.845rem] sm:flex-row sm:justify-center sm:px-0 sm:text-base">
+          <a href="https://apps.apple.com/us/app/wireguard/id1441195209" class="btn-fill">WireGuard VPN</a>
+          <a href="https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.conf" class="btn-fill">WireGuard Config File</a>
         </div>
       </div>
     </div>
