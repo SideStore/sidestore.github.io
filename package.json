@@ -1,6 +1,7 @@
 {
   "name": "sidestoreio",
   "version": "1.0.0",
+  "private": "true",
   "description": "The sidestore website, visible at sidestore.io",
   "source": "src/index.html",
   "license": "MIT",
@@ -15,6 +16,7 @@
     "postbuild:windows": "xcopy src/.well-known dist/.well-known /E/H"
   },
   "devDependencies": {
+    "@parcel/config-default": "^2.8.2",
     "@parcel/packager-raw-url": "2.8.2",
     "@parcel/resolver-glob": "^2.8.2",
     "@parcel/transformer-inline-string": "2.8.2",

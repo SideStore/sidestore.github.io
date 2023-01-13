@@ -201,7 +201,7 @@
   dependencies:
     "@parcel/plugin" "2.8.2"
 
-"@parcel/config-default@2.8.2":
+"@parcel/config-default@2.8.2", "@parcel/config-default@^2.8.2":
   version "2.8.2"
   resolved "https://registry.npmjs.org/@parcel/config-default/-/config-default-2.8.2.tgz"
   integrity sha512-1ELJAHx37fKSZZkYKWy6UdcuLRv5vrZJc89tVS6eRvvMt+udbIoSgIUzPXu7XemkcchF7Tryw3u2pRyxyLyL3w==
