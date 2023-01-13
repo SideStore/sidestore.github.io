@@ -96,18 +96,6 @@ window.apps = apps;
 
   console.log(`Loaded apps marquee with ${apps.length} items.`);
 
-  const latestIPADownload = document.querySelector('#latest-ipa-download');
-  const latestRelease = await (await fetch('https://api.github.com/repos/SideStore/SideStore/releases/latest')).json();
-  if ('assets' in latestRelease)
-    for (const asset of latestRelease.assets) {
-      if (asset.name.endsWith('.ipa')) {
-        latestIPADownload.href = asset.browser_download_url;
-        console.log('Found latest release and .ipa', asset, latestRelease);
-        break;
-      }
-    }
-  else console.log("Couldn't find latest release", latestRelease);
-
   let eventLog = [];
   if (process.env.NODE_ENV !== 'production') {
     eventLog = await import('./assets/mockevents.json');
