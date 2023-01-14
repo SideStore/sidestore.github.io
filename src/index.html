@@ -144,9 +144,8 @@
           <ul id="event-log"></ul>
         </div>
       </div>
-    </div>
-
-    <div id="downloads" class="my-8 flex w-full flex-col items-center justify-center lg:grid lg:max-w-[90rem] lg:grid-cols-2 lg:px-12">
+	  
+	  <div id="downloads" class="my-8 flex w-full flex-col items-center justify-center lg:grid lg:max-w-[90rem] lg:grid-cols-2 lg:px-12">
       <div class="flex max-w-xl flex-col justify-center px-4 pb-4 lg:mr-4">
         <h1 class="font-['Poppins'] text-3xl font-medium text-white">Downloads</h1>
         <p class="mt-2 text-gray-200">
@@ -159,6 +158,13 @@
       <div class="mt-2 flex w-screen flex-col items-center lg:mt-0 lg:w-auto">
         <!-- <h1 class="mb-2 font-['Poppins'] text-xl font-medium text-white">SideStore IPA</h1> -->
 
+		<div class="flex flex-col gap-2 max-w-md px-6 sm:flex-row sm:justify-center sm:px-0 sm:text-base text-[0.845rem] w-full"> 
+		<div class="bg-purple-500 duration-150 ease-in-out flex hover:bg-purple-600 items-center justify-center px-7 py-2.5 rounded-full transition-colors">
+		   <a href="https://github.com/SideStore/SideStore/releases/latest/download/SideStore.ipa" class="font-medium text-white">Download IPA</a> </div>
+		<div class="bg-purple-500 duration-150 ease-in-out flex hover:bg-purple-600 items-center justify-center px-7 py-2.5 rounded-full transition-colors">
+		   <a href="https://github.com/SideStore/SideStore/releases/download/beta/SideStore.ipa" class="font-medium mr-1 text-white">Download IPA</a> <span class="bg-orange-500 darken-container-hover duration-150 ease-in-out font-medium ml-0.5 pointer-events-none px-2 py-0.5 rounded-full text-white text-xs transition-colors">Beta</span> </div>
+		</div>
+		
         <div class="flex w-full max-w-md flex-col px-6 text-[0.845rem] sm:items-center sm:px-0 sm:text-base">
           <a href="https://github.com/SideStore/SideStore/releases/latest/download/SideStore.ipa" class="btn-fill">Download SideStore IPA</a>
         </div>
@@ -206,6 +212,8 @@
           <a href="https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.conf" class="btn-fill">WireGuard Config File</a>
         </div>
       </div>
+    </div>
+	
     </div>
 
     <script src="./index.js" type="module"></script>
