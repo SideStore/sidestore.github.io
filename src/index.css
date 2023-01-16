@@ -9,21 +9,76 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    position: relative;
+    min-height: 100%;
   }
   body {
-    background: #121316;
+    height: 100%;
+    /* background: radial-gradient(circle closest-corner at 70px 70px, rgba(90, 26, 229, 0.2), #121316 70%),
+      radial-gradient(circle at bottom right, #fff, #121316 70%), #121316; */
+    background: radial-gradient(circle 120vh at 25% -20px, rgba(90, 26, 229, 0.2), rgba(90, 26, 229, 0.2), transparent),
+      radial-gradient(circle 150vh at 70% 80%, rgba(26, 80, 229, 0.2), transparent), #121316;
   }
 }
 
 @layer utilities {
-  .bg-sidegrad {
-    background: radial-gradient(circle at 40vh -10vw, rgba(90, 26, 229, 0.2), #121316 70%);
-  }
   .scrollbar-extrathin {
     scrollbar-width: thin;
   }
   .scrollbar-extrathin::-webkit-scrollbar {
     width: 6px;
     height: 6px;
+  }
+
+  .mask-fade-vertical {
+    -webkit-mask-image: linear-gradient(#0000, #000, #000, #000, #0000);
+    mask-image: linear-gradient(#0000, #000, #000, #000, #0000);
+  }
+
+  .glink {
+    @apply text-purple-300 transition-all duration-200 ease-in-out hover:font-semibold hover:text-purple-100;
+  }
+
+  .marquee-container {
+    --offset: -0%;
+    --move-initial: calc(- (100 / 44) % + var(--offset));
+    --move-final: calc(-50% + var(--offset));
+    --move-initial--reverse: calc((100 / 44) %);
+    --move-final--reverse: calc(50%);
+  }
+
+  .marquee-inner {
+    transform: translate3d(var(--move-initial), 0, 0);
+    animation: marquee 42s linear infinite;
+    animation-play-state: paused;
+    will-change: transform, contents;
+  }
+
+  .marquee-inner.marquee-reverse {
+    animation-direction: reverse;
+  }
+
+  *:hover > .darken-container-hover {
+    @apply bg-orange-600;
+  }
+}
+
+@layer components {
+  .btn-fill {
+    @apply flex items-center justify-center rounded-full bg-purple-500 px-7 py-2.5 font-medium text-white shadow-sm transition-colors duration-200 ease-in-out focus:bg-purple-600 focus:outline-none focus:ring-4 focus:ring-purple-300 hover:bg-purple-600;
+  }
+
+  .btn-fill.disabled {
+    @apply cursor-not-allowed bg-gray-700 focus:pointer-events-none focus:bg-gray-700 focus:ring-0 hover:bg-gray-700;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
   }
 }

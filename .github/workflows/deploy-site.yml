@@ -1,4 +1,4 @@
-name: Deploy to pages
+name: Deploy to Github Pages
 
 on:
   push:
@@ -26,7 +26,11 @@ jobs:
       - name: Install and Build 🔧
         run: |
           yarn
-          yarn build
+          yarn global add parcel
+          yarn prebuild
+          parcel build --no-source-maps --public-url https://sidestore.io/
+          yarn postbuild
+          sed -i 's/{gh_actions_replace_hash}/${{ github.sha }}/' dist/index.html
 
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v2
