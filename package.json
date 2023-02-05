@@ -11,8 +11,8 @@
     "prebuild:windows": "rd /s /q dist & rd /s /q parcel-cache",
     "build": "parcel build --no-source-maps --public-url ./",
     "postbuild": "run-script-os",
-    "postbuild:nix": "cp -R src/.well-known dist/.well-known",
-    "postbuild:windows": "xcopy src/.well-known dist/.well-known /E/H"
+    "postbuild:nix": "cp -R src/.well-known dist/.well-known && cp -R src/cdn dist/cdn",
+    "postbuild:windows": "xcopy src/.well-known dist/.well-known /E/H && xcopy src/cdn dist/cdn /E/H"
   },
   "devDependencies": {
     "@parcel/packager-raw-url": "2.8.2",
