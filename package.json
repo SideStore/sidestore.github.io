@@ -1,24 +1,25 @@
 {
   "name": "sidestoreio",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "The sidestore website, visible at sidestore.io",
   "source": "src/index.html",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel",
+    "dev": "node tools/update_apps.mjs && parcel",
     "prebuild": "run-script-os",
-    "prebuild:nix": "rm -rf dist .parcel-cache",
-    "prebuild:windows": "rd /s /q dist & rd /s /q parcel-cache",
+    "prebuild:nix": "rm -rf dist .parcel-cache && node tools/update_apps.mjs --no-cache",
+    "prebuild:windows": "rd /s /q dist & rd /s /q .parcel-cache & node tools/update_apps.mjs --no-cache",
     "build": "parcel build --no-source-maps --public-url ./",
     "postbuild": "run-script-os",
-    "postbuild:nix": "cp -R src/.well-known dist/.well-known && cp -R src/cdn dist/cdn",
-    "postbuild:windows": "xcopy src/.well-known dist/.well-known /E/H && xcopy src/cdn dist/cdn /E/H"
+    "postbuild:nix": "cp -R src/.well-known dist/.well-known",
+    "postbuild:windows": "xcopy src/.well-known dist/.well-known /E/H"
   },
   "devDependencies": {
     "@parcel/packager-raw-url": "2.8.2",
     "@parcel/resolver-glob": "^2.8.2",
     "@parcel/transformer-inline-string": "2.8.2",
     "@parcel/transformer-webmanifest": "2.8.2",
+    "node-fetch": "^3.3.1",
     "parcel": "^2.8.2",
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",

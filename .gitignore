@@ -3,3 +3,6 @@ dist/
 .parcel-cache/
 yarn-error.log
 .DS_Store
+apps_out/
+src/assets/apps_data/
+src/assets/mockevents.json

@@ -35,10 +35,6 @@
     mask-image: linear-gradient(#0000, #000, #000, #000, #0000);
   }
 
-  .glink {
-    @apply text-purple-300 transition-all duration-200 ease-in-out hover:font-semibold hover:text-purple-100;
-  }
-
   .marquee-container {
     --offset: -0%;
     --move-initial: calc(- (100 / 44) % + var(--offset));
@@ -49,7 +45,7 @@
 
   .marquee-inner {
     transform: translate3d(var(--move-initial), 0, 0);
-    animation: marquee 42s linear infinite;
+    animation: marquee 50s linear infinite;
     animation-play-state: paused;
     will-change: transform, contents;
   }
@@ -64,12 +60,55 @@
 }
 
 @layer components {
-  .btn-fill {
-    @apply flex items-center justify-center rounded-full bg-purple-500 px-7 py-2.5 font-medium text-white shadow-sm transition-colors duration-200 ease-in-out focus:bg-purple-600 focus:outline-none focus:ring-4 focus:ring-purple-300 hover:bg-purple-600;
+  .glink {
+    @apply text-side-purple-200 transition-all duration-200 ease-in-out hover:font-semibold hover:text-side-purple-100;
   }
 
-  .btn-fill.disabled {
+  .bg-material {
+    @apply bg-[rgba(31,32,35,.8)] backdrop-blur-2xl;
+  }
+  .btn-fill {
+    @apply flex items-center justify-center rounded-lg bg-purple-500 px-7 py-2.5 font-medium text-white shadow-sm transition-colors duration-200 ease-in-out focus:bg-purple-600 focus:outline-none focus:ring-4 focus:ring-purple-300 hover:bg-purple-600;
+  }
+
+  .btn-fill.disabled,
+  .btn-fill[disabled] {
     @apply cursor-not-allowed bg-gray-700 focus:pointer-events-none focus:bg-gray-700 focus:ring-0 hover:bg-gray-700;
+  }
+
+  .split-btn-base {
+    @apply flex flex-grow flex-col justify-center bg-side-purple-600  text-left font-medium text-white shadow-sm transition-colors duration-200 ease-in-out focus:bg-side-purple-700 focus:outline-none focus:ring-4 focus:ring-side-purple-300 hover:bg-side-purple-700;
+  }
+
+  .split-btn-base.disabled,
+  .split-btn-base[disabled] {
+    @apply cursor-not-allowed bg-side-purple-600/40 !text-gray-400 focus:pointer-events-none focus:bg-side-purple-600/40 focus:ring-0 hover:bg-side-purple-600/40;
+  }
+
+  .split-btn-base.disabled span,
+  .split-btn-base[disabled] span {
+    @apply cursor-not-allowed !text-gray-400;
+  }
+
+  .split-btn-right {
+    @apply flex flex-grow-0 rounded-r-lg border-l border-side-purple-border px-4 py-2.5 focus:ring-0;
+  }
+
+  .dropdown-box {
+    @apply bg-material z-10 mt-2 hidden divide-y divide-gray-100 rounded-xl px-2 shadow-sm;
+  }
+
+  .dropdown-link {
+    @apply block w-full rounded-lg px-4 py-3 transition-colors duration-100 ease-in-out hover:bg-side-purple-600/30 hover:text-white;
+  }
+
+  .dropdown-link.disabled,
+  .dropdown-link[disabled] {
+    @apply cursor-not-allowed text-gray-700 focus:pointer-events-none focus:bg-transparent focus:ring-0 hover:bg-transparent;
+  }
+
+  .dropdown-list {
+    @apply w-full py-2 text-sm text-gray-700 dark:text-gray-200;
   }
 }
 
