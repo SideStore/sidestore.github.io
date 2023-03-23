@@ -56,7 +56,7 @@ let eventItem = `<li class="flex items-center mb-1.5"><img class="mr-2 h-5 w-5 r
         dropdownHidden.forEach((i) => linkedDropdown.classList.remove(i));
         dropdownVisible.forEach((i) => linkedDropdown.classList.add(i));
         //scroll to top of dropdown
-        linkedDropdown.scrollIntoView({ behavior: 'smooth' });
+        // linkedDropdown.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
