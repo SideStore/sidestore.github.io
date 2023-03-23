@@ -155,4 +155,9 @@ let eventItem = `<li class="flex items-center mb-1.5"><img class="mr-2 h-5 w-5 r
     el.href = platformDLElement.href;
 
   });
+
+  const releaseData = await (await fetch("https://api.github.com/repos/sidestore/sidestore/releases/latest")).json()
+  const versionTag = releaseData.tag_name || "?.?.?";
+  const label = document.querySelector("#hook-latest-ipa-version");
+  label.innerText = `v${versionTag}`;
 })();
