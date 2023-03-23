@@ -11,6 +11,17 @@ const overrides = {
     "PokeMMO": "PokeMMO is a free to play mmorpg, come join a growing community as you level up and discover new monsters."
 };
 
+const folderExists = async (path) => {
+    let exists = false;
+    try {
+        exists = await fs.stat(path) && true;
+    }
+    catch (e) {
+        if (e.code !== "ENOENT") throw e;
+    }
+    return exists;
+}
+
 const outFolder = path.join(__dirname, "../src/assets/apps_data/");
 //for each app get the name icon and subtitle and download the icon
 (async () => {
@@ -28,7 +39,7 @@ const outFolder = path.join(__dirname, "../src/assets/apps_data/");
             console.log(`📂 Skipping apps_out folder deletion...`);
         }
 
-        if (!await fs.stat(outFolder)) {
+        if (!await folderExists(outFolder)) {
             await fs.mkdir(outFolder);
             console.log(`📂 Created apps_out folder...`);
         }
