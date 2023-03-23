@@ -190,6 +190,8 @@
                   class="dropdown-link">Latest Stable IPA</a>
                 <a href="https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa"
                   class="dropdown-link">Latest Nightly IPA</a>
+                <a href="https://cdn.discordapp.com/attachments/949183273827983370/1074037820328521829/SideStore_MDC_14.ipa"
+                  class="dropdown-link">MDC v14 IPA</a>
               </ul>
             </div>
           </div>
@@ -223,20 +225,42 @@
         </div>
 
         <div
-          class="mx-6 mt-4 flex max-w-[480px] rounded-lg p-4 px-5 py-4 text-xs text-red-400 shadow-sm backdrop-blur-2xl bg-[rgba(31,32,35,.8)]"
+          class="mx-6 mt-4 flex flex-col rounded-lg p-4 px-5 py-4 text-xs shadow-sm backdrop-blur-2xl bg-[rgba(31,32,35,.8)] gap-3"
           role="alert">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-            class="mr-3 inline h-5 w-5 flex-shrink-0">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-          </svg>
 
-          <span class="sr-only">Info</span>
-          <div>
-            SideServer is not yet available for download for Windows or Linux. Please refer to our
-            <a class="glink" href="https://wiki.sidestore.io">wiki</a> for instructions to use AltServer for
-            installation.
+
+          <div class="flex text-red-400 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="mr-3 inline h-5 w-5 flex-shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+            </svg>
+
+
+            <span class="sr-only">SideServer Info</span>
+            <div>
+              SideServer is not yet available for download for Windows or Linux. Please refer to our
+              <a class="glink" href="https://wiki.sidestore.io">wiki</a> for instructions to use AltServer for
+              installation.
+            </div>
+
           </div>
+
+          <div class="flex text-yellow-500 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="mr-3 inline h-5 w-5 flex-shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
+
+            <span class="sr-only">MDC SideStore Info</span>
+            <div>The MDC version of SideStore (bypass 3-app limit) is only compatible with <b>iOS 15.0-16.1.2</b> and
+              you may
+              experience issues using it.
+            </div>
+          </div>
+
+
         </div>
 
         <h1 class="mt-6 mb-2 font-['Poppins'] text-xl font-medium text-white">Other Downloads</h1>
