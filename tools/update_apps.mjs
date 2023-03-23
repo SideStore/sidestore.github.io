@@ -29,24 +29,18 @@ const outFolder = path.join(__dirname, "../src/assets/apps_data/");
     const mockEvents = await (await fetch("https://api.github.com/orgs/sidestore/events?per_page=100")).json();
     await fs.writeFile(path.join(__dirname, "../src/assets/mockevents.json"), JSON.stringify(mockEvents, null, 2));
 
-    try {
-        //delete the folder if it exists and if command input contained --no-cache
-        if (process.argv.includes("--no-cache") && await fs.stat(outFolder)) {
-            await fs.rm(outFolder, { recursive: true });
-            await fs.mkdir(outFolder);
-            console.log(`📂 Created apps_out folder...`);
-        } else {
-            console.log(`📂 Skipping apps_out folder deletion...`);
-        }
+    //delete the folder if it exists and if command input contained --no-cache
+    if (process.argv.includes("--no-cache") && await folderExists(outFolder)) {
+        await fs.rm(outFolder, { recursive: true });
+    } else {
+        console.log(`📂 Skipping apps_out folder deletion...`);
+    }
 
-        if (!await folderExists(outFolder)) {
-            await fs.mkdir(outFolder);
-            console.log(`📂 Created apps_out folder...`);
-        }
+    if (!await folderExists(outFolder)) {
+        await fs.mkdir(outFolder);
+        console.log(`📂 Created apps_out folder...`);
     }
-    catch (e) {
-        if (e.code !== "ENOENT") throw e;
-    }
+
 
     //https://raw.githubusercontent.com/SideStore/SideStore/develop/trustedapps.json
     console.log(`✨ Fetching trusted sources...`)
