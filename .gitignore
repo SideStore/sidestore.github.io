@@ -6,3 +6,5 @@ yarn-error.log
 apps_out/
 src/assets/apps_data/
 src/assets/mockevents.json
+src/.DS_Store
+src/assets/.DS_Store
