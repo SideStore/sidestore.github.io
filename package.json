@@ -13,7 +13,7 @@
     "postbuild": "run-script-os",
     "postbuild:nix": "cp -R src/.well-known dist/.well-known",
     "postbuild:windows": "xcopy src/.well-known dist/.well-known /E/H",
-    "build:action": "yarn global add parcel && yarn prebuild && parcel build --no-source-maps --public-url https://sidestore.io/ && yarn postbuild"
+    "build:action": "yarn prebuild && yarn parcel build --no-source-maps --public-url https://sidestore.io/ && yarn postbuild"
   },
   "devDependencies": {
     "@parcel/packager-raw-url": "2.8.2",
@@ -32,5 +32,10 @@
   },
   "engines": {
     "node": ">= 18.16.0"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not IE_Mob 11"
+  ]
 }
