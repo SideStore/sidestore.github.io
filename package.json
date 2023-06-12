@@ -29,5 +29,8 @@
     "sharp": "^0.31.1",
     "tailwind-scrollbar": "^2.0.1",
     "tailwindcss": "^3.2.4"
+  },
+  "engines": {
+    "node": ">= 18.16.0"
   }
 }
