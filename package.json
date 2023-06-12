@@ -12,7 +12,8 @@
     "build": "parcel build --no-source-maps --public-url ./",
     "postbuild": "run-script-os",
     "postbuild:nix": "cp -R src/.well-known dist/.well-known",
-    "postbuild:windows": "xcopy src/.well-known dist/.well-known /E/H"
+    "postbuild:windows": "xcopy src/.well-known dist/.well-known /E/H",
+    "build:action": "yarn global add parcel && yarn prebuild && parcel build --no-source-maps --public-url https://sidestore.io/ && yarn postbuild"
   },
   "devDependencies": {
     "@parcel/packager-raw-url": "2.8.2",
