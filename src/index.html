@@ -253,12 +253,12 @@
       </div>
 
       <div
-        class="flex items-start w-full px-4 mt-4 section-fade section-fade-less max-w-[70rem] space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row">
+        class="flex items-start w-full px-4 mt-4 section-fade section-fade-less max-w-[70rem] space-y-4 lg:space-y-0 lg:space-x-4 flex-col lg:flex-row">
 
         <div
-          class="flex flex-col items-center justify-center w-full h-full col-span-4 p-4 overflow-hidden text-sm text-left border md:w-max sm:p-8 lg:mt-0 bg-material/30 border-zinc-800 rounded-3xl sm:text-base text-zinc-300 min-w-max md:min-w-[17.3125rem]">
+          class="flex flex-col items-center justify-center w-full h-full col-span-4 p-4 overflow-hidden text-sm text-left border lg:w-max sm:p-8 lg:mt-0 bg-material/30 border-zinc-800 rounded-3xl sm:text-base text-zinc-300 min-w-max lg:min-w-[17.3125rem]">
 
-          <ol class="flex items-center w-full text-sm text-center md:flex-col sm:text-base peer/stepper md:items-start"
+          <ol class="flex items-center w-full text-sm text-center lg:flex-col sm:text-base peer/stepper lg:items-start"
             id="setup-stepper">
             <li class="flex items-center group active w-max">
               <span class="stepper-pill">
@@ -268,7 +268,7 @@
               </span>
             </li>
             <li aria-hidden="true"
-              class="flex-grow inline-block w-full h-1 mx-1 ml-3 border-b border-gray-700 md:border-b-0 md:border-r md:w-1 md:h-3 xs:mx-3 md:my-3 border-1">
+              class="flex-grow inline-block w-full h-1 mx-1 ml-3 border-b border-gray-700 lg:border-b-0 lg:border-r lg:w-1 lg:h-3 xs:mx-3 lg:my-3 border-1">
             </li>
 
             <li class="flex items-center group">
@@ -279,7 +279,7 @@
               </span>
             </li>
             <li aria-hidden="true"
-              class="flex-grow inline-block w-full h-1 mx-1 ml-3 border-b border-gray-700 md:border-b-0 md:border-r md:w-1 md:h-3 xs:mx-3 md:my-3 border-1">
+              class="flex-grow inline-block w-full h-1 mx-1 ml-3 border-b border-gray-700 lg:border-b-0 lg:border-r lg:w-1 lg:h-3 xs:mx-3 lg:my-3 border-1">
             </li>
 
 
@@ -291,7 +291,7 @@
               </span>
             </li>
             <li aria-hidden="true"
-              class="flex-grow inline-block w-full h-1 mx-1 ml-3 border-b border-gray-700 md:border-b-0 md:border-r md:w-1 md:h-3 xs:mx-3 md:my-3 border-1">
+              class="flex-grow inline-block w-full h-1 mx-1 ml-3 border-b border-gray-700 lg:border-b-0 lg:border-r lg:w-1 lg:h-3 xs:mx-3 lg:my-3 border-1">
             </li>
             <li class="flex items-center group ">
               <span class="stepper-pill">
@@ -303,21 +303,22 @@
           </ol>
         </div>
         <div
-          class="flex flex-col items-center justify-center w-full h-full col-span-4 p-4 overflow-hidden text-sm text-left border sm:p-8 lg:mt-0 bg-material/30 border-zinc-800 rounded-3xl sm:text-base md:min-h-[27.75rem]">
-          <div class="flex flex-col items-center flex-grow w-full h-full text-zinc-300">
+          class="flex flex-col items-center justify-center w-full h-full col-span-4 p-4 overflow-hidden text-sm text-left border sm:p-8 lg:mt-0 bg-material/30 border-zinc-800 rounded-3xl sm:text-base min-h-[24.5rem] md:min-h-[27.75rem]">
+          <div class="flex flex-col-reverse items-center flex-grow w-full h-full lg:flex-col text-zinc-300">
 
 
 
 
-            <div id="setup-content" class="flex-grow w-full h-full mb-8 text-left"></div>
+            <div id="setup-content" class="flex-grow w-full h-full mt-4 text-left lg:mt-0 lg:mb-8"></div>
 
-            <div class="flex items-end w-full">
-              <div class="flex flex-col justify-center w-full sm:justify-start sm:items-center sm:flex-row">
-                <span class="mb-1 text-xs md:text-base sm:mb-0">Viewing instructions for:</span>
+            <div class="flex items-start w-full">
+              <div
+                class="flex flex-col justify-center w-full bardualok:justify-start bardualok:items-center bardualok:flex-row">
+                <span class="mb-1 text-sm sm:text-base bardualok:mb-0">Viewing instructions for:</span>
 
                 <div class="flex items-center group">
                   <select id="setup-os-select"
-                    class="text-xs md:text-base sm:ml-2 transition-colors bg-transparent border group-hover:bg-material pl-2.5 pr-8 py-1 rounded-full border-zinc-800 appearance-none shadow-md focus:outline-none focus:border-violet-300/50">
+                    class="text-sm sm:text-base bardualok:ml-2 transition-colors bg-transparent border group-hover:bg-material pl-2.5 pr-8 py-1 rounded-full border-zinc-800 appearance-none shadow-md focus:outline-none focus:border-violet-300/50">
                     <option value="mac">Mac</option>
                     <option value="windows">Windows</option>
                     <!-- <option value="linux">Linux</option> -->
@@ -335,14 +336,14 @@
               <!-- <div class="w-full"></div> -->
               <!-- if peer/stepper nth child 0 is active, disabled -->
               <button id="setup-prev-btn"
-                class="flex items-center px-1 py-1 mr-2 transition-colors bg-transparent border rounded-full shadow-md appearance-none lg:px-3 w-max hover:bg-material border-zinc-800 focus:outline-none active:border-violet-300/50">
-                <svg xmlns=" http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 lg:mr-2"
+                class="flex items-center px-1 py-1 mr-2 transition-colors bg-transparent border rounded-full shadow-md appearance-none md:px-3 w-max hover:bg-material border-zinc-800 focus:outline-none active:border-violet-300/50">
+                <svg xmlns=" http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 md:mr-2"
                   viewBox="0 0 256 256">
                   <path
                     d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z">
                   </path>
                 </svg>
-                <span class="hidden lg:block md:w-max" aria-label="Previous Step">Previous Step</span>
+                <span class="hidden md:block md:w-max" aria-label="Previous Step">Previous Step</span>
 
 
               </button>

@@ -17,6 +17,7 @@ module.exports = {
         grid35ok: '1268px',
         grid12ok: '1422px',
         dualbuttonok: '540px',
+        bardualok: '380px',
       },
       colors: {
         side: {
