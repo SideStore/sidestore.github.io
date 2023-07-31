@@ -64,25 +64,20 @@
 
   .marquee-container {
     --offset: -0%;
-    /* --move-initial: calc(- (100 / 40) % + var(--offset)); */
     --move-initial: -0;
     --move-final: calc(-50% + var(--offset));
-    /* --move-initial--reverse: calc((100 / 44) %);
-    --move-final--reverse: calc(50%); */
   }
 
   .marquee-inner {
-    /* transform: translateX(var(--move-initial), 0, 0) translateZ(0); */
     animation: marquee 240s linear infinite;
     transform: translateZ(0) translateX(var(--move-initial));
-    /* animation-play-state: paused; */
     will-change: contents;
     transition: all 0.4s ease;
     -webkit-transition: all 0.4s ease;
   }
 
   .marquee-card {
-    @apply mx-2 flex h-auto w-max max-w-[324px] items-center rounded-2xl border border-zinc-800 bg-material/40  px-4 py-4 shadow-sm;
+    @apply mx-2 flex h-auto w-max max-w-[324px] items-center rounded-2xl border border-zinc-800 bg-material/40 px-4 py-4 shadow-sm;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -98,14 +93,6 @@
   .marquee-wrapper {
     -webkit-transform: translate3d(0, 0, 0);
   }
-
-  *:hover > .darken-container-hover {
-    @apply bg-orange-600;
-  }
-
-  .delay-0 {
-    transition-delay: 0ms;
-  }
 }
 
 @layer components {
@@ -113,14 +100,10 @@
     @apply font-medium text-violet-300/70;
   }
   .shadow-title-r {
-    /* background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 75%) 100%); */
     background: linear-gradient(to bottom right, #fff 30%, hsla(0, 0%, 100%, 0.5));
-    @apply block bg-clip-text !text-transparent;
   }
   .shadow-title-b {
-    /* background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 75%) 100%); */
     background: linear-gradient(to bottom, #fff 5%, #fff 30%, hsla(0, 0%, 100%, 0.6));
-    @apply block bg-clip-text !text-transparent;
   }
   .glink {
     @apply text-violet-300/70 transition-colors hover:text-violet-300;
@@ -144,50 +127,6 @@
 
   code {
     @apply rounded-xl border border-zinc-800 bg-material/10 px-1.5 py-0.5 font-mono text-[0.825rem] leading-6;
-  }
-
-  .stepper-pill {
-    @apply flex w-max min-w-max items-center rounded-full border border-zinc-800 bg-material px-3 py-1 shadow-md transition-colors duration-300 group-[.active]:border-purple-400/60 group-[.active]:bg-side-purple-700/30 group-[.active]:font-title  hover:border-purple-400/40 hover:bg-side-purple-700/20 xs:group-[.active]:font-medium;
-  }
-
-  .btn-fill.disabled,
-  .btn-fill[disabled] {
-    @apply cursor-not-allowed bg-gray-700 focus:pointer-events-none focus:bg-gray-700 focus:ring-0 hover:bg-gray-700;
-  }
-
-  .split-btn-base {
-    @apply flex flex-grow flex-col justify-center bg-side-purple-600 text-left font-medium text-white shadow-sm transition-colors duration-200 ease-in-out focus:bg-side-purple-700 focus:outline-none focus:ring-4 focus:ring-side-purple-300 hover:bg-side-purple-700;
-  }
-
-  .split-btn-base.disabled,
-  .split-btn-base[disabled] {
-    @apply cursor-not-allowed bg-side-purple-600/40 !text-gray-400 focus:pointer-events-none focus:bg-side-purple-600/40 focus:ring-0 hover:bg-side-purple-600/40;
-  }
-
-  .split-btn-base.disabled span,
-  .split-btn-base[disabled] span {
-    @apply cursor-not-allowed !text-gray-400;
-  }
-
-  .split-btn-right {
-    @apply flex flex-grow-0 rounded-r-lg border-l border-side-purple-border px-4 py-2.5 focus:ring-0;
-  }
-
-  .dropdown-box {
-    @apply z-10 mt-2 hidden divide-y divide-gray-100 rounded-xl bg-material px-2 shadow-sm;
-  }
-
-  .dropdown-link {
-    @apply block w-full rounded-lg px-4 py-3 transition-colors duration-100 ease-in-out hover:bg-side-purple-600/30 hover:text-white;
-  }
-
-  .dropdown-link.disabled,
-  .dropdown-link[disabled] {
-    @apply cursor-not-allowed text-gray-700 focus:pointer-events-none focus:bg-transparent focus:ring-0 hover:bg-transparent;
-  }
-
-  .dropdown-list {
-    @apply w-full py-2 text-sm text-gray-700 dark:text-gray-200;
   }
 
   .grid-fix {

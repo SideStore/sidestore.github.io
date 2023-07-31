@@ -1,5 +1,7 @@
 import icons from './assets/apps_data/*.webp';
 import rawApps from './assets/apps_data/applist.json';
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -23,7 +25,7 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 const observeElements = () =>
-  document.querySelectorAll('.section-fade,.section-fade-items').forEach((element) => {
+  $$('.section-fade,.section-fade-items').forEach((element) => {
     observer.observe(element);
   });
 
@@ -63,11 +65,11 @@ let setupStepContents = [
     `Now to finish the process: <ul class="list-disc list-inside"><li>Open SideStore and sign in with the same Apple ID you used to install SideStore.</li><li>Go to the Apps tab and refresh the SideStore app itself once (you might have to swipe up to your homescreen for the process to complete).</li></ul><br> Now, you're all set! You can install apps from the sources tab or any other <code>.ipa</code> file you have.<br>If you run into any more issues, you can get support in our <a class="glink" target="_blank" href="https://discord.gg/sidestore">Discord server.</a>`,
 ];
 
-const osSelect = document.querySelector('#setup-os-select');
-const setupNextBtn = document.querySelector('#setup-next-btn');
-const setupPrevBtn = document.querySelector('#setup-prev-btn');
-const setupContent = document.querySelector('#setup-content');
-const setupStepper = [...document.querySelectorAll('#setup-stepper li:not([aria-hidden="true"])')];
+const osSelect = $('#setup-os-select');
+const setupNextBtn = $('#setup-next-btn');
+const setupPrevBtn = $('#setup-prev-btn');
+const setupContent = $('#setup-content');
+const setupStepper = [...$$('#setup-stepper li:not([aria-hidden="true"])')];
 const update = (act) => {
   setupStepper.map((item, idx) => item.classList.toggle('active', idx == act));
 
@@ -82,25 +84,25 @@ const update = (act) => {
   }, 300);
   setupPrevBtn.classList.toggle('hidden', act == 0);
   setupNextBtn.classList.toggle('hidden', act == 3);
-  document.querySelector('#setup-btn-wrap').classList.toggle('onlyprev', act == 3);
+  $('#setup-btn-wrap').classList.toggle('onlyprev', act == 3);
 };
 
 setupNextBtn.addEventListener('click', () => {
-  let activeStep = document.querySelector('#setup-stepper li.active');
+  let activeStep = $('#setup-stepper li.active');
   let activeStepIndex = setupStepper.indexOf(activeStep);
   if (activeStepIndex == 3) return;
   update(activeStepIndex + 1);
 });
 
 setupPrevBtn.addEventListener('click', () => {
-  let activeStep = document.querySelector('#setup-stepper li.active');
+  let activeStep = $('#setup-stepper li.active');
   let activeStepIndex = setupStepper.indexOf(activeStep);
   if (activeStepIndex == 0) return;
   update(activeStepIndex - 1);
 });
 osSelect.addEventListener('change', (e) => {
   detectedOS = e.target.value;
-  update(setupStepper.indexOf(document.querySelector('#setup-stepper li.active')));
+  update(setupStepper.indexOf($('#setup-stepper li.active')));
 });
 osSelect.value = detectedOS;
 
@@ -128,29 +130,29 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
   let set1 = apps.join('');
   let set2 = apps.reverse().join('');
 
-  document.querySelectorAll('#marquee1').forEach((el) => (el.innerHTML = set1));
-  document.querySelectorAll('#marquee2').forEach((el) => (el.innerHTML = set2));
+  $$('#marquee1').forEach((el) => (el.innerHTML = set1));
+  $$('#marquee2').forEach((el) => (el.innerHTML = set2));
   observeElements();
   // ensure gpu acceleration
-  document.querySelectorAll('.marquee-inner').forEach((e) => (e.style['transform'] = 'translateZ(0)'));
+  $$('.marquee-inner').forEach((e) => (e.style['transform'] = 'translateZ(0)'));
 
-  document.querySelector('#show-all-downloads').addEventListener('click', () => {
-    document.querySelector('#all-downloads').classList.remove('hidden');
-    document.querySelector('#all-downloads').classList.add('flex');
+  $('#show-all-downloads').addEventListener('click', () => {
+    $('#all-downloads').classList.remove('hidden');
+    $('#all-downloads').classList.add('flex');
     setTimeout(() => {
-      document.querySelector('#all-downloads').classList.add('show');
+      $('#all-downloads').classList.add('show');
     }, 10);
   });
-  document.querySelector('#close-all-downloads').addEventListener('click', () => {
-    document.querySelector('#all-downloads').classList.remove('show');
+  $('#close-all-downloads').addEventListener('click', () => {
+    $('#all-downloads').classList.remove('show');
     setTimeout(() => {
-      document.querySelector('#all-downloads').classList.remove('flex');
-      document.querySelector('#all-downloads').classList.add('hidden');
+      $('#all-downloads').classList.remove('flex');
+      $('#all-downloads').classList.add('hidden');
     }, 150);
   });
   // start animation
 
-  // document.querySelectorAll('.marquee-inner').forEach((e) => (e.style['animation-play-state'] = 'running'));
+  // $$('.marquee-inner').forEach((e) => (e.style['animation-play-state'] = 'running'));
 
   console.log(`Loaded apps marquee with ${apps.length} items.`);
 
@@ -179,11 +181,11 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
     }
   }
 
-  // document.querySelectorAll('[linked-dropdown]').forEach((el) => {
+  // $$('[linked-dropdown]').forEach((el) => {
   //   const linkedDropdown = document.getElementById(el.getAttribute('linked-dropdown'));
   //   const dropdownHidden = linkedDropdown.getAttribute('dropdown-hidden').split(' ') || [];
   //   const dropdownVisible = linkedDropdown.getAttribute('dropdown-visible').split(' ') || [];
-  //   const copyWidth = linkedDropdown.getAttribute('dd-copy-width') ? document.querySelector(linkedDropdown.getAttribute('dd-copy-width')) : false;
+  //   const copyWidth = linkedDropdown.getAttribute('dd-copy-width') ? $(linkedDropdown.getAttribute('dd-copy-width')) : false;
   //   console.log(`Linked dropdown button to ${`#` + linkedDropdown.id || `.` + el.class}.`);
   //   const hide = () => {
   //     linkedDropdown.classList.remove('dd-visible');
@@ -228,7 +230,7 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
     })
     .join('');
 
-  document.querySelector('#repos-grid').innerHTML = builtRepos;
+  $('#repos-grid').innerHTML = builtRepos;
   observeElements();
   const typeMap = {
     PushEvent: 'commit',
@@ -301,12 +303,12 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
     })
     .slice(0, 9);
 
-  document.querySelectorAll('#event-log').forEach((el) => (el.innerHTML = log.join('')));
+  $$('#event-log').forEach((el) => (el.innerHTML = log.join('')));
   observeElements();
 
   // for every button with id "hookPlatformDL"
-  // document.querySelectorAll('#hookPlatformDL').forEach((el) => {
-  //   const ddList = document.querySelector(el.getAttribute('platform-dl-list'));
+  // $$('#hookPlatformDL').forEach((el) => {
+  //   const ddList = $(el.getAttribute('platform-dl-list'));
   //   const platformDLElement = ddList.querySelector(`[dl-platform=${os}]`);
   //   const platformText = el.querySelector('#platformText');
   //   console.log(platformDLElement);
@@ -318,6 +320,6 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
 
   // const releaseData = await (await fetch('https://api.github.com/repos/sidestore/sidestore/releases/latest')).json();
   // const versionTag = releaseData.tag_name || '?.?.?';
-  // const label = document.querySelector('#hook-latest-ipa-version');
+  // const label = $('#hook-latest-ipa-version');
   // label.innerText = `v${versionTag}`;
 })();
