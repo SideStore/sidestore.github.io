@@ -39,22 +39,53 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link href="assets/apple-touch-icon.png" rel="apple-touch-icon" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./index.css" />
+
 </head>
 
-<body class="scrollbar-thin scrollbar-track-[#121316] scrollbar-thumb-[#21262d]"
+
+<body class="scrollbar-thin scrollbar-track-[#121316] scrollbar-thumb-[rgb(31,32,35)]"
   commit-hash="{gh_actions_replace_hash}">
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center snap-mandatory snap-y">
     <!-- navbar -->
-    <div class="sticky top-0 z-50 flex w-full justify-center">
+    <div class="sticky top-0 z-50 flex justify-center w-full">
       <nav
-        class="mx-4 mt-4 flex max-w-xl flex-grow flex-row items-center rounded-full bg-[rgba(31,32,35,.5)] px-5 py-4 shadow-sm backdrop-blur-2xl">
-        <img alt="SideStore Logo" src="assets/apple-touch-icon.png" class="h-8 w-8 rounded-full" />
+        class="flex flex-row items-center flex-grow max-w-xl px-4 py-3 mx-4 mt-4 border rounded-full shadow-md bg-material/50 backdrop-blur-2xl border-zinc-800">
+        <a class="p-1.5 border rounded-full border-zinc-800 hover:bg-zinc-800 transition-colors hover:border-zinc-700 duration-100"
+          href="#" aria-label="SideStore Logo">
+          <svg class="w-6 h-6 hover:text-white text-zinc-300" viewBox="0 0 200 200" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+            xmlns:serif="http://www.serif.com/"
+            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" fill="currentColor">
+
+            <g transform="matrix(1.47059,0,0,1.47059,-47.0588,-341.176)">
+              <g transform="matrix(0.223776,0,0,0.257843,-1.09427,183.47)">
+                <path
+                  d="M755.639,451.943C755.639,434.819 739.62,420.916 719.889,420.916L290.89,420.916C271.159,420.916 255.14,434.819 255.14,451.943C255.14,469.067 271.159,482.969 290.89,482.969L719.889,482.969C739.62,482.969 755.639,469.067 755.639,451.943Z" />
+              </g>
+            </g>
+            <g transform="matrix(1.47059,0,0,1.47059,-47.0588,-341.176)">
+              <g transform="matrix(1,0,0,1,2.84217e-14,-20)">
+                <path
+                  d="M108,276L108,280C108,286.365 105.471,292.47 100.971,296.971C96.47,301.471 90.365,304 84,304L64,304C59.757,304 55.687,305.686 52.686,308.686C49.686,311.687 48,315.757 48,320C48,324.243 49.686,328.313 52.686,331.314C55.687,334.314 59.757,336 64,336L84,336C90.365,336 96.47,338.529 100.971,343.029C105.471,347.53 108,353.635 108,360C108,360 108,378.246 108,385.28C108,386.001 107.713,386.693 107.203,387.203C106.693,387.713 106.001,388 105.28,388C102.335,388 97.665,388 94.72,388C93.999,388 93.307,387.713 92.797,387.203C92.287,386.693 92,386.001 92,385.28C92,378.246 92,360 92,360C92,357.878 91.157,355.843 89.657,354.343C88.157,352.843 86.122,352 84,352L64,352C55.513,352 47.374,348.629 41.373,342.627C35.371,336.626 32,328.487 32,320C32,311.513 35.371,303.374 41.373,297.373C47.374,291.371 55.513,288 64,288L84,288C86.122,288 88.157,287.157 89.657,285.657C91.157,284.157 92,282.122 92,280L92,276L84,276L100,252L116,276L108,276Z" />
+              </g>
+            </g>
+            <g transform="matrix(1.47059,0,0,1.47059,-47.0588,-341.176)">
+              <g transform="matrix(0.221976,0,0,0.221976,24,200)">
+                <path
+                  d="M486.54,744.586C486.54,747.836 485.249,750.953 482.951,753.251C480.653,755.549 477.536,756.84 474.286,756.84C461.019,756.84 439.981,756.84 426.714,756.84C423.464,756.84 420.347,755.549 418.049,753.251C415.751,750.953 414.46,747.836 414.46,744.586C414.46,704.155 414.46,575.265 414.46,534.834C414.46,531.584 415.751,528.467 418.049,526.169C420.347,523.871 423.464,522.58 426.714,522.58C439.981,522.58 461.019,522.58 474.286,522.58C477.536,522.58 480.653,523.871 482.951,526.169C485.249,528.467 486.54,531.584 486.54,534.834L486.54,744.586Z" />
+              </g>
+            </g>
+          </svg>
+        </a>
         <div class="flex-grow"></div>
-        <div class="flex justify-center gap-3">
+
+        <div class="flex justify-center space-x-[0.95rem] py-1.5 px-2 mx-0.5 border rounded-full border-zinc-800">
           <!-- github -->
           <a title="GitHub" href="https://github.com/SideStore/SideStore/" target="_blank"
-            class="flex h-6 w-6 justify-center text-gray-300">
+            class="flex justify-center w-6 h-6 transition-colors duration-100 text-zinc-300 hover:text-white">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
               <path
                 d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
@@ -62,16 +93,22 @@
           </a>
           <!-- twitter -->
           <a title="Twitter" target="_blank" href="https://twitter.com/sidestore_io"
-            class="flex h-6 w-6 justify-center text-gray-300">
+            class="flex justify-center w-6 h-6 transition-colors duration-100 text-zinc-300 hover:text-white">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
               <path
                 d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
             </svg>
           </a>
-          <!-- discord -->
+          <a title="Patreon" target="_blank" href="https://www.patreon.com/sidestore"
+            class="flex justify-center w-6 h-6 p-0.5 transition-colors duration-100 text-zinc-300 hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+              <path
+                d="M512 194.8c0 101.3-82.4 183.8-183.8 183.8-101.7 0-184.4-82.4-184.4-183.8 0-101.6 82.7-184.3 184.4-184.3C429.6 10.5 512 93.2 512 194.8zM0 501.5h90v-491H0v491z" />
+            </svg>
+          </a>
           <a title="Discord" href="https://discord.gg/CacsuuzsBq" target="_blank"
-            class="flex h-6 w-6 justify-center text-gray-300"><svg xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 640 512" fill="currentColor">
+            class="flex justify-center w-6 h-6 transition-colors duration-100 text-zinc-300 hover:text-white"><svg
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor">
               <path
                 d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z" />
             </svg></a>
@@ -81,247 +118,388 @@
 
     <!-- hero/landing section -->
     <div
-      class="mt-4 flex h-full w-full max-w-[90rem] flex-col items-center overflow-hidden lg:mt-0 lg:grid lg:grid-cols-8">
+      class="mt-8 sm:mt-12 flex h-full w-full max-w-[90rem] flex-col items-center overflow-hidden lg:mt-0 lg:grid lg:grid-cols-8 lg:px-12 snap-center">
       <div class="flex flex-col justify-center px-4 text-left lg:col-span-4 lg:-translate-y-2/4 lg:pl-12 2xl:pl-0">
-        <h1 class="font-['Poppins'] text-3xl font-[450] text-white sm:text-4xl lg:text-6xl">SideStore</h1>
-        <p class="mt-4 max-w-xl text-gray-300">
-          SideStore is an alternative app store that aims to make sideloading apps as seamless as possible. No jailbreak
+        <h1 class="text-4xl font-medium tracking-tight shadow-title-r font-title sm:text-5xl lg:text-7xl">SideStore
+        </h1>
+        <p class="max-w-xl mt-5 text-lg text-zinc-300">
+          An alternative app store for seamless sideloading. No jailbreak
           needed, and
-          <b>you don't need a computer</b>
+          <b>no computer</b>
           after the initial install, only a WiFi connection.
         </p>
-        <div class="mt-4 flex flex-col gap-2 buttonsok:flex-row">
-          <!-- rounded pill download button -->
-          <div class="flex items-center justify-center rounded-lg bg-side-purple-600 px-7 py-2.5">
-            <a href="#downloads" class="font-medium text-white">Get started</a>
-          </div>
-          <div class="flex items-center justify-center rounded-lg border-2 border-side-purple-600 px-7 py-2.5">
-            <a href="https://wiki.sidestore.io" target="_blank" class="font-medium text-white">Documentation</a>
-          </div>
+        <div class="flex flex-col gap-2 mt-5 buttonsok:flex-row">
+          <a href="#get-started"
+            class="flex items-center justify-center rounded-full bg-side-purple-700 hover:bg-side-purple-600 transition-colors px-7 py-2.5 hover:shadow-[inset_0_-7px_11px_#a48fff1f] font-medium text-white">
+            Get Started
+          </a>
+
+
+          <a href="https://wiki.sidestore.io" target="_blank"
+            class="flex items-center justify-center rounded-full border-zinc-800 hover:border-zinc-700 hover:bg-material  transition-colors border px-7 py-2.5 font-medium text-white">
+            Wiki
+          </a>
         </div>
       </div>
 
       <!-- 1665w by 2102h is the source -->
       <div
-        class="hidden h-full w-full translate-x-24 items-center justify-center px-12 lg:col-span-4 lg:flex stoplgtranslation:translate-x-0">
+        class="items-center justify-center hidden w-full h-full px-12 translate-x-24 lg:col-span-4 lg:flex stoplgtranslation:translate-x-0">
         <img alt="Phone render" src="assets/hero_render2.png?as=webp"
           srcset="assets/hero_render2.png?as=webp&width=832&height=1051, assets/hero_render2.png?as=webp 2x"
-          class="max-h-full max-w-3xl object-scale-down" />
+          class="object-scale-down max-w-3xl max-h-full w-[48rem] h-[60.5975rem]" />
       </div>
 
-      <div class="fade-out mr-0 max-h-[38rem] w-screen translate-x-1/4 md:w-full lg:hidden">
+      <div class="mask-fade-bottom mr-0 max-h-[54rem] w-screen translate-x-1/4 md:w-full lg:hidden">
         <img alt="Phone render" src="assets/hero_render2.png?as=webp&width=832&height=1051"
-          class="max-h-full max-w-3xl bg-cover object-scale-down" />
+          class="object-scale-down max-w-3xl max-h-full bg-cover w-[48rem] h-[60.634rem]" />
       </div>
     </div>
 
-    <div id="apps-section"
-      class="my-8 flex w-full flex-col items-center justify-center lg:grid lg:max-w-[90rem] lg:grid-cols-2 lg:px-12">
-      <div class="flex max-w-xl flex-col justify-center px-4 pb-4 lg:mr-4">
-        <h1 class="font-['Poppins'] text-3xl font-medium text-white">Apps</h1>
-        <p class="mt-2 text-gray-200">
-          SideStore allows installation for any app you want, alongside the many available in our verified sources. And
-          with the in-app JIT enabler,
-          you can play hardware-accelerated games, emulators or whatever you want, wherever you want, with no computer
-          required.
+
+    <div id="apps-section-2"
+      class="mt-8 lg:mt-0 mb-32 flex w-full flex-col items-center justify-center lg:max-w-[90rem] lg:px-12 section-fade snap-start">
+      <div class="flex flex-col items-center justify-center max-w-xl px-4 pb-4 text-center lg:mr-4">
+        <span
+          class="px-3 py-1 border rounded-full shadow-[inset_0_-7px_11px_#a48fff1f] text-[0.92rem] border-side-purple-400/60 flex text-white bg-material/50 backdrop-blur-md w-max">Apps</span>
+        <h1
+          class="text-3xl xs:text-4xl sm:leading-none sm:text-[3rem] font-medium text-white font-title shadow-title-b mt-6">
+          Install
+          any .ipa</h1>
+        <p class="mt-2 sm:mt-3 text-zinc-300/70">
+          SideStore allows you to <ph>install any app you want</ph>, alongside the many available in our <ph>verified
+            sources</ph>.
+          And with the <ph>in-app JIT enabler</ph>, you can play <ph>hardware-accelerated games</ph>, <ph>emulators</ph>
+          and
+          <ph>
+            anything
+            else.
+          </ph>
         </p>
       </div>
 
-      <div class="mask-fade-horizontal mt-4 flex w-screen flex-col lg:mt-0 lg:w-auto">
-        <div class="marquee-container relative flex overflow-x-hidden">
-          <div class="marquee-inner relative flex w-fit whitespace-nowrap py-2" id="marquee1"></div>
+      <div class="flex flex-col w-full mt-4 mask-fade-vertical marquee-wrapper section-fade section-fade-less">
+        <div class="relative flex overflow-x-hidden marquee-container">
+          <div class="relative flex py-2 marquee-inner w-fit whitespace-nowrap" id="marquee1"></div>
         </div>
-        <div class="marquee-container relative flex overflow-x-hidden">
-          <div class="marquee-inner marquee-reverse relative flex w-fit whitespace-nowrap py-2" id="marquee2"></div>
+        <div class="relative flex overflow-x-hidden marquee-container">
+          <div class="relative flex py-2 marquee-inner marquee-reverse w-fit whitespace-nowrap" id="marquee2"></div>
         </div>
       </div>
     </div>
 
     <div id="open-source"
-      class="my-8 flex w-full flex-col-reverse items-center justify-center lg:grid lg:max-w-[90rem] lg:grid-cols-2 lg:px-12 ">
-      <div class="mt-4 flex flex-col items-center px-4 pb-4 text-left lg:mt-0">
-        <ul id="event-log"></ul>
-      </div>
-      <div class="flex max-w-xl flex-col justify-center px-4 pb-4 lg:mr-4">
-        <h1 class="font-['Poppins'] text-3xl font-medium text-white">Open Source</h1>
-        <p class="mt-2 text-gray-200">
-          SideStore is fully open-source and run by contributors. You can find the source code on GitHub, and contribute
-          to the project if you want.
+      class="my-32 flex w-full flex-col items-center justify-center lg:max-w-[90rem] lg:px-12 section-fade snap-center">
+      <div class="flex flex-col items-center justify-center max-w-xl px-4 pb-4 text-center lg:mr-4">
+        <span
+          class="px-3 py-1 border rounded-full shadow-[inset_0_-7px_11px_#a48fff1f] text-[0.92rem] border-side-purple-400/60 flex text-white bg-material/50 backdrop-blur-md w-max">Open
+          Source</span>
+        <h1
+          class="text-3xl xs:text-4xl sm:leading-none sm:text-[3rem] font-medium text-white font-title shadow-title-b mt-6">
+          Free, forever</h1>
+        <p class="mt-2 sm:mt-3 text-zinc-300/70">
+          SideStore is <ph>fully open-source</ph> and <ph>run by contributors</ph>, supported by our <ph>community</ph>
+          and our
+          <ph>patrons</ph>.
+          You can find the source code for all our projects on
+          <a href="https://github.com/SideStore" target="_blank"
+            class="font-medium underline transition-colors text-violet-300/70 hover:text-violet-300">GitHub</a>,
+          and you can freely contribute to the project.
         </p>
+      </div>
+      <div class="grid justify-center w-full h-full px-4 mt-4 gridok:justify-evenly">
+        <div
+          class="flex flex-col items-center w-full max-w-lg grid-cols-8 space-y-4 h-max gridok:space-y-0 gridok:max-w-none gridok:space-x-4 grid12ok:grid-cols-12 gridok:grid">
+          <div
+            class="flex flex-col items-center w-full h-full col-span-4 p-4 text-sm text-left border sm:p-8 grid35ok:col-span-3 grid12ok:col-span-4 lg:mt-0 bg-material/30 border-zinc-800 rounded-3xl sm:text-base">
+            <div id="event-log" class="flex flex-col justify-center w-full h-full space-y-4 section-fade-items"></div>
+          </div>
+
+
+          <div
+            class="flex flex-col items-center justify-center w-auto h-full col-span-4 p-4 text-sm text-left border sm:p-8 grid35ok:col-span-5 grid12ok:col-span-8 lg:mt-0 bg-material/30 border-zinc-800 rounded-3xl sm:text-base">
+
+            <div class="grid w-full h-full">
+              <div
+                class="flex flex-col items-center w-full h-full gap-3 grid35ok:grid grid35ok:grid-cols-2 grid12ok:grid-cols-3 section-fade-items grid-fix group"
+                id="repos-grid">
+
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
       </div>
     </div>
 
 
-    <!-- used to be grid -->
-    <div id="downloads" class="my-8 flex w-full flex-col items-center justify-center lg:max-w-[48rem] lg:px-12 px-4">
-      <div class="max-w-xl px-4 pb-4 lg:max-w-none">
-        <h1 class="font-['Poppins'] text-3xl font-medium text-white">Downloads</h1>
-        <p class="mt-2 text-gray-200">
-          SideStore is only works on devices that are on iOS 14.0 or higher. Our <a class="glink"
-            href="https://wiki.sidestore.io">wiki</a><span class="text-red-400"> (not complete)</span> has an in-depth
-          guide on the setup process for SideStore, but you can download the
-          assets required here.
+    <div id="get-started"
+      class="my-32 flex w-full flex-col items-center justify-center lg:max-w-[90rem] lg:px-12 section-fade snap-center">
+      <div class="flex flex-col items-center justify-center max-w-xl px-4 pb-4 text-center lg:mr-4">
+        <span
+          class="px-3 py-1 border rounded-full shadow-[inset_0_-7px_11px_#a48fff1f] text-[0.92rem] border-side-purple-400/60 flex text-white bg-material/50 backdrop-blur-md w-max">Download</span>
+        <h1
+          class="text-3xl xs:text-4xl sm:leading-none sm:text-[3rem] font-medium text-white font-title shadow-title-b mt-6">
+          Get started</h1>
+        <p class="mt-2 sm:mt-3 text-zinc-300/70">
+          SideStore works on iOS 14.0 and higher. You'll need a computer for the initial setup, but after that you can
+          install apps directly on your device. <br>
+
         </p>
       </div>
 
-      <div class="mt-8 flex w-screen dualbuttonok:w-[530px] flex-col items-center">
-
-        <div class="flex flex-col gap-2 dualbuttonok:flex-row w-full justify-center px-6">
-          <div class="flex flex-col w-full dualbuttonok:w-auto">
-            <div class="inline-flex rounded-md shadow-sm copy-width-ipa-dl-btn w-full dualbuttonok:w-auto">
-              <button type="button" class="split-btn-base rounded-l-lg px-6 py-2.5 flex-grow">
-                Download IPA
-                <span class="text-gray-200 font-mono text-xs font-semibold" id="hook-latest-ipa-version">
-                  v?.?.?
-                </span>
-              </button>
-              <button type="button" linked-dropdown="dd-download-ipa" class="split-btn-base split-btn-right">
-                <svg class="w-6 h-6 font-bold" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-            </div>
-
-            <div id="dd-download-ipa" dropdown-visible="flex" dropdown-hidden="hidden"
-              dd-copy-width=".copy-width-ipa-dl-btn" class="dropdown-box">
-              <ul class="dropdown-list" aria-labelledby="dropdownDefaultButton">
-                <a href="https://github.com/SideStore/SideStore/releases/latest/download/SideStore.ipa"
-                  class="dropdown-link">Latest Stable IPA</a>
-                <a href="https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa"
-                  class="dropdown-link">Latest Nightly IPA</a>
-                <a href="https://cdn.discordapp.com/attachments/949183273827983370/1074037820328521829/SideStore_MDC_14.ipa"
-                  class="dropdown-link">MDC v14 IPA</a>
-              </ul>
-            </div>
-          </div>
-          <div class="flex flex-col w-full dualbuttonok:w-auto">
-            <div class="inline-flex rounded-md shadow-sm cw-dl-sideserver w-full dualbuttonok:w-auto">
-              <a class="split-btn-base rounded-l-lg px-6 py-2.5" id="hookPlatformDL"
-                platform-dl-list="#dd-download-sideserver">
-                Download SideServer
-                <span class="text-gray-200 font-mono text-xs font-semibold" id="platformText">
-                  for ?
-                </span>
-              </a>
-              <button type="button" linked-dropdown="dd-download-sideserver" class="split-btn-base split-btn-right">
-                <svg class="w-6 h-6 font-bold" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-            </div>
-
-            <div id="dd-download-sideserver" dropdown-visible="flex" dropdown-hidden="hidden"
-              dd-copy-width=".cw-dl-sideserver" class="dropdown-box">
-              <ul class="dropdown-list" aria-labelledby="dropdownDefaultButton">
-                <a href="https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg"
-                  class="dropdown-link" dl-platform="macos">MacOS</a>
-                <a href="" class="dropdown-link" disabled dl-platform="windows">Windows</a>
-                <a href="" class="dropdown-link" disabled dl-platform="nix">Linux</a>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div
+        class="flex items-center w-full px-4 mt-4 section-fade section-fade-less max-w-[70rem] space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row">
 
         <div
-          class="mx-6 mt-4 flex flex-col rounded-lg p-4 px-5 py-4 text-xs shadow-sm backdrop-blur-2xl bg-[rgba(31,32,35,.8)] gap-3"
-          role="alert">
+          class="flex flex-col items-center justify-center w-full h-full col-span-4 p-4 overflow-hidden text-sm text-left border md:w-max sm:p-8 lg:mt-0 bg-material/30 border-zinc-800 rounded-3xl sm:text-base text-zinc-300 min-w-max">
+
+          <ol class="flex items-center w-full text-sm text-center md:flex-col sm:text-base peer/stepper md:items-start"
+            id="setup-stepper">
+            <li class="flex items-center group active w-max">
+              <span class="stepper-pill">
+                <span class="font-bold ">1</span>
+                <span class="hidden md:block md:ml-2 xs:group-[.active]:block xs:group-[.active]:ml-2 w-max">Download
+                  SideServer</span>
+              </span>
+            </li>
+            <li aria-hidden="true"
+              class="flex-grow inline-block w-full h-1 mx-1 ml-3 border-b border-gray-700 md:border-b-0 md:border-r md:w-1 md:h-3 xs:mx-3 md:my-3 border-1">
+            </li>
+
+            <li class="flex items-center group">
+              <span class="stepper-pill">
+                <span class="font-bold ">2</span>
+                <span class="hidden md:block md:ml-2 xs:group-[.active]:block xs:group-[.active]:ml-2">Sideload
+                  App</span>
+              </span>
+            </li>
+            <li aria-hidden="true"
+              class="flex-grow inline-block w-full h-1 mx-1 ml-3 border-b border-gray-700 md:border-b-0 md:border-r md:w-1 md:h-3 xs:mx-3 md:my-3 border-1">
+            </li>
 
 
-          <div class="flex text-red-400 items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor" class="mr-3 inline h-5 w-5 flex-shrink-0">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-            </svg>
+            <li class="flex items-center group ">
+              <span class="stepper-pill">
+                <span class="font-bold ">3</span>
+                <span class="hidden md:block md:ml-2 xs:group-[.active]:block xs:group-[.active]:ml-2">WireGuard
+                  VPN</span>
+              </span>
+            </li>
+            <li aria-hidden="true"
+              class="flex-grow inline-block w-full h-1 mx-1 ml-3 border-b border-gray-700 md:border-b-0 md:border-r md:w-1 md:h-3 xs:mx-3 md:my-3 border-1">
+            </li>
+            <li class="flex items-center group ">
+              <span class="stepper-pill">
+                <span class="font-bold ">4</span>
+                <span class="hidden md:block md:ml-2 xs:group-[.active]:block xs:group-[.active]:ml-2">Finished</span>
+              </span>
+            </li>
 
-
-            <span class="sr-only">SideServer Info</span>
-            <div>
-              SideServer is not yet available for download for Windows or Linux. Please refer to our
-              <a class="glink" href="https://wiki.sidestore.io">wiki</a> for instructions to use AltServer for
-              installation.
-            </div>
-
-          </div>
-
-          <div class="flex text-yellow-500 items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor" class="mr-3 inline h-5 w-5 flex-shrink-0">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-            </svg>
-
-            <span class="sr-only">MDC SideStore Info</span>
-            <div>The MDC version of SideStore (bypass 3-app limit) is only compatible with <b>iOS 15.0-16.1.2</b> and
-              you may
-              experience issues using it.
-            </div>
-          </div>
-
-
+          </ol>
         </div>
-
-        <h1 class="mt-6 mb-2 font-['Poppins'] text-xl font-medium text-white">Other Downloads</h1>
-
-        <div class="flex flex-col gap-2 dualbuttonok:flex-row  w-full justify-center px-6">
-          <div class="flex flex-col w-full dualbuttonok:w-auto">
-            <div
-              class="flex flex-col buttonsok:flex-row buttonsok:inline-flex rounded-md shadow-sm copy-width-ipa-dl-btn w-full dualbuttonok:w-auto gap-2 dualbuttonok:gap-0">
-              <a href="https://apps.apple.com/us/app/wireguard/id1441195209"
-                class="split-btn-base rounded-lg dualbuttonok:rounded-l-lg dualbuttonok:rounded-r-none px-6 py-2.5">
-                Wireguard
-                <span class="text-gray-200 font-mono text-xs font-semibold">
-                  iOS App
-                </span>
-              </a>
-              <a href="https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.conf"
-                class="split-btn-base rounded-lg dualbuttonok:rounded-r-lg dualbuttonok:rounded-l-none px-6 py-2.5 dualbuttonok:border-l dualbuttonok:border-side-purple-border">
-                Wireguard
-                <span class="text-gray-200 font-mono text-xs font-semibold">
-                  Config File
-                </span>
-              </a>
-            </div>
+        <div
+          class="flex flex-col items-center justify-center w-full h-full col-span-4 p-4 overflow-hidden text-sm text-left border sm:p-8 lg:mt-0 bg-material/30 border-zinc-800 rounded-3xl sm:text-base md:min-h-[27.75rem]">
+          <div class="flex flex-col items-center flex-grow w-full h-full text-zinc-300">
 
 
-          </div>
-          <div class="flex flex-col w-full dualbuttonok:w-auto">
-            <div class="inline-flex rounded-md shadow-sm w-full dualbuttonok:w-auto cw-dl-jitterbug">
-              <a class="split-btn-base rounded-l-lg px-6 py-2.5" id="hookPlatformDL"
-                platform-dl-list="#dd-download-jitterbug">
-                Jitterbugpair
-                <span class="text-gray-200 font-mono text-xs font-semibold" id="platformText">
-                  for ?
-                </span>
-              </a>
-              <button type="button" linked-dropdown="dd-download-jitterbug" class="split-btn-base split-btn-right">
-                <svg class="w-6 h-6 font-bold" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+
+
+            <div id="setup-content" class="flex-grow w-full h-full mb-8 text-left"></div>
+
+            <div class="flex items-end w-full">
+              <div class="flex flex-col justify-center w-full sm:justify-start sm:items-center sm:flex-row">
+                <span class="mb-1 text-xs md:text-base sm:mb-0">Viewing instructions for:</span>
+
+                <div class="flex items-center group">
+                  <select id="setup-os-select"
+                    class="text-xs md:text-base sm:ml-2 transition-colors bg-transparent border group-hover:bg-material pl-2.5 pr-8 py-1 rounded-full border-zinc-800 appearance-none shadow-md focus:outline-none focus:border-violet-300/50">
+                    <option value="mac">Mac</option>
+                    <option value="windows">Windows</option>
+                    <!-- <option value="linux">Linux</option> -->
+                  </select>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 -translate-x-6" fill="currentColor"
+                    viewBox="0 0 256 256">
+                    <path
+                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+
+              <!-- <div class="w-full"></div> -->
+              <!-- if peer/stepper nth child 0 is active, disabled -->
+              <button id="setup-prev-btn"
+                class="flex items-center px-1 py-1 mr-2 transition-colors bg-transparent border rounded-full shadow-md appearance-none lg:px-3 w-max hover:bg-material border-zinc-800 focus:outline-none active:border-violet-300/50">
+                <svg xmlns=" http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 lg:mr-2"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z">
+                  </path>
+                </svg>
+                <span class="hidden lg:block md:w-max" aria-label="Previous Step">Previous Step</span>
+
+
+              </button>
+              <button id="setup-next-btn" aria-label="Next Step"
+                class="flex items-center px-1 py-1 transition-colors bg-transparent border rounded-full shadow-md appearance-none md:px-3 w-max hover:bg-material border-zinc-800 focus:outline-none active:border-violet-300/50 ">
+                <span class="hidden md:block md:w-max">Next Step</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 md:ml-2"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z">
+                  </path>
                 </svg>
               </button>
             </div>
 
-            <div id="dd-download-jitterbug" dropdown-visible="flex" dropdown-hidden="hidden"
-              dd-copy-width=".cw-dl-jitterbug" class="dropdown-box">
-              <ul class="dropdown-list" aria-labelledby="dropdownDefaultButton">
-                <a href="https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip"
-                  class="dropdown-link" dl-platform="macos">MacOS</a>
-
-                <a href="https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip"
-                  class="dropdown-link" dl-platform="windows">Windows</a>
-                <a href="https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip"
-                  class="dropdown-link" dl-platform="nix">Linux</a>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
+
+      <button class="mt-3 text-sm btn-fill text-zinc-300 xs:text-base" id="show-all-downloads">
+        Just want the downloads instead?
+      </button>
     </div>
 
-    <script src="./index.js" type="module"></script>
+    <div id="all-downloads"
+      class="fixed top-0 hidden w-full h-full overflow-y-auto transition-opacity xs:px-4 xs:items-center xs:justify-center bg-material xs:bg-black/40 backdrop-blur-sm group">
+      <div
+        class="flex flex-col p-5 xs:border bg-material border-zinc-700 xs:shadow-xl md:p-8 xs:rounded-2xl text-zinc-300 max-w-[50rem] w-full scale-95 transition group-[.show]:scale-100 h-max">
+        <div class="flex items-center mb-4">
+          <span class="text-xl font-medium sm:text-xl font-title">All Downloads</span>
+          <div class="flex-grow"></div>
+          <button class="btn-fill" id="close-all-downloads"><svg xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 mr-1.5" fill="currentColor" viewBox="0 0 256 256">
+              <path
+                d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z">
+              </path>
+            </svg> Close</button>
+        </div>
+
+        <span class="font-medium text-md sm:text-lg">SideStore <code>.ipa</code> files</span>
+        <ul class="list-disc list-inside">
+
+          <li>
+            <a href="https://github.com/SideStore/SideStore/releases/latest/download/SideStore.ipa" class="glink">Latest
+              Stable Release</a>
+          </li>
+          <li>
+            <a href="https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa"
+              class="glink">Latest
+              Nightly Release</a>
+          </li>
+          <li>
+            <a href="https://cdn.discordapp.com/attachments/949183273827983370/1074037820328521829/SideStore_MDC_14.ipa"
+              class="glink">Old MDC v14 IPA</a>
+          </li>
+
+        </ul>
+        <div class="flex flex-col mt-2 text-sm sm:text-[0.9rem] text-yellow-500 ">
+          <div class="flex items-center font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256"
+              class="flex-shrink-0 inline w-4 h-4 mr-1">
+              <path
+                d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z">
+              </path>
+            </svg>
+            Warning
+          </div>
+
+
+          <span class="sr-only">MDC SideStore Warning</span>
+          <div>
+            The MDC version of SideStore above (bypass 3-app limit) is only compatible with <b>iOS 15.0-16.1.2</b>, and
+            is very outdated, and so you may experience issues. If you want to have this feature, we reccomend you
+            <a class="glink" href="https://github.com/zhuowei/WDBRemoveThreeAppLimit/releases/tag/v1.0">seperately
+              install WDBRemoveThreeAppLimit with SideStore</a>,
+            apply the tweak and then turn off the three-app-limit in the
+            latest SideStore's settings instead.
+          </div>
+
+        </div>
+
+        <span class="mt-4 font-medium text-md sm:text-lg">SideServer Downloads</span>
+        <ul class="list-disc list-inside">
+
+          <li>
+            <a href="https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg"
+              class="glink">Latest MacOS Release</a>
+          </li>
+          <li>
+            <a href="https://github.com/SideStore/SideServer-Windows/releases/latest/download/SideServer.Installer.msi"
+              class="glink">Latest
+              Windows Release</a>
+          </li>
+        </ul>
+        <div class="flex flex-col mt-2 text-sm sm:text-[0.9rem] text-zinc-400/90 ">
+          <div class="flex items-center font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"
+              class="flex-shrink-0 inline w-4 h-4 mr-1">
+              <path
+                d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z">
+              </path>
+            </svg>
+
+
+            Linux Installation
+          </div>
+
+          <span class="sr-only">Linux Installation</span>
+          <div>
+            SideServer isn't available for Linux yet, and you will have to follow the guide on the <a class="glink"
+              href="https://wiki.sidestore.io/guides/install.html#install-via-altserver-linux">SideStore Wiki</a> to
+            install SideStore using a containerised version of
+            AltServer.
+          </div>
+
+        </div>
+
+        <span class="mt-4 font-medium text-md sm:text-lg">WireGuard Downloads</span>
+        <ul class="list-disc list-inside">
+
+          <li>
+            <a href="https://apps.apple.com/us/app/wireguard/id1441195209" class="glink">WireGuard VPN App for iOS</a>
+          </li>
+          <li>
+            <a href="https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.conf"
+              class="glink">SideStore Wireguard Config</a>
+          </li>
+        </ul>
+
+
+        <span class="mt-4 font-medium text-md sm:text-lg">Jitterbugpair Downloads</span>
+        <ul class="list-disc list-inside">
+
+
+          <!-- <a href="https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip" class="dropdown-link"
+                        dl-platform="macos">MacOS</a>
+                      
+                      <a href="https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip" class="dropdown-link"
+                        dl-platform="windows">Windows</a>
+                      <a href="https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip" class="dropdown-link"
+                        dl-platform="nix">Linux</a>
+                         -->
+          <li>
+            <a href="https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip"
+              class="glink">Jitterbugpair v1.3.1 for MacOS</a>
+          </li>
+          <li>
+            <a href="https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip"
+              class="glink">Jitterbugpair v1.3.1 for Windows</a>
+          </li>
+          <li>
+            <a href="https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip"
+              class="glink">Jitterbugpair v1.3.1 for Linux</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="./index.js" type="module"></script>
 </body>
 
 </html>

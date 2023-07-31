@@ -1,6 +1,106 @@
 import icons from './assets/apps_data/*.webp';
 import rawApps from './assets/apps_data/applist.json';
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    // console.log(entry);
+    if (entry.isIntersecting) {
+      // if (entry.target.classList.contains('section-fade-items')) {
+      //   entry.target.childNodes.forEach((child) => {
+      //     child.classList && child.classList.add('animate-fade-show');
+      //   });
+      // }
+      entry.target.classList.add('animate-fade-show');
+    } else {
+      // if (entry.target.classList.contains('section-fade-items')) {
+      //   entry.target.childNodes.forEach((child) => {
+      //     child.classList && child.classList.remove('animate-fade-show');
+      //   });
+      // }
+      entry.target.classList.remove('animate-fade-show');
+    }
+  });
+});
+
+const observeElements = () =>
+  document.querySelectorAll('.section-fade,.section-fade-items').forEach((element) => {
+    observer.observe(element);
+  });
+
+observeElements();
+
+let detectedOS = navigator.userAgent.toLowerCase();
+const osW = (...items) => (detectedOS == 'mac' ? items[0] : detectedOS == 'windows' ? items[1] : items[2]);
+if (detectedOS.indexOf('mac') != -1) detectedOS = 'mac';
+else if (detectedOS.indexOf('win') != -1) detectedOS = 'windows';
+else detectedOS = 'mac';
+
+let setupStepContents = [
+  //download sideserver
+  () =>
+    `To get started, you'll need:<ul class="list-disc list-inside"><li>${osW(
+      'A Mac running macOS 10.15 or later',
+      'A PC running Windows 10 or later',
+      'A PC running Linux, of some sort'
+    )}</li><li>An iCloud account (a burner account is recommended)</li><li>An Internet connection</li><li>An iPhone or iPad with iOS 14 or iPadOS 14 or later</li></ul><br>On your computer, download the following:<a class="btn-fill" target="_blank" href="${osW(
+      'https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg',
+      'https://github.com/SideStore/SideServer-Windows/releases/latest/download/SideServer.Installer.msi'
+    )}">Download SideServer</a>${osW(
+      `Then, open the downloaded file and drag <code>SideServer.app</code> to your Applications folder. Now, open the app (you may have to right click and select "Open" if you get a warning).`,
+      `Then, open the downloaded file and run the installer. You'll also need to install the non-Microsoft Store version of iTunes, and iCloud and uninstall the Microsoft Store versions if you have either installed.<div class="flex flex-col xs:flex-row space-y-2 xs:space-y-0 xs:space-x-2"><a class="btn-fill" href="https://support.apple.com/en-us/HT210384">Download iTunes</a><a class="btn-fill" href="https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe">Download iCloud</a></div>`
+    )}`,
+  //sideload app
+  (os) =>
+    `If you are running iOS or iPadOS 16 or higher, you must enable Developer Mode to sideload apps.<ul class="list-decimal list-inside"><li>Open Settings</li><li>Tap “Privacy & Security”</li><li>Scroll to the bottom, and toggle Developer Mode on.</li></ul><br>Then, follow these steps to install SideStore:<ul class="list-disc list-inside"><li>Plug your device into your computer via a cable</li><li>Trust your computer on your device (if prompted)</li><li>${osW(
+      'Launch SideServer and pick <code>Install SideStore</code> from the SideServer icon in the menu bar',
+      'Right click on the SideServer tray icon, and pick <code>Install SideStore</code>'
+    )}</li><li>Follow the instructions until SideServer confirms that SideStore has been installed (you may need to enter your iCloud account login details)</li><li>Open <code>Settings > General > VPN & Device Management</code> on your device</li> and approve the <code>Developer App</code> with your Apple ID's email.`,
+  //wireguard vpn
+  () =>
+    `On your device, you'll need to download the WireGuard VPN app.<a class="btn-fill" target="_blank" href="https://apps.apple.com/us/app/wireguard/id1441195209">Download WireGuard</a>After that, you'll need to import SideStore's WireGuard configuration. (Download the file and then you can "share" it to the WireGuard app).<a class="btn-fill" target="_blank" href="https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.conf">Download WireGuard Config</a>You'll have to turn on the VPN every time you want to use SideStore to sideload apps. You can turn it off when you're done, and the VPN doesn't connect to an external server, as it operates on-device.`,
+  //finished
+  () =>
+    `Now to finish the process, <ul class="list-disc list-inside"><li>Open SideStore and sign in with the same Apple ID you used to install SideStore.</li><li>Go to the Apps tab and refresh the SideStore app itself once (you might have to swipe up to your homescreen for the process to complete).</li></ul><br> Now, you're all set! You can install apps from the sources tab or any other <code>.ipa</code> file you have.`,
+];
+
+const osSelect = document.querySelector('#setup-os-select');
+const setupNextBtn = document.querySelector('#setup-next-btn');
+const setupPrevBtn = document.querySelector('#setup-prev-btn');
+const setupContent = document.querySelector('#setup-content');
+const setupStepper = [...document.querySelectorAll('#setup-stepper li')];
+const update = (act) => {
+  setupStepper.map((item, idx) => {
+    item.classList.remove('active');
+    if (idx == act) item.classList.add('active');
+  });
+
+  setupContent.innerHTML = setupStepContents[act](detectedOS);
+  act == 0 ? (setupPrevBtn.style.display = 'none') : (setupPrevBtn.style.display = 'flex');
+  act == 3 ? (setupNextBtn.style.display = 'none') : (setupNextBtn.style.display = 'flex');
+};
+
+setupNextBtn.addEventListener('click', () => {
+  let activeStep = document.querySelector('#setup-stepper li.active');
+  let activeStepIndex = setupStepper.indexOf(activeStep);
+  if (activeStepIndex == 3) return;
+  update(activeStepIndex + 1);
+});
+
+setupPrevBtn.addEventListener('click', () => {
+  let activeStep = document.querySelector('#setup-stepper li.active');
+  let activeStepIndex = setupStepper.indexOf(activeStep);
+  if (activeStepIndex == 0) return;
+  update(activeStepIndex - 1);
+});
+osSelect.addEventListener('change', (e) => {
+  detectedOS = e.target.value;
+  update(setupStepper.indexOf(document.querySelector('#setup-stepper li.active')));
+});
+osSelect.value = detectedOS;
+
+setupStepper.map((step, index) => step.addEventListener('click', () => update(index)));
+update(0);
+
 let template = (html, obj, urlkeys) => {
   Object.keys(obj).forEach(
     (key) => (html = html.replace(new RegExp(`{{${key}}}`, 'g'), urlkeys.indexOf(key) > -1 ? new URL(obj[key], import.meta.url) : obj[key]))
@@ -8,59 +108,118 @@ let template = (html, obj, urlkeys) => {
   return html;
 };
 
-let marqueeItem = `<div class="mx-2 flex h-auto w-max max-w-[324px] items-center rounded-xl bg-[rgba(31,32,35,.3)] shadow-sm backdrop-blur-2xl px-4 py-4"><img src="{{icon}}" alt="{{name}}" class="mr-4 h-16 w-16 rounded-xl" /><div class="flex flex-col justify-center"><h1 class="text-xl font-medium font-['Poppins'] text-gray-200">{{name}}</h1><p class="whitespace-pre-line text-sm text-gray-200">{{desc}}</p></div></div>`;
-let eventItem = `<li class="flex items-center mb-1.5"><img class="mr-2 h-5 w-5 rounded-full" loading="lazy" src="{{avatar}}" alt="{{actor_name}}"/><p class="font-mono text-xs text-gray-300">{{message}}</p></li>`;
+let marqueeItem = `<div class="marquee-card"><img src="{{icon}}" alt="{{name}}" class="mr-4 h-[4.15rem] w-[4.15rem] min-h-[4.15rem] min-w-[4.15rem] rounded-[0.925rem] shadow-sm p-0.5"/><div class="flex flex-col justify-center"><h1 class="text-xl font-medium font-title text-zinc-200">{{name}}</h1><p class="whitespace-pre-line text-sm text-zinc-300/70">{{desc}}</p></div></div>`;
+let eventItem = `<div class="flex items-center w-full" style="--custom-index:{{index}}"> <img class="mr-4 h-8 w-8 rounded-lg" loading="lazy" src="{{avatar}}" alt="{{actor_name}}"/> <div class="flex flex-col justify-center"> <p class="text-sm sm:text-base font-medium text-gray-300">{{message}}</p><p class="text-xs sm:text-sm text-gray-300 text-zinc-300/70">{{sub}}</p></div></div>`;
+const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_blank" class="flex flex-col w-full gridok:h-full max-w-md p-4 border rounded-2xl border-zinc-800 text-zinc-200 bg-material/50 hover:bg-material hover:border-zinc-700 hover:shadow-xl"> <span class="text-[1.075rem] text-semibold font-title">{{name}}</span> <p class="text-zinc-300/70 overflow-x-ellipsis whitespace-pre-wrap text-[0.9rem]">{{description}}</p><div class="gridok:flex-grow" ></div><div class="flex space-x-3 mt-1 text-[0.9rem]"> <div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 256 256"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>{{stars}}</div><div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 256 256"><path d="M216,48H40A16,16,0,0,0,24,64V224a15.84,15.84,0,0,0,9.25,14.5A16.05,16.05,0,0,0,40,240a15.89,15.89,0,0,0,10.25-3.78.69.69,0,0,0,.13-.11L82.5,208H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48ZM84,140a12,12,0,1,1,12-12A12,12,0,0,1,84,140Zm44,0a12,12,0,1,1,12-12A12,12,0,0,1,128,140Zm44,0a12,12,0,1,1,12-12A12,12,0,0,1,172,140Z"></path></svg>{{issues}}</div><div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 256 256"><path d="M104,64A32,32,0,1,0,64,95v66a32,32,0,1,0,16,0V95A32.06,32.06,0,0,0,104,64ZM88,192a16,16,0,1,1-16-16A16,16,0,0,1,88,192Zm144,0a32,32,0,1,1-40-31V123.88A39.71,39.71,0,0,0,180.28,95.6L152,67.31V96a8,8,0,0,1-16,0V48a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H163.31L191.6,84.28a55.67,55.67,0,0,1,16.4,39.6V161A32.06,32.06,0,0,1,232,192Z"></path></svg>{{forks}}</div></div></a>`;
 
 (async () => {
-  let apps = rawApps
-    .sort(() => Math.random() - 0.5);
+  let apps = rawApps.sort(() => Math.random() - 0.5);
 
   apps = apps
     .map((i) => ({ ...i, icon: icons[i.name].endsWith('.webp') ? icons[i.name] : icons[i.name] + '.webp' }))
     .map((i) => template(marqueeItem, i, ['icon']));
 
-  let set1 = apps.sort(() => Math.random() - 0.5).join('');
-  let set2 = apps.sort(() => Math.random() - 0.5).join('');
-  document.querySelectorAll('#marquee1').forEach((el) => (el.innerHTML = set1.repeat(2)));
-  document.querySelectorAll('#marquee2').forEach((el) => (el.innerHTML = set2.repeat(2)));
-  document.querySelectorAll('.marquee-inner').forEach((e) => (e.style['animation-play-state'] = 'running'));
+  let set1 = apps.join('');
+  let set2 = apps.reverse().join('');
+
+  document.querySelectorAll('#marquee1').forEach((el) => (el.innerHTML = set1));
+  document.querySelectorAll('#marquee2').forEach((el) => (el.innerHTML = set2));
+  observeElements();
+  // ensure gpu acceleration
+  document.querySelectorAll('.marquee-inner').forEach((e) => (e.style['transform'] = 'translateZ(0)'));
+
+  document.querySelector('#show-all-downloads').addEventListener('click', () => {
+    document.querySelector('#all-downloads').classList.remove('hidden');
+    document.querySelector('#all-downloads').classList.add('flex');
+    setTimeout(() => {
+      document.querySelector('#all-downloads').classList.add('show');
+    }, 10);
+  });
+  document.querySelector('#close-all-downloads').addEventListener('click', () => {
+    document.querySelector('#all-downloads').classList.remove('show');
+    setTimeout(() => {
+      document.querySelector('#all-downloads').classList.remove('flex');
+      document.querySelector('#all-downloads').classList.add('hidden');
+    }, 150);
+  });
+  // start animation
+
+  // document.querySelectorAll('.marquee-inner').forEach((e) => (e.style['animation-play-state'] = 'running'));
 
   console.log(`Loaded apps marquee with ${apps.length} items.`);
 
+  let cache_log = JSON.parse(localStorage.getItem('eventLogCache')) || [];
   let eventLog = [];
-  if (process.env.NODE_ENV !== 'production') {
+  //less than 5 minutes old
+  if (cache_log.length && localStorage.getItem('eventLogCacheDate') < Date.now() - 1000 * 60 * 5) eventLog = cache_log;
+  if (process.env.NODE_ENV !== 'production' && !eventLog.length) {
     eventLog = await import('./assets/mockevents.json');
   } else {
     eventLog = await (await fetch('https://api.github.com/orgs/sidestore/events?per_page=100')).json();
+    localStorage.setItem('eventLogCache', JSON.stringify(eventLog));
   }
 
-  // loop over all elements with the id "dropdown-button", get the attribute "linked-dropdown" and when the element with the id of the attribute is clicked, add the classes from the attribute "dropdown-hidden" to the element with the id of the attribute and remove the classes from the attribute "dropdown-visible" from the element with the id of the attribute and vice versa
-  document.querySelectorAll('[linked-dropdown]').forEach((el) => {
-    const linkedDropdown = document.getElementById(el.getAttribute('linked-dropdown'));
-    const dropdownHidden = linkedDropdown.getAttribute('dropdown-hidden').split(' ') || [];
-    const dropdownVisible = linkedDropdown.getAttribute('dropdown-visible').split(' ') || [];
-    const copyWidth = linkedDropdown.getAttribute('dd-copy-width') ? document.querySelector(linkedDropdown.getAttribute('dd-copy-width')) : false;
-    console.log(`Linked dropdown button to ${`#` + linkedDropdown.id || `.` + el.class}.`);
-    const hide = () => {
-      linkedDropdown.classList.remove('dd-visible');
-      dropdownHidden.forEach((i) => linkedDropdown.classList.add(i));
-      dropdownVisible.forEach((i) => linkedDropdown.classList.remove(i));
-    };
-    hide();
-    el.addEventListener('click', () => {
-      // if the linked dropdown has the class dd-visibile, then remove visible tags and add hidden tags
-      if (linkedDropdown.classList.contains('dd-visible')) hide();
-      else {
-        linkedDropdown.classList.add('dd-visible');
-        if (copyWidth) linkedDropdown.style.width = copyWidth.offsetWidth + 'px';
-        dropdownHidden.forEach((i) => linkedDropdown.classList.remove(i));
-        dropdownVisible.forEach((i) => linkedDropdown.classList.add(i));
-        //scroll to top of dropdown
-        // linkedDropdown.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+  const cache_repos = JSON.parse(localStorage.getItem('reposCache')) || [];
+  let repos = [];
+  if (cache_repos.length && localStorage.getItem('reposCacheDate') < Date.now() - 1000 * 60 * 60 * 4) repos = cache_repos;
+  if (process.env.NODE_ENV !== 'production' && !repos.length) {
+    repos = await import('./assets/mockrepos.json');
+  } else {
+    repos = await (await fetch('https://api.github.com/users/sidestore/repos?per_page=50')).json();
+    localStorage.setItem('reposCache', JSON.stringify(repos));
+  }
 
+  // document.querySelectorAll('[linked-dropdown]').forEach((el) => {
+  //   const linkedDropdown = document.getElementById(el.getAttribute('linked-dropdown'));
+  //   const dropdownHidden = linkedDropdown.getAttribute('dropdown-hidden').split(' ') || [];
+  //   const dropdownVisible = linkedDropdown.getAttribute('dropdown-visible').split(' ') || [];
+  //   const copyWidth = linkedDropdown.getAttribute('dd-copy-width') ? document.querySelector(linkedDropdown.getAttribute('dd-copy-width')) : false;
+  //   console.log(`Linked dropdown button to ${`#` + linkedDropdown.id || `.` + el.class}.`);
+  //   const hide = () => {
+  //     linkedDropdown.classList.remove('dd-visible');
+  //     dropdownHidden.forEach((i) => linkedDropdown.classList.add(i));
+  //     dropdownVisible.forEach((i) => linkedDropdown.classList.remove(i));
+  //   };
+  //   hide();
+  //   el.addEventListener('click', () => {
+  //     // if the linked dropdown has the class dd-visibile, then remove visible tags and add hidden tags
+  //     if (linkedDropdown.classList.contains('dd-visible')) hide();
+  //     else {
+  //       linkedDropdown.classList.add('dd-visible');
+  //       if (copyWidth) linkedDropdown.style.width = copyWidth.offsetWidth + 'px';
+  //       dropdownHidden.forEach((i) => linkedDropdown.classList.remove(i));
+  //       dropdownVisible.forEach((i) => linkedDropdown.classList.add(i));
+  //       //scroll to top of dropdown
+  //       // linkedDropdown.scrollIntoView({ behavior: 'smooth' });
+  //     }
+  //   });
+  // });
+
+  const builtRepos = repos
+    .sort((a, b) => b.stargazers_count - a.stargazers_count)
+    .filter((i) => i.id != 563241929)
+    .slice(0, 9)
+    .map((i, index) => {
+      let descP = (i.description.length > 85 ? i.description.split('.')[0].split('and')[0] : i.description).trim();
+      descP.endsWith('.') || descP.endsWith(',') ? (descP = descP.slice(0, -1)) : null;
+      return template(
+        repoItem,
+        {
+          name: i.name.replace(/_/g, '-'),
+          description: descP,
+          stars: i.stargazers_count,
+          forks: i.forks_count,
+          issues: i.open_issues_count,
+          url: i.html_url,
+          index,
+        },
+        []
+      );
+    })
+    .join('');
+
+  document.querySelector('#repos-grid').innerHTML = builtRepos;
+  observeElements();
   const typeMap = {
     PushEvent: 'commit',
     IssueCommentEvent: 'issue_comment',
@@ -117,47 +276,38 @@ let eventItem = `<li class="flex items-center mb-1.5"><img class="mr-2 h-5 w-5 r
 
       return i;
     })
-    .map((i) => {
+    .map((i, index) => {
       let url = (t) => t.replace(/https:\/\/api\.github\.com\/(users|repos)/i, 'https://github.com');
       let glink = (id, type) => `<a class="glink" target="_blank" href="${`${url(i.data.repo.url)}/${type}/${id}`}">#${id}</a>`;
 
       let text = `<a class="glink" href="${url(i.data.actor.url)}">${i.data.actor.login}</a> `;
-      if (i.event == 'commit') text += `pushed ${i.data.commits} commit${i.data.commits > 1 ? 's' : ''} to `;
-      if (i.event == 'issue_comment') text += `commented on issue ${glink(i.data.issueID, 'issues')} in `;
-      if (i.event == 'pull_comment') text += `commented on pull request ${glink(i.data.pullID, 'pull')} in `;
-      if (i.event == 'pull_request') text += ` ${i.data.action} pull request ${glink(i.data.pullID, 'pull')} in `;
+      if (i.event == 'commit') text += `pushed ${i.data.commits} commit${i.data.commits > 1 ? 's' : ''}`;
+      if (i.event == 'issue_comment') text += `commented on issue ${glink(i.data.issueID, 'issues')}`;
+      if (i.event == 'pull_comment') text += `commented on pull request ${glink(i.data.pullID, 'pull')}`;
+      if (i.event == 'pull_request') text += ` ${i.data.action} pull request ${glink(i.data.pullID, 'pull')}`;
 
-      text += `<a class="glink" href="${url(i.data.repo.url)}">${i.data.repo.name.split('/')[1]}</a> ${i.data.date.dateSpan}`;
-      return template(eventItem, { avatar: i.data.actor.avatar_url + 'v=3&s=32', message: text, actor_name: i.data.actor.login }, []);
+      let sub = `in <a class="glink" href="${url(i.data.repo.url)}">${i.data.repo.name.split('/')[1]}</a> • ${i.data.date.dateSpan}`;
+      return template(eventItem, { avatar: i.data.actor.avatar_url + 'v=3&s=32', message: text, sub, actor_name: i.data.actor.login, index }, []);
     })
-    .slice(0, 15);
+    .slice(0, 9);
 
   document.querySelectorAll('#event-log').forEach((el) => (el.innerHTML = log.join('')));
-
-  let os = 'unknown';
-
-  if (navigator.appVersion.indexOf("Win") != -1) os = "windows";
-  if (navigator.appVersion.indexOf("Mac") != -1) os = "macos";
-  if (navigator.appVersion.indexOf("X11") != -1 || navigator.appVersion.indexOf("Linux") != -1) os = "nix";
-
+  observeElements();
 
   // for every button with id "hookPlatformDL"
-  document.querySelectorAll('#hookPlatformDL').forEach((el) => {
-    const ddList = document.querySelector(el.getAttribute('platform-dl-list'));
-    const platformDLElement = ddList.querySelector(`[dl-platform=${os}]`);
-    const platformText = el.querySelector("#platformText");
-    console.log(platformDLElement);
-    if (platformText)
-      platformText.innerText = `for ${platformDLElement.innerText}`;
+  // document.querySelectorAll('#hookPlatformDL').forEach((el) => {
+  //   const ddList = document.querySelector(el.getAttribute('platform-dl-list'));
+  //   const platformDLElement = ddList.querySelector(`[dl-platform=${os}]`);
+  //   const platformText = el.querySelector('#platformText');
+  //   console.log(platformDLElement);
+  //   if (platformText) platformText.innerText = `for ${platformDLElement.innerText}`;
 
-    if (platformDLElement.classList.contains('disabled') || platformDLElement.hasAttribute('disabled'))
-      return el.classList.add('disabled');
-    el.href = platformDLElement.href;
+  //   if (platformDLElement.classList.contains('disabled') || platformDLElement.hasAttribute('disabled')) return el.classList.add('disabled');
+  //   el.href = platformDLElement.href;
+  // });
 
-  });
-
-  const releaseData = await (await fetch("https://api.github.com/repos/sidestore/sidestore/releases/latest")).json()
-  const versionTag = releaseData.tag_name || "?.?.?";
-  const label = document.querySelector("#hook-latest-ipa-version");
-  label.innerText = `v${versionTag}`;
+  // const releaseData = await (await fetch('https://api.github.com/repos/sidestore/sidestore/releases/latest')).json();
+  // const versionTag = releaseData.tag_name || '?.?.?';
+  // const label = document.querySelector('#hook-latest-ipa-version');
+  // label.innerText = `v${versionTag}`;
 })();
