@@ -67,7 +67,7 @@ const osSelect = document.querySelector('#setup-os-select');
 const setupNextBtn = document.querySelector('#setup-next-btn');
 const setupPrevBtn = document.querySelector('#setup-prev-btn');
 const setupContent = document.querySelector('#setup-content');
-const setupStepper = [...document.querySelectorAll('#setup-stepper li')];
+const setupStepper = [...document.querySelectorAll('#setup-stepper li:not([aria-hidden="true"])')];
 const update = (act) => {
   setupStepper.map((item, idx) => {
     item.classList.remove('active');
