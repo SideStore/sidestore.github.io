@@ -152,21 +152,25 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
   let eventLog = [];
   //less than 5 minutes old
   if (cache_log.length && localStorage.getItem('eventLogCacheDate') < Date.now() - 1000 * 60 * 5) eventLog = cache_log;
-  if (process.env.NODE_ENV !== 'production' && !eventLog.length) {
+  if (process.env.NODE_ENV !== 'production') {
     eventLog = await import('./assets/mockevents.json');
   } else {
-    eventLog = await (await fetch('https://api.github.com/orgs/sidestore/events?per_page=100')).json();
-    localStorage.setItem('eventLogCache', JSON.stringify(eventLog));
+    if (!eventLog.length) {
+      eventLog = await (await fetch('https://api.github.com/orgs/sidestore/events?per_page=100')).json();
+      localStorage.setItem('eventLogCache', JSON.stringify(eventLog));
+    }
   }
 
   const cache_repos = JSON.parse(localStorage.getItem('reposCache')) || [];
   let repos = [];
   if (cache_repos.length && localStorage.getItem('reposCacheDate') < Date.now() - 1000 * 60 * 60 * 4) repos = cache_repos;
-  if (process.env.NODE_ENV !== 'production' && !repos.length) {
+  if (process.env.NODE_ENV !== 'production') {
     repos = await import('./assets/mockrepos.json');
   } else {
-    repos = await (await fetch('https://api.github.com/users/sidestore/repos?per_page=50')).json();
-    localStorage.setItem('reposCache', JSON.stringify(repos));
+    if (!repos.length) {
+      repos = await (await fetch('https://api.github.com/users/sidestore/repos?per_page=50')).json();
+      localStorage.setItem('reposCache', JSON.stringify(repos));
+    }
   }
 
   // document.querySelectorAll('[linked-dropdown]').forEach((el) => {
