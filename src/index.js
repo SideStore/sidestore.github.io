@@ -44,10 +44,10 @@ let setupStepContents = [
       'A PC running Linux, of some sort'
     )}</li><li>An iCloud account (a burner account is recommended)</li><li>An Internet connection</li><li>An iPhone or iPad with iOS 14 or iPadOS 14 or later</li></ul><br>On your computer, download the following:<a class="btn-fill" target="_blank" href="${osW(
       'https://github.com/SideStore/SideServer-macOS/releases/latest/download/SideServer.dmg',
-      'https://github.com/SideStore/SideServer-Windows/releases/latest/download/SideServer.Installer.msi'
+      'https://github.com/SideStore/SideServer-Windows/releases/latest/download/SideServer.Installer.zip'
     )}">Download SideServer</a>${osW(
       `Then, open the downloaded file and drag <code>SideServer.app</code> to your Applications folder. Now, open the app (you may have to right click and select "Open" if you get a warning).`,
-      `Then, open the downloaded file and run the installer. You'll also need to install the non-Microsoft Store version of iTunes, and iCloud and uninstall the Microsoft Store versions if you have either installed.<div class="flex flex-col xs:flex-row space-y-2 xs:space-y-0 xs:space-x-2"><a class="btn-fill" href="https://support.apple.com/en-us/HT210384">Download iTunes</a><a class="btn-fill" href="https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe">Download iCloud</a></div>`
+      `Then, extract the downloaded file and run <code>setup.exe</code> to install SideServer. You'll also need to install the non-Microsoft Store version of iTunes, and iCloud and uninstall the Microsoft Store versions if you have either installed.<div class="flex flex-wrap gap-2"><a class="btn-fill" href="https://support.apple.com/en-us/HT210384">Download iTunes</a><a class="btn-fill" href="https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe">Download iCloud</a></div>`
     )}`,
   //sideload app
   (os) =>
@@ -69,12 +69,17 @@ const setupPrevBtn = document.querySelector('#setup-prev-btn');
 const setupContent = document.querySelector('#setup-content');
 const setupStepper = [...document.querySelectorAll('#setup-stepper li:not([aria-hidden="true"])')];
 const update = (act) => {
-  setupStepper.map((item, idx) => {
-    item.classList.remove('active');
-    if (idx == act) item.classList.add('active');
-  });
+  setupStepper.map((item, idx) => item.classList.toggle('active', idx == act));
 
-  setupContent.innerHTML = setupStepContents[act](detectedOS);
+  setupContent.classList.add('!opacity-0');
+  // setupContent.classList.remove('translate-y-[40px]');
+  setupContent.classList.add('translate-y-[10px]');
+
+  setTimeout(() => {
+    setupContent.innerHTML = setupStepContents[act](detectedOS);
+    setupContent.classList.remove('!opacity-0');
+    setupContent.classList.remove('translate-y-[10px]');
+  }, 300);
   act == 0 ? (setupPrevBtn.style.display = 'none') : (setupPrevBtn.style.display = 'flex');
   act == 3 ? (setupNextBtn.style.display = 'none') : (setupNextBtn.style.display = 'flex');
 };

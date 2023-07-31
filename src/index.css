@@ -147,7 +147,7 @@
   }
 
   .stepper-pill {
-    @apply flex w-max min-w-max items-center rounded-full border border-zinc-800 bg-material px-3 py-1 shadow-md transition-colors group-[.active]:border-purple-400/60 group-[.active]:bg-side-purple-700/30 group-[.active]:font-title group-[.active]:font-medium hover:border-purple-400/40 hover:bg-side-purple-700/20;
+    @apply flex w-max min-w-max items-center rounded-full border border-zinc-800 bg-material px-3 py-1 shadow-md transition-colors duration-300 group-[.active]:border-purple-400/60 group-[.active]:bg-side-purple-700/30 group-[.active]:font-title  hover:border-purple-400/40 hover:bg-side-purple-700/20 xs:group-[.active]:font-medium;
   }
 
   .btn-fill.disabled,
