@@ -80,8 +80,9 @@ const update = (act) => {
     setupContent.classList.remove('!opacity-0');
     setupContent.classList.remove('translate-y-[10px]');
   }, 300);
-  act == 0 ? (setupPrevBtn.style.display = 'none') : (setupPrevBtn.style.display = 'flex');
-  act == 3 ? (setupNextBtn.style.display = 'none') : (setupNextBtn.style.display = 'flex');
+  setupPrevBtn.classList.toggle('hidden', act == 0);
+  setupNextBtn.classList.toggle('hidden', act == 3);
+  document.querySelector('#setup-btn-wrap').classList.toggle('onlyprev', act == 3);
 };
 
 setupNextBtn.addEventListener('click', () => {

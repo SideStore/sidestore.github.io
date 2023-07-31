@@ -14,6 +14,7 @@ module.exports = {
         buttonsok: '355px',
         stoplgtranslation: '1330px',
         gridok: '896px',
+        nextprevok: '1096px',
         grid35ok: '1268px',
         grid12ok: '1422px',
         dualbuttonok: '540px',
