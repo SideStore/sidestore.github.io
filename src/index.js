@@ -53,10 +53,10 @@ let setupStepContents = [
     )}`,
   //sideload app
   (os) =>
-    `If you are running iOS or iPadOS 16 or higher, you must enable Developer Mode to sideload apps.<ul class="list-decimal list-inside"><li>Open Settings</li><li>Tap “Privacy & Security”</li><li>Scroll to the bottom, and toggle Developer Mode on.</li></ul><br><b>Then, follow these steps to install SideStore:</b><ul class="list-disc list-inside"><li>Plug your device into your computer via a cable</li><li>Trust your computer on your device (if prompted)</li><li>${osW(
+    `<b>Follow these steps to install SideStore:</b><ul class="list-disc list-inside"><li>Plug your device into your computer via a cable</li><li>Trust your computer on your device (if prompted)</li><li>${osW(
       'Launch SideServer and pick <code>Install SideStore</code> from the SideServer icon in the menu bar',
       'Right click on the SideServer tray icon, and pick <code>Install SideStore</code>'
-    )}</li><li>Follow the instructions until SideServer confirms that SideStore has been installed (you may need to enter your iCloud account login details)</li><li>Open <code>Settings > General > VPN & Device Management</code> on your device</li> and approve the <code>Developer App</code> with your Apple ID's email.`,
+    )}</li><li>Follow the instructions until SideServer confirms that SideStore has been installed (you may need to enter your iCloud account login details)</li><li>If you are running iOS or iPadOS 16 or higher, you must enable Developer Mode to use sideloaded apps (this only shows up <b>after you sideload an app for the first time</b>)<ul class="list-decimal list-inside ml-4 sm:ml-6"><li>Open Settings</li><li>Tap “Privacy & Security”</li><li>Scroll to the bottom, and toggle Developer Mode on</li></ul></li><li>Open <code>Settings > General > VPN & Device Management</code> on your device</li> and approve the <code>Developer App</code> with your Apple ID's email.`,
   //wireguard vpn
   () =>
     `On your device, you'll need to download the WireGuard VPN app.<a class="btn-fill" target="_blank" href="https://apps.apple.com/us/app/wireguard/id1441195209">Download WireGuard</a>After that, you'll need to import SideStore's WireGuard configuration. (Download the file and then you can "share" it to the WireGuard app).<a class="btn-fill" target="_blank" href="https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.conf">Download WireGuard Config</a>You'll have to turn on the VPN every time you want to use SideStore to sideload apps. You can turn it off when you're done, and the VPN doesn't connect to an external server, as it operates on-device.`,
@@ -209,7 +209,7 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
 
   const builtRepos = repos
     .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .filter((i) => i.id != 563241929)
+    .filter((i) => i.id != 563241929) // sidestore_downloader
     .slice(0, 9)
     .map((i, index) => {
       let descP = (i.description.length > 85 ? i.description.split('.')[0].split('and')[0] : i.description).trim();
