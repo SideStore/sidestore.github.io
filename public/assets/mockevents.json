@@ -1,5 +1,132 @@
 [
   {
+    "id": "34968955073",
+    "type": "PushEvent",
+    "actor": {
+      "id": 40409848,
+      "login": "junepark678",
+      "display_login": "junepark678",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/junepark678",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40409848?"
+    },
+    "repo": {
+      "id": 502541849,
+      "name": "SideStore/sidestore.github.io",
+      "url": "https://api.github.com/repos/SideStore/sidestore.github.io"
+    },
+    "payload": {
+      "repository_id": 502541849,
+      "push_id": 16713883497,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/rewrite",
+      "head": "c5ad92c0aa92c0c9cc58e48337c073a5c91dafdf",
+      "before": "1bdeaf7db52f45e3e7ac01344c146a35b1658082",
+      "commits": [
+        {
+          "sha": "c5ad92c0aa92c0c9cc58e48337c073a5c91dafdf",
+          "author": {
+            "email": "rjp2030@outlook.com",
+            "name": "June P"
+          },
+          "message": "remove unnecessary css link",
+          "distinct": true,
+          "url": "https://api.github.com/repos/SideStore/sidestore.github.io/commits/c5ad92c0aa92c0c9cc58e48337c073a5c91dafdf"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2024-01-19T17:46:22Z",
+    "org": {
+      "id": 105070799,
+      "login": "SideStore",
+      "gravatar_id": "",
+      "url": "https://api.github.com/orgs/SideStore",
+      "avatar_url": "https://avatars.githubusercontent.com/u/105070799?"
+    }
+  },
+  {
+    "id": "34968918733",
+    "type": "PushEvent",
+    "actor": {
+      "id": 40409848,
+      "login": "junepark678",
+      "display_login": "junepark678",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/junepark678",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40409848?"
+    },
+    "repo": {
+      "id": 502541849,
+      "name": "SideStore/sidestore.github.io",
+      "url": "https://api.github.com/repos/SideStore/sidestore.github.io"
+    },
+    "payload": {
+      "repository_id": 502541849,
+      "push_id": 16713865156,
+      "size": 1,
+      "distinct_size": 1,
+      "ref": "refs/heads/rewrite",
+      "head": "1bdeaf7db52f45e3e7ac01344c146a35b1658082",
+      "before": "3d7c469dc486a08f66a7a8a30e53f75e3be45c24",
+      "commits": [
+        {
+          "sha": "1bdeaf7db52f45e3e7ac01344c146a35b1658082",
+          "author": {
+            "email": "rjp2030@outlook.com",
+            "name": "June P"
+          },
+          "message": "Fix readme",
+          "distinct": true,
+          "url": "https://api.github.com/repos/SideStore/sidestore.github.io/commits/1bdeaf7db52f45e3e7ac01344c146a35b1658082"
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2024-01-19T17:44:45Z",
+    "org": {
+      "id": 105070799,
+      "login": "SideStore",
+      "gravatar_id": "",
+      "url": "https://api.github.com/orgs/SideStore",
+      "avatar_url": "https://avatars.githubusercontent.com/u/105070799?"
+    }
+  },
+  {
+    "id": "34968808294",
+    "type": "CreateEvent",
+    "actor": {
+      "id": 40409848,
+      "login": "junepark678",
+      "display_login": "junepark678",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/junepark678",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40409848?"
+    },
+    "repo": {
+      "id": 502541849,
+      "name": "SideStore/sidestore.github.io",
+      "url": "https://api.github.com/repos/SideStore/sidestore.github.io"
+    },
+    "payload": {
+      "ref": "rewrite",
+      "ref_type": "branch",
+      "master_branch": "master",
+      "description": "https://sidestore.io",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2024-01-19T17:40:01Z",
+    "org": {
+      "id": 105070799,
+      "login": "SideStore",
+      "gravatar_id": "",
+      "url": "https://api.github.com/orgs/SideStore",
+      "avatar_url": "https://avatars.githubusercontent.com/u/105070799?"
+    }
+  },
+  {
     "id": "34966859424",
     "type": "PushEvent",
     "actor": {
@@ -8211,93 +8338,6 @@
     },
     "public": true,
     "created_at": "2024-01-08T01:48:36Z",
-    "org": {
-      "id": 105070799,
-      "login": "SideStore",
-      "gravatar_id": "",
-      "url": "https://api.github.com/orgs/SideStore",
-      "avatar_url": "https://avatars.githubusercontent.com/u/105070799?"
-    }
-  },
-  {
-    "id": "34635828711",
-    "type": "WatchEvent",
-    "actor": {
-      "id": 151382658,
-      "login": "josephjsteen1",
-      "display_login": "josephjsteen1",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/josephjsteen1",
-      "avatar_url": "https://avatars.githubusercontent.com/u/151382658?"
-    },
-    "repo": {
-      "id": 609742062,
-      "name": "SideStore/omnisette-server",
-      "url": "https://api.github.com/repos/SideStore/omnisette-server"
-    },
-    "payload": {
-      "action": "started"
-    },
-    "public": true,
-    "created_at": "2024-01-08T01:48:30Z",
-    "org": {
-      "id": 105070799,
-      "login": "SideStore",
-      "gravatar_id": "",
-      "url": "https://api.github.com/orgs/SideStore",
-      "avatar_url": "https://avatars.githubusercontent.com/u/105070799?"
-    }
-  },
-  {
-    "id": "34630405607",
-    "type": "WatchEvent",
-    "actor": {
-      "id": 5357004,
-      "login": "daoye",
-      "display_login": "daoye",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/daoye",
-      "avatar_url": "https://avatars.githubusercontent.com/u/5357004?"
-    },
-    "repo": {
-      "id": 489490307,
-      "name": "SideStore/SideStore",
-      "url": "https://api.github.com/repos/SideStore/SideStore"
-    },
-    "payload": {
-      "action": "started"
-    },
-    "public": true,
-    "created_at": "2024-01-07T15:22:21Z",
-    "org": {
-      "id": 105070799,
-      "login": "SideStore",
-      "gravatar_id": "",
-      "url": "https://api.github.com/orgs/SideStore",
-      "avatar_url": "https://avatars.githubusercontent.com/u/105070799?"
-    }
-  },
-  {
-    "id": "34629463593",
-    "type": "WatchEvent",
-    "actor": {
-      "id": 24431667,
-      "login": "Jeffrey031",
-      "display_login": "Jeffrey031",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/Jeffrey031",
-      "avatar_url": "https://avatars.githubusercontent.com/u/24431667?"
-    },
-    "repo": {
-      "id": 489490307,
-      "name": "SideStore/SideStore",
-      "url": "https://api.github.com/repos/SideStore/SideStore"
-    },
-    "payload": {
-      "action": "started"
-    },
-    "public": true,
-    "created_at": "2024-01-07T13:37:29Z",
     "org": {
       "id": 105070799,
       "login": "SideStore",

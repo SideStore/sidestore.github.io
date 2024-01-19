@@ -21,7 +21,7 @@ const folderExists = async (path) => {
   return exists;
 };
 
-const outFolder = path.join(__dirname, '../public/assets/apps_data/');
+const outFolder = 'public/assets/apps_data/';
 //for each app get the name icon and subtitle and download the icon
 (async () => {
   console.log(`✨ Updating mock events...`);
