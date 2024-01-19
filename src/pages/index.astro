@@ -1,0 +1,76 @@
+---
+import '../css/index.css';
+import OpenSource from '../components/astro/OpenSource.astro';
+import NavBar from '../components/astro/NavBar.astro';
+import Hero from '../components/astro/Hero.astro';
+import AppsSection2 from '../components/astro/AppsSection2.astro';
+---
+
+<html lang="en">
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-27VPGVY9C8"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-27VPGVY9C8');
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SideStore</title>
+    <meta name="description" content="An alternative app store that aims to make sideloading apps as seamless as possible." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sidestore.io/" />
+    <meta property="og:title" content="SideStore" />
+    <meta property="og:description" content="An alternative app store that aims to make sideloading apps as seamless as possible." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/SideStore/sidestore.github.io/master/src/assets/embed_card.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sidestore.io/" />
+    <meta property="twitter:title" content="SideStore" />
+    <meta property="twitter:description" content="An alternative app store that aims to make sideloading apps as seamless as possible." />
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/SideStore/sidestore.github.io/master/src/assets/embed_card.png" />
+
+    <link href="assets/favicon-32x32.png" rel="icon" sizes="32x32" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link href="assets/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body class="scrollbar-thin scrollbar-track-[#121316] scrollbar-thumb-[rgb(31,32,35)]" commit-hash="{gh_actions_replace_hash}">
+    <div class="flex flex-col items-center snap-mandatory snap-y">
+      <NavBar />
+      <Hero />
+      <AppsSection2 />
+      <OpenSource />
+    </div>
+  </body>
+  <script defer>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-show');
+        } else {
+          entry.target.classList.remove('animate-fade-show');
+        }
+      });
+    });
+    const observeElements = () =>
+      $$('.section-fade,.section-fade-items').forEach((element) => {
+        observer.observe(element);
+      });
+
+    observeElements();
+  </script>
+</html>

@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
+
+:root {
+  --credit: 'Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.';
+  --msg: 'Used in index.html';
+}
+
+@font-face {
+  font-family: 'SatoshiVariable';
+  src: url('./assets/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 100 200 300 400 500 600 700 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi-Bold.woff2') format('woff2'), url('./assets/fonts/Satoshi-Bold.woff') format('woff'),
+    url('./assets/fonts/Satoshi-Black.woff2') format('woff2'), url('./assets/fonts/Satoshi-Black.woff') format('woff');
+  font-weight: 700, 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+  /* background: radial-gradient(circle closest-corner at 70px 70px, rgba(90, 26, 229, 0.2), #121316 70%),
+      radial-gradient(circle at bottom right, #fff, #121316 70%), #121316; */
+  background: radial-gradient(circle 120vh at 25% -20px, rgba(90, 26, 229, 0.15), rgba(90, 26, 229, 0.15), transparent),
+    radial-gradient(circle 150vh at 70% 80%, rgba(26, 80, 229, 0.15), transparent), #121316;
+}
+
+
+.scrollbar-extrathin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-extrathin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.mask-fade-vertical {
+  mask-image: linear-gradient(to right, hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 20%, hsl(0 0% 0% / 1) 80%, hsl(0 0% 0% / 0));
+}
+
+.mask-fade-horizontal {
+  mask-image: linear-gradient(to bottom, hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 20%, hsl(0 0% 0% / 1) 80%, hsl(0 0% 0% / 0));
+}
+
+.mask-fade-bottom {
+  mask-image: linear-gradient(#fff, #000000 50%, #0000);
+}
+
+.marquee-container {
+  --offset: -0%;
+  --move-initial: -0;
+  --move-final: calc(-50% + var(--offset));
+}
+
+.marquee-inner {
+  animation: marquee 240s linear infinite;
+  transform: translateZ(0) translateX(var(--move-initial));
+  will-change: contents;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-inner {
+    animation-play-state: paused !important;
+  }
+}
+
+.marquee-inner.marquee-reverse {
+  animation-direction: reverse;
+}
+
+.marquee-wrapper {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.shadow-title-r {
+  background: linear-gradient(to bottom right, #fff 30%, hsla(0, 0%, 100%, 0.5));
+  background-clip: text;
+}
+
+.shadow-title-b {
+  background: linear-gradient(to bottom, #fff 5%, #fff 30%, hsla(0, 0%, 100%, 0.6));
+  background-clip: text;
+}
+
+.grid-fix {
+  -webkit-margin-top-collapse: discard;
+}
+
+.section-fade,
+.section-fade-items>* {
+  opacity: 0;
+  transform: translateY(80px) translateZ(0);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  -webkit-margin-top-collapse: discard;
+}
+
+.section-fade-less {
+  opacity: 0;
+  transform: translateY(40px) translateZ(0);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.section-fade-items>* {
+  transform: translateY(40px) translateZ(0);
+  transition-delay: calc((var(--custom-index)) * 80ms);
+}
+
+.animate-fade-show,
+.section-fade-items.animate-fade-show>* {
+  opacity: 1;
+  transform: translateY(0px) translateZ(0);
+  /* transition-delay: 0ms; */
+}
+
+#repos-grid.animate-fade-show>* {
+  --delay: calc((var(--custom-index, 0)) * 80ms);
+  transition: opacity 0.6s ease-in-out var(--delay), transform 0.6s ease-in-out var(--delay), background-color 150ms ease-in-out 0ms,
+    border-color 150ms ease-in-out 0ms, box-shadow 150ms ease-in-out 0ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-fade {
+    transition: none !important;
+    opacity: 1 !important;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(var(--move-initial)) translateZ(0);
+  }
+
+  100% {
+    transform: translateX(var(--move-final)) translateZ(0);
+  }
+}
+
+@media (min-width: 1110px) {
+  #event-log>*:nth-of-type(1n + 9) {
+    display: none;
+  }
+}
+
+@media (max-width: 896px) {
+  #event-log>*:nth-of-type(1n + 5) {
+    display: none;
+  }
+}
+
+@media (max-width: 896px) {
+  #repos-grid>*:nth-of-type(1n + 4) {
+    display: none;
+  }
+}
+
+@media (max-width: 1268px) {
+  #repos-grid>*:nth-of-type(1n + 5) {
+    display: none;
+  }
+}
+
+@media (max-width: 1421px) {
+  #repos-grid>*:nth-of-type(1n + 7) {
+    display: none;
+  }
+}
+
+/* lg breakpoint */
+@media (min-width: 1422px) {
+  #repos-grid div {
+    display: flex !important;
+  }
+}

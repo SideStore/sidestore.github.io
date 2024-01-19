@@ -1,0 +1,33 @@
+---
+import VioletPhrase from '../preact/VioletPhrase';
+import AppMarquee from '../preact/AppMarquee';
+---
+
+<div
+  id="apps-section-2"
+  class="mt-8 lg:mt-0 mb-32 flex w-full flex-col items-center justify-center lg:max-w-[90rem] lg:px-12 section-fade snap-start"
+>
+  <div class="flex flex-col items-center justify-center max-w-xl px-4 pb-4 text-center lg:mr-4">
+    <span
+      class="px-3 py-1 border rounded-full shadow-[inset_0_-7px_11px_#a48fff1f] text-[0.92rem] border-side-purple-400/60 flex text-white bg-material/50 backdrop-blur-md w-max"
+      >Apps</span
+    >
+    <h1
+      class="text-3xl xs:text-4xl sm:leading-none sm:text-[3rem] font-medium text-white font-title shadow-title-b block bg-clip-text !text-transparent mt-6"
+    >
+      Install any .ipa
+    </h1>
+    <p class="mt-2 sm:mt-3 text-zinc-300/70">
+      SideStore allows you to <VioletPhrase>install any app you want</VioletPhrase>, alongside the many available in our <VioletPhrase>
+        verified sources
+      </VioletPhrase>. And with the <VioletPhrase>in-app JIT enabler</VioletPhrase>, you can play <VioletPhrase>
+        hardware-accelerated games
+      </VioletPhrase>, <VioletPhrase>emulators</VioletPhrase>
+      and
+      <VioletPhrase>anything else.</VioletPhrase>
+    </p>
+  </div>
+
+  <AppMarquee/>
+
+</div>
