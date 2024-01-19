@@ -1,47 +1,11 @@
-# Astro Starter Kit: Minimal
+# SideStore Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+_The primary user-facing website for SideStore, (re)designed by @f1shy-dev_
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+[![Deploy to Github Pages](https://github.com/SideStore/sidestore.github.io/actions/workflows/deploy-site.yml/badge.svg)](https://github.com/SideStore/sidestore.github.io/actions/workflows/deploy-site.yml)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Alt](https://repobeats.axiom.co/api/embed/0a9e089823503d17f4e9dcf17db235433bfb926d.svg "Repobeats analytics image")
 
-## 🚀 Project Structure
+## Current Design
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+![The SideStore design](./design.png)
