@@ -40,7 +40,7 @@ else detectedOS = 'mac';
 let setupStepContents = [
   //download sideserver
   () =>
-    `<b><i>Windows Users, please follow the instructions at <a href="https://wiki.sidestore.io/guides/getting-started/#install-via-altserver-windowsmac">the Wiki.</a> SideServer for Windows is currently broken.</b></i>
+    `<b><i>Windows Users, please follow the instructions at <a href="https://wiki.sidestore.io/guides/getting-started/#install-via-altserver-windowsmac">the Wiki.</a> SideServer for Windows is currently broken.</b></i><br><br>
      <b>To get started, you'll need:</b><ul class="list-disc list-inside"><li>${osW(
       'A Mac running macOS 10.15 or later',
       'A PC running Windows 10 or later',

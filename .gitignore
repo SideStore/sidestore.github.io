@@ -9,3 +9,4 @@ src/assets/mockevents.json
 src/assets/mockrepos.json
 src/.DS_Store
 src/assets/.DS_Store
+.yarn/install-state.gz
