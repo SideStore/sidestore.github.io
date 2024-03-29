@@ -54,7 +54,7 @@ let setupStepContents = [
           )}">Download SideStore.ipa</a>
                 <a class="btn-fill" target="_blank" href="${osW(
                   'https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-macos.zip',
-                  'https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-linux.zip'
+                  'https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip'
                 )}">Download JitterbugPair</a>${osW(
       `Then, open the downloaded AltServer zip file and extract it. Then drag <code>AltServer.app</code> to your Applications folder. Now, open the app (you may have to right click and select "Open" if you get a warning).`,
       `Then, extract the downloaded AltInstaller zip file and run <code>setup.exe</code> to install AltServer. You'll also need to install the non-Microsoft Store version of iTunes, and iCloud and uninstall the Microsoft Store versions if you have either installed.<div class="flex flex-wrap gap-2"><a class="btn-fill" href="https://support.apple.com/en-us/HT210384">Download iTunes</a><a class="btn-fill" href="https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe">Download iCloud</a></div>`
@@ -63,7 +63,7 @@ let setupStepContents = [
   (os) =>
     `<b>Follow these steps to install SideStore:</b><ul class="list-disc list-inside"><li>Plug your device into your computer via a cable</li><li>Trust your computer on your device (if prompted)</li><li>${osW(
       'Launch AltServer and hold options and pick <code>Sideload .ipa</code> from the AltServer icon in the menu bar',
-      'Right click on the AltServer tray icon, and pick <code>Sideload .ipa</code>'
+      'Shift-Right click on the AltServer tray icon, and pick <code>Sideload .ipa</code>'
     )}</li><li> Select the SideStore ipa and then Follow the instructions until AltServer confirms that SideStore has been installed (you may need to enter your iCloud account login details)</li><li>If you are running iOS or iPadOS 16 or higher, you must enable Developer Mode to use sideloaded apps (this only shows up <b>after you sideload an app for the first time</b>)<ul class="list-decimal list-inside ml-4 sm:ml-6"><li>Open Settings</li><li>Tap “Privacy & Security”</li><li>Scroll to the bottom, and toggle Developer Mode on</li></ul></li><li>Open <code>Settings > General > VPN & Device Management</code> on your device</li> and approve the <code>Developer App</code> with your Apple ID's email.`,
   //Pairing Idevice
                                                                                                                                                                                                                                                         (os) =>
