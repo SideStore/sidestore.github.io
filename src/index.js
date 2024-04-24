@@ -44,7 +44,7 @@ let setupStepContents = [
       'A Mac running macOS 10.15 or later',
       'A PC running Windows 10 or later',
       'A PC running Linux, of some sort'
-    )}</li><li>An iCloud account (a burner account is recommended but not required)</li><li>An Internet connection</li><li>An iPhone or iPad with iOS 14 or iPadOS 14 or later</li></ul><br>On your computer, download the following:<a class="btn-fill" target="_blank" href="${osW(
+    )}</li><li>An Apple ID</li><li>An Internet connection</li><li>An iPhone or iPad with iOS 14 or iPadOS 14 or later</li></ul><br>On your computer, download the following:<a class="btn-fill" target="_blank" href="${osW(
       'https://cdn.altstore.io/file/altstore/altserver.zip',
       'https://cdn.altstore.io/file/altstore/altinstaller.zip'
     )}">Download AltServer</a>
@@ -61,7 +61,7 @@ let setupStepContents = [
     )}`,
   //sideload app
   (os) =>
-    `<b>Follow these steps to install SideStore:</b><ul class="list-disc list-inside"><li>Plug your device into your computer via a cable.</li><li>Trust your computer on your device (if prompted).</li><li>Launch Altserver and,</li><li>${osW(
+    `<b>Follow these steps to install SideStore:</b><ul class="list-disc list-inside"><li>Plug your device into your computer via a cable.</li><li>Trust your computer on your device (if prompted).</li><li>Launch Altserver and,${osW(
       'holding options, click on the Altserver icon in the menu bar and select <code>Sideload .ipa</code>.',
       'Holding shift, click on the AltServer tray icon and select <code>Sideload .ipa</code>.'
     )}</li><li> Select the SideStore .ipa, follow instructions as prompted, and wait until AltServer confirms that SideStore has been installed.</li><li>If your device is running iOS/iPadOS 16 or higher, you must now enable Developer Mode<ul class="list-decimal list-inside ml-4 sm:ml-6"><li>Open the Settings app</li><li>Tap “Privacy & Security”</li><li>Scroll to the bottom and toggle Developer Mode on</li></ul></li><li>Open <code>Settings > General > VPN & Device Management</code> on your device</li> and approve the <code>Developer App</code> with your Apple ID's email.`,
