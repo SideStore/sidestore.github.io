@@ -225,7 +225,7 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
 
   const builtRepos = repos
     .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .filter((i) => i.id != 563241929) // SideStore_downloader
+    .filter((i) => i.id != 563241929) // sidestore_downloader
     .slice(0, 9)
     .map((i, index) => {
       let descP = (i.description.length > 85 ? i.description.split('.')[0].split('and')[0] : i.description).trim();
