@@ -57,25 +57,25 @@ let setupStepContents = [
                   'https://github.com/osy/Jitterbug/releases/download/v1.3.1/jitterbugpair-win64.zip'
                 )}">Download JitterbugPair</a>${osW(
       `Then, open the downloaded AltServer zip file and extract it. Then drag <code>AltServer.app</code> to your Applications folder. Now, open the app (you may have to right click and select "Open" if you get a warning).`,
-      `Extract the downloaded AltInstaller zip file and run <code>setup.exe</code> to install AltServer. You'll  need to have the non-Microsoft Store version of iTunes and iCloud installed. Uninstall the Microsoft Store versions if you have either installed.<div class="flex flex-wrap gap-2"><a class="btn-fill" href="https://www.apple.com/itunes/download/win64/">Download iTunes</a><a class="btn-fill" href="https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe">Download iCloud</a></div>`
+      `Extract the downloaded AltInstaller zip file and run <code>setup.exe</code> to install AltServer. You'll  need to have the non-Microsoft Store version of iTunes and iCloud installed. Uninstall the Microsoft Store versions if you have either installed.<div class="flex flex-wrap gap-2"><a class="btn-fill" href="https://www.apple.com/itunes/download/win64/">Download iTunes</a>f</div>`
     )}`,
   //sideload app
   (os) =>
-    `<b>Follow these steps to install SideStore:</b><ul class="list-disc list-inside"><li>Plug your device into your computer via a cable.</li><li>Trust your computer on your device (if prompted).</li><li>Launch Altserver and,${osW(
+    `<b>Follow these steps to install SideStore:</b><ul class="list-disc list-inside"><li>Plug your device into your computer via a cable.</li><li>Trust your computer on your device (if prompted).</li><li>Launch Altserver and, ${osW(
       'holding options, click on the Altserver icon in the menu bar and select <code>Sideload .ipa</code>.',
       'Holding shift, click on the AltServer tray icon and select <code>Sideload .ipa</code>.'
-    )}</li><li> Select the SideStore .ipa, follow instructions as prompted, and wait until AltServer confirms that SideStore has been installed.</li><li>If your device is running iOS/iPadOS 16 or higher, you must now enable Developer Mode<ul class="list-decimal list-inside ml-4 sm:ml-6"><li>Open the Settings app</li><li>Tap “Privacy & Security”</li><li>Scroll to the bottom and toggle Developer Mode on</li></ul></li><li>Open <code>Settings > General > VPN & Device Management</code> on your device</li> and approve the <code>Developer App</code> with your Apple ID's email.`,
+    )}</li><li> Select the SideStore .ipa, follow instructions as prompted, and wait until AltServer confirms that SideStore has been installed.</li><li>Open <code>Settings > General > VPN & Device Management</code> on your device and approve of the <code>Developer App</code> linked to your Apple ID's email.</li><li>If your device is running iOS/iPadOS 16 or higher, you must now enable Developer Mode. To do that:<ul class="list-decimal list-inside ml-4 sm:ml-6"><li>Open the Settings app</li><li>Tap “Privacy & Security”</li><li>Scroll to the bottom and toggle Developer Mode on</li></ul></li>`,
   //Pairing Idevice
                                                                                                                                                                                                                                                         (os) =>
-                                                                                                                                                                                                                                                                                                        `<b>Follow these steps to Pair your device:</b><li>Extract <code>Jitterbugpair.zip</code>. Ensure that your device is still connected to your computer via cable.</li> <ul class="list-disc list-inside"><li> ${osW(
-                                                                                                                                                                                                                                                                                                          'Open your device to its homescreen. Then, execute <code>JitterBugPair</code> by double-clicking it or right-clicking it and selecting open.</li><li>JitterBugPair will then generate a <b>pairing file</b>. This pairing file will have the file exentension <code>.mobiledevicepairing</code>.</li>',
-                                                                                                                                                                                                                                                                                                          'Open your device to its homescreen. Then, open File Explorer, locate <code>jitterbugpair.exe</code> and execute it by double-clicking it or right-clicking it and selecting open. <li>JitterBugPair will then generate a <b>pairing file</b> within the same folder. This pairing file will have the file exentension <code>.mobiledevicepairing</code>.</li>')}</li>
+                                                                                                                                                                                                                                                                                                        `<b>Follow these steps to Pair your device:</b><li>Extract <code>Jitterbugpair.zip.</code> Ensure that your device is still connected to your computer via cable.</li> <ul class="list-disc list-inside"><li> ${osW(
+                                                                                                                                                                                                                                                                                                          'Open your device to its homescreen. Then, execute <code>JitterBugPair</code> by double-clicking it or right-clicking it and selecting open.</li><li>JitterBugPair will then generate a <b>pairing file</b>. This pairing file will have the file exentension <code>mobiledevicepairing.</code></li>',
+                                                                                                                                                                                                                                                                                                          'Open your device to its homescreen. Then, in File Explorer, locate <code>jitterbugpair.exe</code> and execute it by double-clicking it or right-clicking it and selecting open. <li>JitterBugPair will then generate a <b>pairing file</b> within the same folder. This pairing file will have the file exentension <code>mobiledevicepairing.</code> If no file generate, try running JitterBgPair as an administrator or following steps 5-7 listed <a class="glink" target="_blank" href="https://docs.SideStore.io/docs/getting-started/pairing-file.">on the docs instructions.</a></li>')}</li>
                                                                                                                                                                                                                                                                                                           
 <li>Zip this pairing file and transfer it to your device via Google Drive, emailing it to yourself, or any other method.</li>
-<br><br>Using the Files app, longpress on your pairing file and select uncompress. Then, launch Sidestore and select OK when prompted. Select the file you just unzipped and Sidestore will be paired!<li>Note that if you update your iDevice your pairing file will become invalid and you'll have to go through this process again.</li><li>To get sidestore to prompt you for your pairing file again you'll ned to select <code>Reset Pairing File</code> in the Sidestore app.</li>`,
+<br>In the Files app, longpress on your zipped pairing file and select uncompress. Then, locate and launch the SideStore app and select OK when prompted.<li>If you cannot find the SideStore app you may need to restart your device to make it appear.</li>Select your now unzipped pairing file and SideStore will be paired!<li>Note that if you update your iDevice your pairing file will become invalid and you'll have to go through this process again.</li><li>To get SideStore to prompt you for your pairing file again tap <code>Reset Pairing File</code> in the SideStore app.</li>`,
   //wireguard vpn
   () =>
-    `On your device, download the WireGuard VPN app.<a class="btn-fill" target="_blank" href="https://apps.apple.com/us/app/wireguard/id1441195209">Download WireGuard</a>Then, download Sidestore's config file and "share" it to the WireGuard app.<a class="btn-fill" target="_blank" href="https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.conf">Download WireGuard Config</a>Enable the Sidestore VPN. You'll have to enable this VPN whenever you wish to use Sidestore. This VPN does not connect to an external server, but rather allows your device to communicate with itself.<br><br>If left enabled, Sidestore will refresh your sideloaded apps in the background when necessary.`,
+    `On your device, download the WireGuard VPN app.<a class="btn-fill" target="_blank" href="https://apps.apple.com/us/app/wireguard/id1441195209">Download WireGuard</a>Then, download SideStore's config file and "share" it to the WireGuard app.<a class="btn-fill" target="_blank" href="https://github.com/SideStore/SideStore/releases/download/0.1.1/SideStore.conf">Download WireGuard Config</a>Enable the SideStore VPN. You'll have to enable this VPN whenever you wish to use SideStore. This VPN does not connect to an external server, but rather allows your device to communicate with itself.<br><br>If left enabled, SideStore will attempt to refresh your sideloaded apps in the background when necessary.`,
   //finished
   () =>
     `Now to finish the process: <ul class="list-disc list-inside"><li>Open SideStore and sign in with the same Apple ID you used to install SideStore.</li><li>Go to the Apps tab and refresh the SideStore app by tapping on the green day counter or selecting <code>Refresh All</code>.</li></ul><br> Now you're all set! You can use the sources menu to add installable apps to the browse tab or directly sideload any <code>.ipa</code> files on your device with the + icon in the Apps tab.<br>If you run into any issues, feel free to ask for help in our <a class="glink" target="_blank" href="https://discord.gg/RgpFBX3Q3k">Discord server.</a>`,
@@ -180,7 +180,7 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
     eventLog = await import('./assets/mockevents.json');
   } else {
     if (!eventLog.length) {
-      eventLog = await (await fetch('https://api.github.com/orgs/sidestore/events?per_page=100')).json();
+      eventLog = await (await fetch('https://api.github.com/orgs/SideStore/events?per_page=100')).json();
       localStorage.setItem('eventLogCache', JSON.stringify(eventLog));
     }
   }
@@ -192,7 +192,7 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
     repos = await import('./assets/mockrepos.json');
   } else {
     if (!repos.length) {
-      repos = await (await fetch('https://api.github.com/users/sidestore/repos?per_page=50')).json();
+      repos = await (await fetch('https://api.github.com/users/SideStore/repos?per_page=50')).json();
       localStorage.setItem('reposCache', JSON.stringify(repos));
     }
   }
@@ -225,7 +225,7 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
 
   const builtRepos = repos
     .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .filter((i) => i.id != 563241929) // sidestore_downloader
+    .filter((i) => i.id != 563241929) // SideStore_downloader
     .slice(0, 9)
     .map((i, index) => {
       let descP = (i.description.length > 85 ? i.description.split('.')[0].split('and')[0] : i.description).trim();
@@ -334,7 +334,7 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
   //   el.href = platformDLElement.href;
   // });
 
-  // const releaseData = await (await fetch('https://api.github.com/repos/sidestore/sidestore/releases/latest')).json();
+  // const releaseData = await (await fetch('https://api.github.com/repos/SideStore/SideStore/releases/latest')).json();
   // const versionTag = releaseData.tag_name || '?.?.?';
   // const label = $('#hook-latest-ipa-version');
   // label.innerText = `v${versionTag}`;
