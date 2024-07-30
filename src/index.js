@@ -102,14 +102,14 @@ const update = (act) => {
     setupContent.classList.remove('translate-y-[10px]');
   }, 300);
   setupPrevBtn.classList.toggle('hidden', act == 0);
-  setupNextBtn.classList.toggle('hidden', act == 3);
-  $('#setup-btn-wrap').classList.toggle('onlyprev', act == 3);
+  setupNextBtn.classList.toggle('hidden', act == 4);
+  $('#setup-btn-wrap').classList.toggle('onlyprev', act == 4);
 };
 
 setupNextBtn.addEventListener('click', () => {
   let activeStep = $('#setup-stepper li.active');
   let activeStepIndex = setupStepper.indexOf(activeStep);
-  if (activeStepIndex == 3) return;
+  if (activeStepIndex == 4) return;
   update(activeStepIndex + 1);
 });
 
