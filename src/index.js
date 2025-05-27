@@ -55,7 +55,7 @@ let setupStepContents = [
                 <a class="btn-fill" target="_blank" href="${osW(
                   'https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--macos-universal.dmg',
                   'https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--windows-x86_64.exe'
-                )}">Download idevice_pair</a>${osW(
+                )}">Download idevice pair</a>${osW(
       `Then, open the downloaded AltServer zip file and extract it. Then drag <code>AltServer.app</code> to your Applications folder. Now, open the app (you may have to right click and select "Open" if you get a warning).`,
       `Extract the downloaded AltInstaller zip file and run <code>setup.exe</code> to install AltServer. You'll need to have the non-Microsoft Store version of iTunes and iCloud installed. Uninstall the Microsoft Store versions if you have either installed.<div class="flex flex-wrap gap-2"><a class="btn-fill" href="https://www.apple.com/itunes/download/win64/">Download iTunes</a><a class="btn-fill" href="https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe">Download iCloud</a></div>`
     )}`,
