@@ -63,7 +63,7 @@ let setupStepContents = [
   (os) =>
     `<b>Follow these steps to install SideStore:</b><ul class="list-disc list-inside"><li>Plug your device into your computer via a cable.</li><li>Trust your computer on your device (if prompted).</li><li> ${osW(
       'Launch AltServer and, holding option, click on the AltServer icon in the menu bar and select <code>Sideload .ipa</code>.',
-      'Launch AltServer as Administrator and, holding shift, click on the AltServer tray icon and select <code>Sideload .ipa</code>.'
+      'Launch AltServer as an Administrator and, holding shift, click on the AltServer icon in the tray and select <code>Sideload .ipa</code>.'
     )}</li><li> Select <code>sidestore.ipa</code>, follow instructions as prompted, and wait until AltServer confirms that SideStore has been installed.</li><li>Open <code>Settings > General > VPN & Device Management</code> on your device and approve of the <code>Developer App</code> linked to your Apple ID's email.</li><li>If your device is running iOS/iPadOS 16 or higher, you must now enable Developer Mode. To do that:<ul class="list-decimal list-inside ml-4 sm:ml-6"><li>Open the Settings app</li><li>Tap “Privacy & Security”</li><li>Scroll to the bottom and toggle Developer Mode on</li></ul></li>`,
   //pairing file
                                                                                                                                                                                                                                                         (os) =>
@@ -74,7 +74,7 @@ let setupStepContents = [
 <br>SideStore will be paired!<li>Note that if you update or reset your iDevice, your pairing file will become invalid and you'll have to go through this process again.</li>`,
   // StosVPN (used to be wireguard)
   () =>
-    `On your device, download the StosVPN app.<a class="btn-fill" target="_blank" href="https://apps.apple.com/us/app/stosvpn/id6744003051">Download StosVPN</a>Then, Enable the StosVPN VPN. You'll have to enable this VPN whenever you wish to use SideStore. StosVPN does not connect to an external server, but rather allows your device to communicate with itself.<br><br>If left enabled, SideStore will attempt to refresh your sideloaded apps in the background when necessary.`,
+    `On your device, download the StosVPN app.<a class="btn-fill" target="_blank" href="https://apps.apple.com/us/app/stosvpn/id6744003051">Download StosVPN</a>Then, enable the StosVPN VPN. You'll have to enable this VPN whenever you wish to use SideStore to install or refresh apps. StosVPN does not connect to an external server, but rather allows your device to communicate with itself.<br><br>If left enabled, SideStore will attempt to refresh your sideloaded apps in the background when necessary.`,
   //finishing up
   () =>
     `Now to finish the process: <ul class="list-disc list-inside"><li>Open SideStore and sign in with the same Apple ID you used to install SideStore.</li><li>Go to the Apps tab and refresh the SideStore app by tapping on the green "X days" counter next to SideStore. You <b>must</b> do this whenever you install SideStore using AltServer. This also means if you install SideStore on another device with AltServer under the same Apple ID, you must manually refresh on both devices. Not doing this may cause errors, including SideStore expiring earlier than it should.</li></ul>
