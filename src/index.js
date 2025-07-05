@@ -44,7 +44,7 @@ let setupStepContents = [
       'A Mac running macOS 10.15 or later',
       'A PC running Windows 10 or later',
       'A PC running Linux, of some sort'
-    )}</li><li>An iPhone or iPad running iOS/iPadOS 14 or higher</li><li>An Apple ID</li><li>The StosVPN app</li><li>A Wi-Fi connection</li></ul><br>On your computer, download the following:<a class="btn-fill" target="_blank" href="${osW(
+    )}</li><li>An iPhone or iPad running iOS/iPadOS 16 or higher</li><li>An Apple ID</li><li>The StosVPN app</li><li>A Wi-Fi connection</li></ul><br>On your computer, download the following:<a class="btn-fill" target="_blank" href="${osW(
       'https://cdn.altstore.io/file/altstore/altserver.zip',
       'https://cdn.altstore.io/file/altstore/altinstaller.zip'
     )}">Download AltServer</a>
