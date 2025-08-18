@@ -44,7 +44,7 @@ let setupStepContents = [
       'A Mac running macOS 10.15 or later',
       'A PC running Windows 10 or later',
       'A PC running Linux, of some sort'
-    )}</li><li>An iPhone or iPad running iOS/iPadOS 14 or higher</li><li>An Apple ID</li><li>The StosVPN app</li><li>A Wi-Fi connection</li></ul><br>On your computer, download the following:<a class="btn-fill" target="_blank" href="${osW(
+    )}</li><li>An iPhone or iPad running iOS/iPadOS 16 or higher</li><li>An Apple ID</li><li>The StosVPN app</li><li>A Wi-Fi connection</li></ul><br>On your computer, download the following:<a class="btn-fill" target="_blank" href="${osW(
       'https://cdn.altstore.io/file/altstore/altserver.zip',
       'https://cdn.altstore.io/file/altstore/altinstaller.zip'
     )}">Download AltServer</a>
@@ -53,11 +53,11 @@ let setupStepContents = [
             'https://github.com/sidestore/sidestore/releases/latest/download/sidestore.ipa'
           )}">Download SideStore IPA</a>
                 <a class="btn-fill" target="_blank" href="${osW(
-                  'https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--macos-universal.dmg',
-                  'https://github.com/jkcoxson/idevice_pair/releases/latest/download/iDevicePair--windows-x86_64.exe'
+                  'https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg',
+                  'https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe'
                 )}">Download idevice pair</a>${osW(
       `Then, open the downloaded AltServer zip file and extract it. Then drag <code>AltServer.app</code> to your Applications folder. Now, open the app (you may have to right click and select "Open" if you get a warning).`,
-      `Extract the downloaded AltInstaller zip file and run <code>setup.exe</code> to install AltServer. You'll need to have the non-Microsoft Store version of iTunes and iCloud installed. Uninstall the Microsoft Store versions if you have either installed.<div class="flex flex-wrap gap-2"><a class="btn-fill" href="https://www.apple.com/itunes/download/win64/">Download iTunes</a><a class="btn-fill" href="https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe">Download iCloud</a></div>`
+      `Extract the downloaded AltInstaller zip file and run <code>setup.exe</code> to install AltServer. You'll need to have the non-Microsoft Store version of iTunes and iCloud installed. Uninstall the Microsoft Store versions if you have either installed.<div class="flex flex-wrap gap-2"><a class="btn-fill" href="https://www.apple.com/itunes/download/win64/">Download iTunes (64-bit)</a><a class="btn-fill" href="https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe">Download iCloud</a></div>`
     )}`,
   //sideloading sidestore
   (os) =>
