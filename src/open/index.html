@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Opening SideStore...</title>
-  
+
   <link href="../assets/favicon-32x32.png" rel="icon" sizes="32x32" />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <link href="../assets/apple-touch-icon.png" rel="apple-touch-icon" />
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../index.css" />
-  
+
   <style>
     body {
       font-family: 'SatoshiVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -27,6 +28,7 @@
       margin: 0;
       text-align: center;
     }
+
     .container {
       background: rgba(31, 32, 35, 0.8);
       backdrop-filter: blur(32px);
@@ -36,6 +38,7 @@
       max-width: 400px;
       width: 90%;
     }
+
     .spinner {
       border: 3px solid rgb(39 39 42);
       border-top: 3px solid rgb(150 112 233);
@@ -45,31 +48,42 @@
       animation: spin 1s linear infinite;
       margin: 0 auto 20px auto;
     }
+
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
+
     .message {
       font-size: 1.125rem;
       font-weight: 600;
       margin-bottom: 1rem;
       color: rgb(244 244 245);
     }
+
     .fallback {
       margin-top: 1.5rem;
       font-size: 0.875rem;
       color: rgb(161 161 170);
     }
+
     .fallback a {
       color: rgb(150 112 233);
       text-decoration: none;
       transition: color 0.2s ease;
     }
+
     .fallback a:hover {
       color: rgb(196 181 253);
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="spinner"></div>
@@ -80,101 +94,45 @@
   </div>
 
   <script>
-    // Add immediate visual feedback
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('SideStore Open: DOM loaded, script executing');
-      
-      // Handle /open routing with different parameters
+    document.addEventListener('DOMContentLoaded', function () {
       const searchParams = new URLSearchParams(window.location.search);
       const messageElement = document.querySelector('.message');
-      
-      console.log('SideStore Open Page: Processing URL parameters', Object.fromEntries(searchParams));
-      console.log('SideStore Open: Current URL:', window.location.href);
-      
-      // Add a small delay to allow logs to be visible and add visual feedback
-      const executeWithDelay = (action, delay = 500) => {
-        console.log(`SideStore Open: Will execute action in ${delay}ms`);
-        setTimeout(action, delay);
-      };
-      
-      // Check for 'source' parameter
+
       if (searchParams.has('source')) {
         const sourceUrl = searchParams.get('source');
         const sidestoreUrl = `sidestore://source?url=${encodeURIComponent(sourceUrl)}`;
-        
-        console.log('SideStore Open: Source parameter detected', {
-          originalUrl: sourceUrl,
-          sidestoreUrl: sidestoreUrl
-        });
-        
+
         messageElement.textContent = 'Opening source in SideStore...';
-        
-        console.log('SideStore Open: Executing redirect to sidestore://source');
-        
-        // Update address bar to show homepage URL
-        window.history.replaceState({}, '', '/');
-        
-        // Attempt to redirect to the sidestore:// URL immediately
+
         window.location.href = sidestoreUrl;
-        
-        // Fallback: redirect to homepage after 3 seconds if sidestore:// doesn't work
+
+        // Redirect to homepage after a short delay, to ensure system alert is shown
         setTimeout(() => {
-          console.log('SideStore Open: Fallback timeout reached, redirecting to homepage');
-          window.location.replace('/');
-        }, 3000);
-      } 
-      // Check for 'ipa' parameter
+          window.location.href = '/';
+        }, 500);
+      }
       else if (searchParams.has('ipa')) {
         const ipaUrl = searchParams.get('ipa');
-        
-        console.log('SideStore Open: IPA parameter detected', { ipaUrl: ipaUrl });
-        
-        // Check if the URL ends with .ipa extension
         if (ipaUrl.toLowerCase().endsWith('.ipa')) {
           const sidestoreUrl = `sidestore://install?url=${encodeURIComponent(ipaUrl)}`;
-          
-          console.log('SideStore Open: Valid IPA URL, redirecting', {
-            originalUrl: ipaUrl,
-            sidestoreUrl: sidestoreUrl
-          });
-          
+
           messageElement.textContent = 'Installing IPA in SideStore...';
-          
-          console.log('SideStore Open: Executing redirect to sidestore://install');
-          
-          // Update address bar to show homepage URL
-          window.history.replaceState({}, '', '/');
-          
-          // Attempt to redirect to the sidestore:// URL immediately
+
           window.location.href = sidestoreUrl;
-          
-          // Fallback: redirect to homepage after 3 seconds if sidestore:// doesn't work
+
+          // Redirect to homepage after a short delay, to ensure system alert is shown
           setTimeout(() => {
-            console.log('SideStore Open: Fallback timeout reached, redirecting to homepage');
-            window.location.replace('/');
-          }, 3000);
-        } else {
-          // Invalid .ipa URL (doesn't end with .ipa), redirect to homepage
-          console.log('SideStore Open: Invalid IPA URL (no .ipa extension), redirecting to homepage', { ipaUrl: ipaUrl });
-          messageElement.textContent = 'Invalid IPA URL, redirecting...';
-          
-          executeWithDelay(() => {
-            console.log('SideStore Open: Executing redirect to homepage (invalid IPA)');
-            window.location.replace('/');
-          });
+            window.location.href = '/';
+          }, 500);
+        } else { 
+          window.location.href = '/';
         }
-      } 
-      // No valid parameters provided, redirect to homepage
+      }
       else {
-        console.log('SideStore Open: No valid parameters found, redirecting to homepage');
-        messageElement.textContent = 'No valid parameters, redirecting...';
-        
-        executeWithDelay(() => {
-          console.log('SideStore Open: Executing redirect to homepage (no params)');
-          window.location.replace('/');
-        });
+        window.location.href = '/';
       }
     });
   </script>
 </body>
+
 </html>
