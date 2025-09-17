@@ -2,7 +2,7 @@
   "name": "sidestoreio",
   "version": "1.2.0",
   "description": "The sidestore website, visible at sidestore.io",
-  "source": "src/index.html",
+  "source": ["src/index.html", "src/open/index.html"],
   "license": "MIT",
   "scripts": {
     "dev": "node tools/update_apps.mjs && parcel",
