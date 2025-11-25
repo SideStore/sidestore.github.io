@@ -31,102 +31,6 @@ const observeElements = () =>
 
 observeElements();
 
-let detectedOS = navigator.userAgent.toLowerCase();
-const osW = (...items) => (detectedOS == 'mac' ? items[0] : detectedOS == 'windows' ? items[1] : items[2]);
-if (detectedOS.indexOf('mac') != -1) detectedOS = 'mac';
-else if (detectedOS.indexOf('win') != -1) detectedOS = 'windows';
-else detectedOS = 'mac';
-
-let setupStepContents = [
-  //downloading altserver
-  () =>
-    `<b>To get started, you'll need:</b><ul class="list-disc list-inside"><li>${osW(
-      'A Mac running macOS 10.15 or later',
-      'A PC running Windows 10 or later',
-      'A PC running Linux, of some sort'
-    )}</li><li>An iPhone or iPad running iOS/iPadOS 14 or higher</li><li>An Apple ID</li><li>The StosVPN app</li><li>A Wi-Fi connection</li></ul><br>On your computer, download the following:<a class="btn-fill" target="_blank" href="${osW(
-      'https://cdn.altstore.io/file/altstore/altserver.zip',
-      'https://cdn.altstore.io/file/altstore/altinstaller.zip'
-    )}">Download AltServer</a>
-          <a class="btn-fill" target="_blank" href="${osW(
-            'https://github.com/sidestore/sidestore/releases/latest/download/SideStore.ipa',
-            'https://github.com/sidestore/sidestore/releases/latest/download/SideStore.ipa'
-          )}">Download SideStore .IPA</a>
-                <a class="btn-fill" target="_blank" href="${osW(
-                  'https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--macos-universal.dmg',
-                  'https://github.com/jkcoxson/idevice_pair/releases/latest/download/idevice_pair--windows-x86_64.exe'
-                )}">Download idevice_pair</a>${osW(
-      `Open the downloaded AltServer zip file and extract it. Drag <code>AltServer.app</code> to your Applications folder. Open the app (you may have to right click and select "Open" if you get a warning).`,
-      `Extract the downloaded AltInstaller zip file and run <code>setup.exe</code> to install AltServer. You'll need to have the non-Microsoft Store versions of iTunes and iCloud installed. Uninstall the Microsoft Store versions if you have either installed, then download/install the following.<div class="flex flex-wrap gap-2"><a class="btn-fill" href="https://www.apple.com/itunes/download/win64/">Download iTunes (64-bit)</a><a class="btn-fill" href="https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe">Download iCloud</a></div>`
-    )}`,
-  //sideloading sidestore
-  (os) =>
-    `<b>Follow these steps to install SideStore:</b><ul class="list-disc list-inside"><li>Plug your device into your computer via a cable.</li><li>Trust your computer on your device (if prompted).</li><li> ${osW(
-      'Launch AltServer and, holding option, click on the AltServer icon in the menu bar and select <code>Sideload .ipa</code>.',
-      'Launch AltServer as an Administrator and, holding shift, click on the AltServer icon in the tray and select <code>Sideload .ipa</code>.'
-    )}</li><li> Select <code>SideStore.ipa</code>, follow instructions as prompted, and wait until AltServer confirms that SideStore has been installed.</li><li>Open <code>Settings > General > VPN & Device Management</code> on your device and approve of the <code>Developer App</code> linked to your Apple ID's email.</li><li>If your device is running iOS/iPadOS 16 or higher, you must now enable Developer Mode. To do that:<ul class="list-decimal list-inside ml-4 sm:ml-6"><li>Open the Settings app</li><li>Tap “Privacy & Security”</li><li>Scroll to the bottom and toggle Developer Mode on</li></ul></li>`,
-  //pairing file
-                                                                                                                                                                                                                                                        (os) =>
-                                                                                                                                                                                                                                                                                                        `<b>Follow these steps to pair your device with SideStore:</b><li>First, install <code>idevice_pair</code>. <a class="glink" target="_blank" href="https://support.apple.com/en-ca/guide/iphone/iph14a867ae/ios">Set a passcode for your device</a> if you don't already have one and ensure that your device is still connected to your computer via cable.</li> <ul class="list-disc list-inside"><li> Open your device to its homescreen. ${osW(
-                                                                                                                                                                                                                                                                                                          'Then, open <code>idevice_pair</code>.</li><li>Ensure your device is unlocked and open to the home screen, then select your device from the drop-down menu and select "load". When a prompt appears on your device, select "trust" again.</li><li>Your <b>pairing file</b> should appear. Ensure your device is still open to the home screen, then scroll down and click "install" underneath SideStore. The word success should appear in green.</li>',
-                                                                                                                                                                                                                                                                                                          'Then, in File Explorer, locate <code>idevice_pair</code> and execute it by double-clicking it or right-clicking it and selecting open.</li><li>Ensure your device is unlocked and open to the home screen, then select your device from the drop-down menu and select "load". When a prompt appears on your device, select "trust" again.</li><li>Your <b>pairing file</b> should appear. Ensure your device is still open to the home screen, then scroll down and click "install" underneath SideStore. The word success should appear in green.</li>')}</li>
-                                                                                                                                                                                                                                                                                                          
-<br>SideStore will be paired!<li>Note that if you update or reset your iDevice, your pairing file may become invalid and you'll have to go through the pairing process again.</li>`,
-  // StosVPN (used to be wireguard)
-  () =>
-    `On your device, download the StosVPN app.<a class="btn-fill" target="_blank" href="https://apps.apple.com/us/app/stosvpn/id6744003051">Download StosVPN</a>Then, enable the StosVPN VPN. You'll have to enable this VPN whenever you wish to use SideStore to install, update, or refresh apps. StosVPN does not connect to an external server, but rather allows your device to communicate with itself.<br><br>If left enabled, SideStore will attempt to refresh your sideloaded apps in the background when necessary.`,
-  //finishing up
-  () =>
-    `Now to finish the process: <ul class="list-disc list-inside"><li>Open SideStore and sign in with the same Apple ID you used to install SideStore.</li><li>Go to the Apps tab and refresh the SideStore app by tapping on the green "X days" counter next to SideStore. You <b>must</b> do this whenever you install SideStore using AltServer.  Not doing this may cause errors, including SideStore expiring earlier than it should. To install SideStore on another device using the same Apple ID, you must follow <a class="glink" target="_blank" href="https://github.com/SideStore/SideStore/pull/1008#issue-3138680291">these instructions</a>.</li></ul>
-    <br> Now you're all set! You can use the sources menu to add installable apps to the browse tab or directly sideload any <code>.ipa</code> files on your device with the + icon in the Apps tab.
-    <br>Note that if you ever let an app expire you won't be able to access it until you refresh it again. To refresh SideStore in this case, simply follow the steps you followed to install it. (Do <b>not</b> uninstall the SideStore app while doing this.) AltServer will refresh SideStore and it will continue to function as before. For any other app, just refresh it normally, and it will work again.
-    <br>If you run into any issues and would like some help, feel free to ask in our <a class="glink" target="_blank" href="https://discord.gg/RgpFBX3Q3k">Discord server.</a>`,
-];
-
-const osSelect = $('#setup-os-select');
-const setupNextBtn = $('#setup-next-btn');
-const setupPrevBtn = $('#setup-prev-btn');
-const setupContent = $('#setup-content');
-const setupStepper = [...$$('#setup-stepper li:not([aria-hidden="true"])')];
-const update = (act) => {
-  setupStepper.map((item, idx) => item.classList.toggle('active', idx == act));
-
-  setupContent.classList.add('!opacity-0');
-  // setupContent.classList.remove('translate-y-[40px]');
-  setupContent.classList.add('translate-y-[10px]');
-
-  setTimeout(() => {
-    setupContent.innerHTML = setupStepContents[act](detectedOS);
-    setupContent.classList.remove('!opacity-0');
-    setupContent.classList.remove('translate-y-[10px]');
-  }, 300);
-  setupPrevBtn.classList.toggle('hidden', act == 0);
-  setupNextBtn.classList.toggle('hidden', act == 4);
-  $('#setup-btn-wrap').classList.toggle('onlyprev', act == 4);
-};
-
-setupNextBtn.addEventListener('click', () => {
-  let activeStep = $('#setup-stepper li.active');
-  let activeStepIndex = setupStepper.indexOf(activeStep);
-  if (activeStepIndex == 4) return;
-  update(activeStepIndex + 1);
-});
-
-setupPrevBtn.addEventListener('click', () => {
-  let activeStep = $('#setup-stepper li.active');
-  let activeStepIndex = setupStepper.indexOf(activeStep);
-  if (activeStepIndex == 0) return;
-  update(activeStepIndex - 1);
-});
-osSelect.addEventListener('change', (e) => {
-  detectedOS = e.target.value;
-  update(setupStepper.indexOf($('#setup-stepper li.active')));
-});
-osSelect.value = detectedOS;
-
-setupStepper.map((step, index) => step.addEventListener('click', () => update(index)));
-update(0);
-
 let template = (html, obj, urlkeys) => {
   Object.keys(obj).forEach(
     (key) => (html = html.replace(new RegExp(`{{${key}}}`, 'g'), urlkeys.indexOf(key) > -1 ? new URL(obj[key], import.meta.url) : obj[key]))
@@ -153,21 +57,6 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
   observeElements();
   // ensure gpu acceleration
   $$('.marquee-inner').forEach((e) => (e.style['transform'] = 'translateZ(0)'));
-
-  $('#show-all-downloads').addEventListener('click', () => {
-    $('#all-downloads').classList.remove('hidden');
-    $('#all-downloads').classList.add('flex');
-    setTimeout(() => {
-      $('#all-downloads').classList.add('show');
-    }, 10);
-  });
-  $('#close-all-downloads').addEventListener('click', () => {
-    $('#all-downloads').classList.remove('show');
-    setTimeout(() => {
-      $('#all-downloads').classList.remove('flex');
-      $('#all-downloads').classList.add('hidden');
-    }, 150);
-  });
   // start animation
 
   // $$('.marquee-inner').forEach((e) => (e.style['animation-play-state'] = 'running'));
