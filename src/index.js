@@ -43,6 +43,11 @@ let eventItem = `<div class="flex items-center w-full" style="--custom-index:{{i
 const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_blank" class="flex flex-col w-full gridok:h-full max-w-md p-4 border rounded-2xl border-zinc-800 text-zinc-200 bg-material/50 hover:bg-material hover:border-zinc-700 hover:shadow-xl"> <span class="text-[1.075rem] text-semibold font-title">{{name}}</span> <p class="text-zinc-300/70 overflow-x-ellipsis whitespace-pre-wrap text-[0.9rem]">{{description}}</p><div class="gridok:flex-grow" ></div><div class="flex space-x-3 mt-1 text-[0.9rem]"> <div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 256 256"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>{{stars}}</div><div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 256 256"><path d="M216,48H40A16,16,0,0,0,24,64V224a15.84,15.84,0,0,0,9.25,14.5A16.05,16.05,0,0,0,40,240a15.89,15.89,0,0,0,10.25-3.78.69.69,0,0,0,.13-.11L82.5,208H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48ZM84,140a12,12,0,1,1,12-12A12,12,0,0,1,84,140Zm44,0a12,12,0,1,1,12-12A12,12,0,0,1,128,140Zm44,0a12,12,0,1,1,12-12A12,12,0,0,1,172,140Z"></path></svg>{{issues}}</div><div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 256 256"><path d="M104,64A32,32,0,1,0,64,95v66a32,32,0,1,0,16,0V95A32.06,32.06,0,0,0,104,64ZM88,192a16,16,0,1,1-16-16A16,16,0,0,1,88,192Zm144,0a32,32,0,1,1-40-31V123.88A39.71,39.71,0,0,0,180.28,95.6L152,67.31V96a8,8,0,0,1-16,0V48a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H163.31L191.6,84.28a55.67,55.67,0,0,1,16.4,39.6V161A32.06,32.06,0,0,1,232,192Z"></path></svg>{{forks}}</div></div></a>`;
 
 (async () => {
+  var gold = Math.random();
+  if (gold < 0.1) {
+    document.getElementById('metal-detector').innerText = "100% attack drone metal free!"
+  }
+  
   let apps = rawApps.sort(() => Math.random() - 0.5);
 
   apps = apps
