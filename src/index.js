@@ -192,7 +192,7 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
       if (dateSpan == 0) set('just now');
       else if (dateSpan == 1) set('a minute ago');
       else if (dateSpan <= 60) set(`${dateSpan} minutes ago`);
-      else if (dateSpan / 60 == 1) set('an hour ago');
+      else if (Math.round(dateSpan / 60) == 1) set('an hour ago');
       else if (dateSpan / 60 <= 24) set(`${Math.round(dateSpan / 60)} hours ago`);
       else if (dateSpan / 60 <= 48) set('yesterday');
       else if (dateSpan / 60 <= 24 * 365) set(`${Math.round(dateSpan / 60 / 24)} days ago`);
