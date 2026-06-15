@@ -16,7 +16,7 @@ const additions = [
   {
    name: 'MeloNX',
    desc: 'A Nintendo Switch Emulator for iOS / iPadOS devices on 15.0+.',
-   iconURL: 'https://git.ryujinx.app/melonx/emu/-/raw/XC-ios-ht/src/MeloNX/MeloNX/Assets/Assets.xcassets/AppIcon.appiconset/nxgradientpng.png?ref_type=heads'
+   iconURL: 'https://git.ryujinx.app/projects/MeloNX/raw/branch/XC-ios-ht/src/MeloNX/MeloNX/Assets/Assets.xcassets/AppIcon.appiconset/nxgradientpng.png?ref_type=heads'
   },
 ];
 
