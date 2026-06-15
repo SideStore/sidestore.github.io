@@ -205,7 +205,7 @@ const repoItem = `<a style="--custom-index:{{index}}" href="{{url}}" target="_bl
       let glink = (id, type) => `<a class="glink" target="_blank" href="${`${url(i.data.repo.url)}/${type}/${id}`}">#${id}</a>`;
 
       let text = `<a class="glink" href="${url(i.data.actor.url)}">${i.data.actor.login}</a> `;
-      if (i.event == 'commit') text += `pushed ${i.data.commits} commit${i.data.commits > 1 ? 's' : ''}`;
+      if (i.event == 'commit') text += `pushed changes`;
       if (i.event == 'issue_comment') text += `commented on issue ${glink(i.data.issueID, 'issues')}`;
       if (i.event == 'pull_comment') text += `commented on pull request ${glink(i.data.pullID, 'pull')}`;
       if (i.event == 'pull_request') text += ` ${i.data.action} pull request ${glink(i.data.pullID, 'pull')}`;
