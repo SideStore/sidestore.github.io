@@ -16,7 +16,8 @@ const additions = [
   {
    name: 'MeloNX',
    desc: 'A Nintendo Switch Emulator for iOS / iPadOS devices on 15.0+.',
-   iconURL: 'https://git.ryujinx.app/projects/MeloNX/raw/branch/XC-ios-ht/src/MeloNX/MeloNX/Assets/Assets.xcassets/AppIcon.appiconset/nxgradientpng.png?ref_type=heads'
+   iconURL: 'https://git.ryujinx.app/projects/MeloNX/raw/branch/XC-ios-ht/src/MeloNX/MeloNX/Assets/Assets.xcassets/AppIcon.appiconset/nxgradientpng.png?ref_type=heads',
+   useCustomUserAgent: true
   },
 ];
 
@@ -127,6 +128,7 @@ const outFolder = path.join(__dirname, '../src/assets/apps_data/');
   console.log(`✨ Processing ${additions.length} custom additions...`);
   for (const app of additions) {
     const { name, desc, iconURL } = app;
+    const useCustomUserAgent = app.useCustomUserAgent || false
     
     if (!name || !desc) {
       console.log(`🚫 Skipping custom app - missing name or desc`);
@@ -144,7 +146,7 @@ const outFolder = path.join(__dirname, '../src/assets/apps_data/');
         console.log(`🖼️  Downloading icon for custom app ${name}...`);
         const file = await fetch(iconURL, {
           headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+            'User-Agent': useCustomUserAgent ? '(SideStore Website Icon Downloader)' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
           },
         });
         const buffer = await file.arrayBuffer();
