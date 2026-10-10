@@ -1,0 +1,184 @@
+SideBot Terms of Service
+
+Last updated 10 October 2026
+
+AGREEMENT TO TERMS
+
+These Terms and Conditions constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and SideStore, LLC. (“we,” “us” or “our”), concerning your access to and use of the SideBot Discord Application or any service related, linked, or otherwise connected thereto (collectively, the “Bot”).
+
+You agree that by accessing the Bot, you have read, understood, and agree to be bound by all of these Terms and Conditions. If you do not agree with all of these Terms and Conditions, then you are expressly prohibited from using the Bot and you must discontinue use immediately.
+
+We reserve the right, in our sole discretion, to make changes or modifications to these Terms and Conditions at any time and for any reason.
+
+It is your responsibility to periodically review these Terms and Conditions to stay informed of updates. You will be subject to, and will be deemed to have been made aware of and to have accepted, the changes in any revised Terms and Conditions by your continued use of the Bot after the date such revised Terms and Conditions are posted.
+
+The information provided through the Bot is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject us to any registration requirement within such jurisdiction or country.
+
+Accordingly, those persons who choose to access the Bot from other locations do so on their own initiative and are solely responsible for compliance with local laws, if and to the extent local laws are applicable.
+
+The Bot is intended for users who are at least 13 years old. Persons under the age of 13 are not permitted to use the Bot, in line with Discord's Terms of Service.
+
+INTELLECTUAL PROPERTY RIGHTS
+
+Unless otherwise indicated, the Bot is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Bot (collectively, the “Content”) and the trademarks, service marks, and logos contained therein (the “Marks”) are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws and various other intellectual property rights and unfair competition laws of the United States, foreign jurisdictions, and international conventions.
+
+The Content and the Marks are provided on the Bot “AS IS” for your information and personal use only. Except as expressly provided in these Terms and Conditions or in the License included with the source code of the Bot, no part of the Bot and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.
+
+Provided that you are eligible to use the Bot, you are granted a limited license to access and use the Bot and to download or print a copy of any portion of the Content to which you have properly gained access solely for your personal, non-commercial use. We reserve all rights not expressly granted to you in and to the Bot, the Content and the Marks.
+
+USER REPRESENTATIONS
+
+By using the Bot, you represent and warrant that:
+
+(1) you have the legal capacity and you agree to comply with these Terms and Conditions;
+
+(2) you are not under the age of 13;
+
+(3) you will not access the Bot through automated or non-human means, whether through a bot, script, or otherwise;
+
+(4) you will not use the Bot for any illegal or unauthorized purpose;
+
+(5) your use of the Bot will not violate any applicable law or regulation.
+
+If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or terminate your access and refuse any and all current or future use of the Bot (or any portion thereof).
+
+PROHIBITED ACTIVITIES
+
+You may not access or use the Bot for any purpose other than that for which we make the Bot available. The Bot may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.
+
+As a user of the Bot, you agree not to:
+
+(1) make any unauthorized use of the Bot, including collecting usernames and/or email addresses of users by electronic or other means for the purpose of sending unsolicited email, or creating user accounts by automated means or under false pretenses;
+
+(2) trick, defraud, or mislead us and other users, especially in any attempt to learn sensitive account information such as user passwords;
+make improper use of our support services or submit false reports of abuse or misconduct;
+
+(3) interfere with, disrupt, or create an undue burden on the Bot or the networks or services connected to the Bot;
+
+(4) use any information obtained from the Bot in order to harass, abuse, or harm another person;
+
+(5) attempt to bypass any measures of the Bot designed to prevent or restrict access to the Bot, or any portion of the Bot;
+
+(6) delete the copyright or other proprietary rights notice from any Content, except for those allowed by the License in the source code of the Bot;
+
+(7) upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other material, including excessive use of capital letters and spamming (continuous posting of repetitive text), that interferes with any party’s uninterrupted use and enjoyment of the Bot or modifies, impairs, disrupts, alters, or interferes with the use, features, functions, operation, or maintenance of the Bot;
+
+(8) upload or transmit (or attempt to upload or to transmit) any material that acts as a passive or active information collection or transmission mechanism, including without limitation, clear graphics interchange formats (“gifs”), 1×1 pixels, web bugs, cookies, or other similar devices (sometimes referred to as “spyware” or “passive collection mechanisms” or “pcms”);
+
+(9) use the Bot in a manner inconsistent with any applicable laws or regulations.
+
+THIRD-PARTY WEBSITES AND CONTENT
+
+The Bot may contain (or you may be sent via the Bot) links to outside websites (“Third-Party Websites”) as well as articles, photographs, text, graphics, pictures, designs, music, sound, video, information, applications, software, and other content or items belonging to or originating from third parties (“Third-Party Content”).
+
+Such Third-Party Websites and Third-Party Content are not investigated, monitored, or checked for accuracy, appropriateness, or completeness by us, and we are not responsible for any Third-Party Websites accessed through the Bot or any Third-Party Content posted on, available through, or installed from the Bot, including the content, accuracy, offensiveness, opinions, reliability, privacy practices, or other policies of or contained in the Third-Party Websites or the Third-Party Content.
+
+Inclusion of, linking to, or permitting the use or installation of any Third-Party Websites or any Third-Party Content does not imply approval or endorsement thereof by us. If you decide to leave the Bot and access the Third-Party Websites or to use or install any Third-Party Content, you do so at your own risk, and you should be aware these Terms and Conditions no longer govern.
+
+You should review the applicable terms and policies, including privacy and data gathering practices, of any website to which you navigate from the Bot or relating to any applications you use or install from the Bot. Any purchases you make through Third-Party Websites will be through other websites and from other companies, and we take no responsibility whatsoever in relation to such purchases which are exclusively between you and the applicable third party.
+
+You agree and acknowledge that we do not endorse the products or services offered on Third-Party Websites and you shall hold us harmless from any harm caused by your purchase of such products or services. Additionally, you shall hold us harmless from any losses sustained by you or harm caused to you relating to or resulting in any way from any Third-Party Content or any contact with Third-Party Websites.
+
+SITE MANAGEMENT
+
+We reserve the right, but not the obligation, to:
+
+(1) monitor the Bot for violations of these Terms and Conditions;
+
+(2) take appropriate legal action against anyone who, in our sole discretion, violates the law or these Terms and Conditions, including without limitation, reporting such user to law enforcement authorities;
+
+(3) in our sole discretion and without limitation, refuse, restrict access to, limit the availability of, or disable (to the extent technologically feasible) any of your Contributions or any portion thereof;
+
+(4) in our sole discretion and without limitation, notice, or liability, to remove from the Bot or otherwise disable all files and content that are excessive in size or are in any way burdensome to our systems;
+
+(5) otherwise manage the Bot in a manner designed to protect our rights and property and to facilitate the proper functioning of the Bot.
+
+PRIVACY POLICY
+
+We care about data privacy and security. By using the Bot, you agree to be bound by our Privacy Policy, which is incorporated into these Terms and Conditions. Please review the "USER DATA" section below for more information.
+
+If you access the Bot from the European Union, Asia, or any other region of the world with laws or other requirements governing personal data collection, use, or disclosure that differ from applicable laws in the United States, then through your continued use of the Bot, you are transferring your data to the United States, and you expressly consent to have your data transferred to and processed in the United States.
+
+Further, we do not knowingly accept, request, or solicit information from children or knowingly market to children (as defined here as under the age of 13). Therefore, in accordance with the U.S. Children’s Online Privacy Protection Act, if we receive actual knowledge that anyone under the age of 13 has provided personal information to us without the requisite and verifiable parental consent, we will delete that information from the Bot as quickly as is reasonably practical.
+
+TERM AND TERMINATION
+
+These Terms and Conditions shall remain in full force and effect while you use the Bot. WITHOUT LIMITING ANY OTHER PROVISION OF THESE TERMS AND CONDITIONS, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE BOT, TO ANY PERSON FOR ANY REASON OR FOR NO REASON, INCLUDING WITHOUT LIMITATION FOR BREACH OF ANY REPRESENTATION, WARRANTY, OR COVENANT CONTAINED IN THESE TERMS AND CONDITIONS OR OF ANY APPLICABLE LAW OR REGULATION. WE MAY TERMINATE YOUR USE OR PARTICIPATION IN THE BOT WITHOUT WARNING, IN OUR SOLE DISCRETION.
+
+If we terminate or suspend your access for any reason, you are prohibited from accessing and using a new account under your name, a fake or borrowed name, or the name of any third party, even if you may be acting on behalf of the third party.
+
+In addition to terminating or suspending your account, we reserve the right to take appropriate legal action, including without limitation pursuing civil, criminal, and injunctive redress.
+
+MODIFICATIONS AND INTERRUPTIONS
+
+We reserve the right to change, modify, or remove the contents of the Bot at any time or for any reason at our sole discretion without notice. However, we have no obligation to update any information on our Bot. We also reserve the right to modify or discontinue all or part of the Bot without notice at any time.
+
+We will not be liable to you or any third party for any modification, price change, suspension, or discontinuance of the Bot.
+
+We cannot guarantee the Bot will be available at all times. We may experience hardware, software, or other problems or need to perform maintenance related to the Bot, resulting in interruptions, delays, or errors.
+
+We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify the Bot at any time or for any reason without notice to you. You agree that we have no liability whatsoever for any loss, damage, or inconvenience caused by your inability to access or use the Bot during any downtime or discontinuance of the Bot.
+
+Nothing in these Terms and Conditions will be construed to obligate us to maintain and support the Bot or to supply any corrections, updates, or releases in connection therewith.
+
+GOVERNING LAW
+
+These Terms and Conditions and your use of the Bot are governed by and construed in accordance with the laws of the State of Indiana applicable to agreements made and to be entirely performed within the State of Indiana, without regard to its conflict of law principles.
+
+DISPUTE RESOLUTION
+
+Any legal action of whatever nature brought by either you or us (collectively, the “Parties” and individually, a “Party”) shall be commenced or prosecuted in the state and federal courts located in Indiana, and the Parties hereby consent to, and waive all defenses of lack of personal jurisdiction and forum non conveniens with respect to venue and jurisdiction in such state and federal courts.
+
+CORRECTIONS
+
+There may be information on the Bot that contains typographical errors, inaccuracies, or omissions that may relate to the Bot, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Bot at any time, without prior notice.
+
+DISCLAIMER
+
+THE BOT IS PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE BOT AND OUR SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE BOT AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THE BOT'S CONTENT OR THE CONTENT OF ANY WEBSITES LINKED TO THE BOT AND WE WILL ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS, (2) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE BOT, (3) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION STORED THEREIN, (4) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE BOT, (5) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH THE BOT BY ANY THIRD PARTY, AND/OR (6) ANY ERRORS OR OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE BOT. WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH THE BOT, ANY HYPERLINKED WEBSITE, OR ANY WEBSITE OR MOBILE APPLICATION FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND WE WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND ANY THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES.
+
+AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE.
+
+LIMITATIONS OF LIABILITY
+
+IN NO EVENT WILL WE BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE BOT, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+USER DATA
+
+We will maintain certain data that you transmit to the Bot for the purpose of managing the Bot, as well as data relating to your use of the Bot. Although we perform regular routine backups of some data, you are solely responsible for all data that you transmit or that relates to any activity you have undertaken using the Bot.
+
+We do not guarantee that we will keep your data for any specific amount of time or that we will delete your data after any specific amount of time.
+
+Your use of the Bot confirms your consent for this data to be collected and/or deleted.
+
+You agree that we shall have no liability to you for any loss or corruption of any such data, and you hereby waive any right of action against us arising from any such loss or corruption of such data.
+
+ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES
+
+Visiting the Bot, sending us emails, and completing online forms constitute electronic communications. You consent to receive electronic communications, and you agree that all agreements, notices, disclosures, and other communications we provide to you electronically, via email and on the Bot, satisfy any legal requirement that such communication be in writing.
+
+YOU HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES, CONTRACTS, ORDERS, AND OTHER RECORDS, AND TO ELECTRONIC DELIVERY OF NOTICES, POLICIES, AND RECORDS OF TRANSACTIONS INITIATED OR COMPLETED BY US OR VIA THE BOT.
+
+You hereby waive any rights or requirements under any statutes, regulations, rules, ordinances, or other laws in any jurisdiction which require an original signature or delivery or retention of non-electronic records, or to payments or the granting of credits by any means other than electronic means.
+
+MISCELLANEOUS
+
+These Terms and Conditions and any policies or operating rules posted by us on the Bot constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Terms and Conditions shall not operate as a waiver of such right or provision.
+
+These Terms and Conditions operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control.
+
+If any provision or part of a provision of these Terms and Conditions is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Terms and Conditions and does not affect the validity and enforceability of any remaining provisions.
+
+There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Terms and Conditions or use of the Bot. You agree that these Terms and Conditions will not be construed against us by virtue of having drafted them.
+
+You hereby waive any and all defenses you may have based on the electronic form of these Terms and Conditions and the lack of signing by the parties hereto to execute these Terms and Conditions.
+
+CONTACT US
+
+In order to resolve a complaint regarding the Bot or to receive further information regarding use of the Bot, please contact us at:
+
+SideStore, LLC.
+
+abuse@sidestore.io
+
+Subject: ATTN: SideBot - (your subject here)
